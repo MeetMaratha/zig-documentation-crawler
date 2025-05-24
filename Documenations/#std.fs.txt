@@ -1,0 +1,165 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [fs](https://ziglang.org/documentation/master/std/#std.fs)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/fs.zig)
+File System.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [AtomicFile](https://ziglang.org/documentation/master/std/#std.fs.AtomicFile)
+  * [Dir](https://ziglang.org/documentation/master/std/#std.fs.Dir)
+  * [File](https://ziglang.org/documentation/master/std/#std.fs.File)
+
+
+## Namespaces
+  * [path](https://ziglang.org/documentation/master/std/#std.fs.path)
+  * [wasi](https://ziglang.org/documentation/master/std/#std.fs.wasi)
+
+
+## Global Variables
+## Values
+[MAX_NAME_BYTES](https://ziglang.org/documentation/master/std/#std.fs.max_name_bytes)| | This represents the maximum size of a `[]u8` file name component that the platform's common file systems support. File name components returned by file system operations are likely to fit into a `u8` array of this length, but (depending on the platform) this assumption may not hold for every configuration. The byte count does not include a null sentinel byte. On Windows, `[]u8` file name components are encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, file name components are encoded as valid UTF-8. On other platforms, `[]u8` components are an opaque sequence of bytes with no particular encoding.  
+---|---|---  
+[MAX_PATH_BYTES](https://ziglang.org/documentation/master/std/#std.fs.MAX_PATH_BYTES)| |   
+[base64_alphabet](https://ziglang.org/documentation/master/std/#std.fs.base64_alphabet)| |   
+[base64_decoder](https://ziglang.org/documentation/master/std/#std.fs.base64_decoder)| | Base64 decoder, replacing the standard `+/` with `-_` so that it can be used in a file name on any filesystem.  
+[base64_encoder](https://ziglang.org/documentation/master/std/#std.fs.base64_encoder)| | Base64 encoder, replacing the standard `+/` with `-_` so that it can be used in a file name on any filesystem.  
+[has_executable_bit](https://ziglang.org/documentation/master/std/#std.fs.has_executable_bit)| |   
+[max_name_bytes](https://ziglang.org/documentation/master/std/#std.fs.max_name_bytes)| | This represents the maximum size of a `[]u8` file name component that the platform's common file systems support. File name components returned by file system operations are likely to fit into a `u8` array of this length, but (depending on the platform) this assumption may not hold for every configuration. The byte count does not include a null sentinel byte. On Windows, `[]u8` file name components are encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, file name components are encoded as valid UTF-8. On other platforms, `[]u8` components are an opaque sequence of bytes with no particular encoding.  
+[max_path_bytes](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)| | The maximum length of a file path that the operating system will accept.  
+## Functions `pub fn accessAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsolute)(absolute_path: []const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).AccessError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.AccessError)!void`
+    
+Test accessing `path[](https://ziglang.org/documentation/master/std/#std.fs.path)`. Be careful of Time-Of-Check-Time-Of-Use race conditions when using this function. For example, instead of testing if a file exists and then opening it, just open it and handle the error for file not found. See `accessAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsoluteZ)` for a function that accepts a null-terminated path. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn accessAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsoluteW)(absolute_path: [*:0]const u16, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).AccessError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.AccessError)!void`
+    
+Same as `accessAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsolute)` but the path parameter is WTF-16 encoded. `pub fn accessAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsoluteZ)(absolute_path: [*:0]const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).AccessError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.AccessError)!void`
+    
+Same as `accessAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.accessAbsolute)` but the path parameter is null-terminated. `pub fn atomicSymLink[](https://ziglang.org/documentation/master/std/#std.fs.atomicSymLink)(_: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), existing_path: []const u8, new_path: []const u8) !void`
+    
+Deprecated. Use `cwd().atomicSymLink()` instead. `pub fn copyFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.copyFileAbsolute)( source_path: []const u8, dest_path: []const u8, args: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).CopyFileOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.CopyFileOptions), ) !void`
+    
+Same as `Dir.copyFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.copyFile)`, except asserts that both `source_path` and `dest_path` are absolute. See `Dir.copyFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.copyFile)` for a function that operates on both absolute and relative paths. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn createFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.createFileAbsolute)(absolute_path: []const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).CreateFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.CreateFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Creates, opens, or overwrites a file with write access, based on an absolute path. Call `File.close[](https://ziglang.org/documentation/master/std/#std.fs.File.close)` to release the resource. Asserts that the path is absolute. See `Dir.createFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.createFile)` for a function that operates on both absolute and relative paths. Asserts that the path parameter has no null bytes. See `createFileAbsoluteC` for a function that accepts a null-terminated path. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn createFileAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.createFileAbsoluteW)(absolute_path_w: [*:0]const u16, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).CreateFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.CreateFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Same as `createFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.createFileAbsolute)` but the path parameter is WTF-16 encoded. `pub fn createFileAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.createFileAbsoluteZ)(absolute_path_c: [*:0]const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).CreateFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.CreateFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Same as `createFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.createFileAbsolute)` but the path parameter is null-terminated. `pub fn cwd[](https://ziglang.org/documentation/master/std/#std.fs.cwd)() Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir)`
+    
+Returns a handle to the current working directory. It is not opened with iteration capability. Closing the returned `Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir)` is checked illegal behavior. Iterating over the result is illegal behavior. On POSIX targets, this function is comptime-callable. `pub fn defaultWasiCwd[](https://ziglang.org/documentation/master/std/#std.fs.defaultWasiCwd)() std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).fd_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.fd_t)`
+`pub fn deleteDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteDirAbsolute)(dir_path: []const u8) !void`
+    
+Same as `Dir.deleteDir[](https://ziglang.org/documentation/master/std/#std.fs.Dir.deleteDir)` except the path is absolute. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn deleteDirAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.deleteDirAbsoluteW)(dir_path: [*:0]const u16) !void`
+    
+Same as `deleteDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteDirAbsolute)` except the path parameter is WTF-16 and target OS is assumed Windows. `pub fn deleteDirAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.deleteDirAbsoluteZ)(dir_path: [*:0]const u8) !void`
+    
+Same as `deleteDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteDirAbsolute)` except the path parameter is null-terminated. `pub fn deleteFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteFileAbsolute)(absolute_path: []const u8) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).DeleteFileError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.DeleteFileError)!void`
+    
+Delete a file name and possibly the file it refers to, based on an absolute path. Asserts that the path is absolute. See `Dir.deleteFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.deleteFile)` for a function that operates on both absolute and relative paths. Asserts that the path parameter has no null bytes. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn deleteFileAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.deleteFileAbsoluteW)(absolute_path_w: [*:0]const u16) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).DeleteFileError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.DeleteFileError)!void`
+    
+Same as `deleteFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteFileAbsolute)` except the parameter is WTF-16 encoded. `pub fn deleteFileAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.deleteFileAbsoluteZ)(absolute_path_c: [*:0]const u8) Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).DeleteFileError[](https://ziglang.org/documentation/master/std/#std.fs.Dir.DeleteFileError)!void`
+    
+Same as `deleteFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteFileAbsolute)` except the parameter is null-terminated. `pub fn deleteTreeAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.deleteTreeAbsolute)(absolute_path: []const u8) !void`
+    
+Removes a symlink, file, or directory. This is equivalent to `Dir.deleteTree[](https://ziglang.org/documentation/master/std/#std.fs.Dir.deleteTree)` with the base directory. Asserts that the path is absolute. See `Dir.deleteTree[](https://ziglang.org/documentation/master/std/#std.fs.Dir.deleteTree)` for a function that operates on both absolute and relative paths. Asserts that the path parameter has no null bytes. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn getAppDataDir[](https://ziglang.org/documentation/master/std/#std.fs.get_app_data_dir.getAppDataDir)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), appname: []const u8) GetAppDataDirError[](https://ziglang.org/documentation/master/std/#std.fs.get_app_data_dir.GetAppDataDirError)![]u8`
+    
+Caller owns returned memory. TODO determine if we can remove the allocator requirement `pub fn makeDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.makeDirAbsolute)(absolute_path: []const u8) !void`
+    
+Create a new directory, based on an absolute path. Asserts that the path is absolute. See `Dir.makeDir[](https://ziglang.org/documentation/master/std/#std.fs.Dir.makeDir)` for a function that operates on both absolute and relative paths. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn makeDirAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.makeDirAbsoluteW)(absolute_path_w: [*:0]const u16) !void`
+    
+Same as `makeDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.makeDirAbsolute)` except the parameter is a null-terminated WTF-16 LE-encoded string. `pub fn makeDirAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.makeDirAbsoluteZ)(absolute_path_z: [*:0]const u8) !void`
+    
+Same as `makeDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.makeDirAbsolute)` except the parameter is null-terminated. `pub fn openDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsolute)(absolute_path: []const u8, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).OpenOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.OpenOptions)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir)`
+    
+Opens a directory at the given path. The directory is a system resource that remains open until `close` is called on the result. See `openDirAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsoluteZ)` for a function that accepts a null-terminated path. `pub fn openDirAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsoluteW)(absolute_path_c: [*:0]const u16, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).OpenOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.OpenOptions)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir)`
+    
+Same as `openDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsolute)` but the path parameter is null-terminated. `pub fn openDirAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsoluteZ)(absolute_path_c: [*:0]const u8, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).OpenOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.OpenOptions)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir)`
+    
+Same as `openDirAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openDirAbsolute)` but the path parameter is null-terminated. `pub fn openFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsolute)(absolute_path: []const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Opens a file for reading or writing, without attempting to create a new file, based on an absolute path. Call `File.close[](https://ziglang.org/documentation/master/std/#std.fs.File.close)` to release the resource. Asserts that the path is absolute. See `Dir.openFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.openFile)` for a function that operates on both absolute and relative paths. Asserts that the path parameter has no null bytes. See `openFileAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsoluteZ)` for a function that accepts a null-terminated path. On Windows, `absolute_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `absolute_path` should be encoded as valid UTF-8. On other platforms, `absolute_path` is an opaque sequence of bytes with no particular encoding. `pub fn openFileAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsoluteW)(absolute_path_w: []const u16, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Same as `openFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsolute)` but the path parameter is WTF-16-encoded. `pub fn openFileAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsoluteZ)(absolute_path_c: [*:0]const u8, flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenError[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+    
+Same as `openFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.openFileAbsolute)` but the path parameter is null-terminated. `pub fn openSelfExe[](https://ziglang.org/documentation/master/std/#std.fs.openSelfExe)(flags: File[](https://ziglang.org/documentation/master/std/#std.fs.File).OpenFlags[](https://ziglang.org/documentation/master/std/#std.fs.File.OpenFlags)) OpenSelfExeError[](https://ziglang.org/documentation/master/std/#std.fs.OpenSelfExeError)!File[](https://ziglang.org/documentation/master/std/#std.fs.File)`
+`pub fn readLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.readLinkAbsolute)(pathname: []const u8, buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) ![]u8`
+    
+Same as `Dir.readLink[](https://ziglang.org/documentation/master/std/#std.fs.Dir.readLink)`, except it asserts the path is absolute. On Windows, `pathname` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `pathname` should be encoded as valid UTF-8. On other platforms, `pathname` is an opaque sequence of bytes with no particular encoding. `pub fn readLinkAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.readLinkAbsoluteZ)(pathname_c: [*:0]const u8, buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) ![]u8`
+    
+Same as `readLink`, except the path parameter is null-terminated. `pub fn readlinkAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.readlinkAbsoluteW)(pathname_w: [*:0]const u16, buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) ![]u8`
+    
+Windows-only. Same as `readlinkW`, except the path parameter is null-terminated, WTF16 encoded. `pub fn realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)(pathname: []const u8, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Return the canonicalized absolute pathname. `pub fn realpathAlloc[](https://ziglang.org/documentation/master/std/#std.fs.realpathAlloc)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), pathname: []const u8) ![]u8`
+    
+`realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)`, except caller must free the returned memory. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. See also `Dir.realpath[](https://ziglang.org/documentation/master/std/#std.fs.Dir.realpath)`. `pub fn realpathW[](https://ziglang.org/documentation/master/std/#std.posix.realpathW)(pathname: []const u16, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Same as `realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)` except `pathname` is WTF16LE-encoded. `pub fn realpathZ[](https://ziglang.org/documentation/master/std/#std.posix.realpathZ)(pathname: [*:0]const u8, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Same as `realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)` except `pathname` is null-terminated. `pub fn rename[](https://ziglang.org/documentation/master/std/#std.fs.rename)(old_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), old_sub_path: []const u8, new_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), new_sub_path: []const u8) !void`
+    
+Same as `Dir.rename[](https://ziglang.org/documentation/master/std/#std.fs.Dir.rename)`, except `new_sub_path` is relative to `new_dir` `pub fn renameAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.renameAbsolute)(old_path: []const u8, new_path: []const u8) !void`
+    
+Same as `Dir.rename[](https://ziglang.org/documentation/master/std/#std.fs.Dir.rename)` except the paths are absolute. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn renameAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.renameAbsoluteW)(old_path: [*:0]const u16, new_path: [*:0]const u16) !void`
+    
+Same as `renameAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.renameAbsolute)` except the path parameters are WTF-16 and target OS is assumed Windows. `pub fn renameAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.renameAbsoluteZ)(old_path: [*:0]const u8, new_path: [*:0]const u8) !void`
+    
+Same as `renameAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.renameAbsolute)` except the path parameters are null-terminated. `pub fn renameW[](https://ziglang.org/documentation/master/std/#std.fs.renameW)(old_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), old_sub_path_w: []const u16, new_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), new_sub_path_w: []const u16) !void`
+    
+Same as `rename[](https://ziglang.org/documentation/master/std/#std.fs.rename)` except the parameters are WTF16LE, NT prefixed. This function is Windows-only. `pub fn renameZ[](https://ziglang.org/documentation/master/std/#std.fs.renameZ)(old_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), old_sub_path_z: [*:0]const u8, new_dir: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), new_sub_path_z: [*:0]const u8) !void`
+    
+Same as `rename[](https://ziglang.org/documentation/master/std/#std.fs.rename)` except the parameters are null-terminated. `pub fn selfExeDirPath[](https://ziglang.org/documentation/master/std/#std.fs.selfExeDirPath)(out_buffer: []u8) SelfExePathError[](https://ziglang.org/documentation/master/std/#std.fs.SelfExePathError)![]const u8`
+    
+Get the directory path that contains the current executable. Returned value is a slice of out_buffer. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn selfExeDirPathAlloc[](https://ziglang.org/documentation/master/std/#std.fs.selfExeDirPathAlloc)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![]u8`
+    
+`selfExeDirPath[](https://ziglang.org/documentation/master/std/#std.fs.selfExeDirPath)` except allocates the result on the heap. Caller owns returned memory. `pub fn selfExePath[](https://ziglang.org/documentation/master/std/#std.fs.selfExePath)(out_buffer: []u8) SelfExePathError[](https://ziglang.org/documentation/master/std/#std.fs.SelfExePathError)![]u8`
+    
+Get the path to the current executable. Follows symlinks. If you only need the directory, use selfExeDirPath. If you only want an open file handle, use openSelfExe. This function may return an error if the current executable was deleted after spawning. Returned value is a slice of out_buffer. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn selfExePathAlloc[](https://ziglang.org/documentation/master/std/#std.fs.selfExePathAlloc)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![]u8`
+    
+`selfExePath[](https://ziglang.org/documentation/master/std/#std.fs.selfExePath)` except allocates the result on the heap. Caller owns returned memory. `pub fn symLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsolute)( target_path: []const u8, sym_link_path: []const u8, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).SymLinkFlags[](https://ziglang.org/documentation/master/std/#std.fs.Dir.SymLinkFlags), ) !void`
+    
+Creates a symbolic link named `sym_link_path` which contains the string `target_path`. A symbolic link (also known as a soft link) may point to an existing file or to a nonexistent one; the latter case is known as a dangling link. If `sym_link_path` exists, it will not be overwritten. See also `symLinkAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsoluteZ)` and `symLinkAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsoluteW)`. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn symLinkAbsoluteW[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsoluteW)( target_path_w: [*:0]const u16, sym_link_path_w: [*:0]const u16, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).SymLinkFlags[](https://ziglang.org/documentation/master/std/#std.fs.Dir.SymLinkFlags), ) !void`
+    
+Windows-only. Same as `symLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsolute)` except the parameters are null-terminated, WTF16 LE encoded. Note that this function will by default try creating a symbolic link to a file. If you would like to create a symbolic link to a directory, specify this with `SymLinkFlags{ .is_directory = true }`. See also `symLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsolute)`, `symLinkAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsoluteZ)`. `pub fn symLinkAbsoluteZ[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsoluteZ)( target_path_c: [*:0]const u8, sym_link_path_c: [*:0]const u8, flags: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).SymLinkFlags[](https://ziglang.org/documentation/master/std/#std.fs.Dir.SymLinkFlags), ) !void`
+    
+Same as `symLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsolute)` except the parameters are null-terminated pointers. See also `symLinkAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.symLinkAbsolute)`. `pub fn updateFileAbsolute[](https://ziglang.org/documentation/master/std/#std.fs.updateFileAbsolute)( source_path: []const u8, dest_path: []const u8, args: Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).CopyFileOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.CopyFileOptions), ) !Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).PrevStatus[](https://ziglang.org/documentation/master/std/#std.fs.Dir.PrevStatus)`
+    
+Same as `Dir.updateFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.updateFile)`, except asserts that both `source_path` and `dest_path` are absolute. See `Dir.updateFile[](https://ziglang.org/documentation/master/std/#std.fs.Dir.updateFile)` for a function that operates on both absolute and relative paths. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding.
+## Error Sets
+  * [GetAppDataDirError](https://ziglang.org/documentation/master/std/#std.fs.get_app_data_dir.GetAppDataDirError)
+  * [OpenSelfExeError](https://ziglang.org/documentation/master/std/#std.fs.OpenSelfExeError)
+  * [SelfExePathError](https://ziglang.org/documentation/master/std/#std.fs.SelfExePathError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

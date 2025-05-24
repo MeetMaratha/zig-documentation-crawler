@@ -1,0 +1,72 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [treap](https://ziglang.org/documentation/master/std/#std.treap)
+  * [Treap](https://ziglang.org/documentation/master/std/#std.treap.Treap)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/treap.zig)
+## Parameters
+```
+Key: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+root: ?*Node[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Node) = null
+```
+
+```
+prng: Prng[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Prng) = .{}
+```
+
+## Types
+  * [Entry](https://ziglang.org/documentation/master/std/#std.treap.Treap.Entry)
+  * [InorderIterator](https://ziglang.org/documentation/master/std/#std.treap.Treap.InorderIterator)
+  * [Node](https://ziglang.org/documentation/master/std/#std.treap.Treap.Node)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn getEntryFor[](https://ziglang.org/documentation/master/std/#std.treap.Treap.getEntryFor)(self: *Self[](https://ziglang.org/documentation/master/std/#std.treap.Treap), key: Key) Entry[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Entry)`
+    
+Lookup the Entry for the given key in the treap. The Entry act's as a slot in the treap to insert/replace/remove the node associated with the key. `pub fn getEntryForExisting[](https://ziglang.org/documentation/master/std/#std.treap.Treap.getEntryForExisting)(self: *Self[](https://ziglang.org/documentation/master/std/#std.treap.Treap), node: *Node[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Node)) Entry[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Entry)`
+    
+Get an entry for a Node that currently exists in the treap. It is undefined behavior if the Node is not currently inserted in the treap. The Entry act's as a slot in the treap to insert/replace/remove the node associated with the key. `pub fn getMax[](https://ziglang.org/documentation/master/std/#std.treap.Treap.getMax)(self: Self[](https://ziglang.org/documentation/master/std/#std.treap.Treap)) ?*Node[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Node)`
+    
+Returns the largest Node by key in the treap if there is one. Use `getEntryForExisting()` to replace/remove this Node from the treap. `pub fn getMin[](https://ziglang.org/documentation/master/std/#std.treap.Treap.getMin)(self: Self[](https://ziglang.org/documentation/master/std/#std.treap.Treap)) ?*Node[](https://ziglang.org/documentation/master/std/#std.treap.Treap.Node)`
+    
+Returns the smallest Node by key in the treap if there is one. Use `getEntryForExisting()` to replace/remove this Node from the treap. `pub fn inorderIterator[](https://ziglang.org/documentation/master/std/#std.treap.Treap.inorderIterator)(self: *Self[](https://ziglang.org/documentation/master/std/#std.treap.Treap)) InorderIterator[](https://ziglang.org/documentation/master/std/#std.treap.Treap.InorderIterator)`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

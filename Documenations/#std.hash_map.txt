@@ -1,0 +1,65 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [hash_map](https://ziglang.org/documentation/master/std/#std.hash_map)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/hash_map.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [AutoContext](https://ziglang.org/documentation/master/std/#std.hash_map.AutoContext)
+  * [AutoHashMap](https://ziglang.org/documentation/master/std/#std.hash_map.AutoHashMap)
+  * [AutoHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.AutoHashMapUnmanaged)
+  * [HashMap](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)
+  * [HashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.HashMapUnmanaged)
+  * [StringHashMap](https://ziglang.org/documentation/master/std/#std.hash_map.StringHashMap)
+  * [StringHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.StringHashMapUnmanaged)
+  * [StringIndexAdapter](https://ziglang.org/documentation/master/std/#std.hash_map.StringIndexAdapter)
+  * [StringIndexContext](https://ziglang.org/documentation/master/std/#std.hash_map.StringIndexContext)
+
+
+## Namespaces
+  * [StringContext](https://ziglang.org/documentation/master/std/#std.hash_map.StringContext)
+
+
+## Global Variables
+## Values
+[default_max_load_percentage](https://ziglang.org/documentation/master/std/#std.hash_map.default_max_load_percentage)| |   
+---|---|---  
+## Functions `pub fn eqlString[](https://ziglang.org/documentation/master/std/#std.hash_map.eqlString)(a: []const u8, b: []const u8) bool`
+`pub fn getAutoEqlFn[](https://ziglang.org/documentation/master/std/#std.hash_map.getAutoEqlFn)(comptime K: type, comptime Context: type) (fn (Context, K, K) bool)`
+`pub fn getAutoHashFn[](https://ziglang.org/documentation/master/std/#std.hash_map.getAutoHashFn)(comptime K: type, comptime Context: type) (fn (Context, K) u64)`
+`pub fn hashString[](https://ziglang.org/documentation/master/std/#std.hash_map.hashString)(s: []const u8) u64`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

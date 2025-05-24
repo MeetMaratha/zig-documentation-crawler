@@ -1,0 +1,133 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [Target](https://ziglang.org/documentation/master/std/#std.Target)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/Target.zig)
+All the details about the machine that will be executing code. Unlike `Query[](https://ziglang.org/documentation/master/std/#std.Target.Query)` which might leave some things as "default" or "host", this data is fully resolved into a concrete set of OS versions, CPU features, etc.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+cpu: Cpu[](https://ziglang.org/documentation/master/std/#std.Target.Cpu)
+```
+
+```
+os: Os[](https://ziglang.org/documentation/master/std/#std.Target.Os)
+```
+
+```
+abi: Abi[](https://ziglang.org/documentation/master/std/#std.Target.Abi)
+```
+
+```
+ofmt: ObjectFormat[](https://ziglang.org/documentation/master/std/#std.Target.ObjectFormat)
+```
+
+```
+dynamic_linker: DynamicLinker[](https://ziglang.org/documentation/master/std/#std.Target.DynamicLinker) = DynamicLinker[](https://ziglang.org/documentation/master/std/#std.Target.DynamicLinker).none[](https://ziglang.org/documentation/master/std/#std.Target.DynamicLinker.none)
+```
+
+## Types
+  * [Abi](https://ziglang.org/documentation/master/std/#std.Target.Abi)
+  * [CType](https://ziglang.org/documentation/master/std/#std.Target.CType)
+  * [Cpu](https://ziglang.org/documentation/master/std/#std.Target.Cpu)
+  * [DynamicLinker](https://ziglang.org/documentation/master/std/#std.Target.DynamicLinker)
+  * [ObjectFormat](https://ziglang.org/documentation/master/std/#std.Target.ObjectFormat)
+  * [Os](https://ziglang.org/documentation/master/std/#std.Target.Os)
+  * [Query](https://ziglang.org/documentation/master/std/#std.Target.Query)
+  * [SubSystem](https://ziglang.org/documentation/master/std/#std.Target.SubSystem)
+
+
+## Namespaces
+  * [aarch64](https://ziglang.org/documentation/master/std/#std.Target.aarch64)
+  * [amdgcn](https://ziglang.org/documentation/master/std/#std.Target.amdgcn)
+  * [arc](https://ziglang.org/documentation/master/std/#std.Target.arc)
+  * [arm](https://ziglang.org/documentation/master/std/#std.Target.arm)
+  * [avr](https://ziglang.org/documentation/master/std/#std.Target.avr)
+  * [bpf](https://ziglang.org/documentation/master/std/#std.Target.bpf)
+  * [csky](https://ziglang.org/documentation/master/std/#std.Target.csky)
+  * [hexagon](https://ziglang.org/documentation/master/std/#std.Target.hexagon)
+  * [lanai](https://ziglang.org/documentation/master/std/#std.Target.lanai)
+  * [loongarch](https://ziglang.org/documentation/master/std/#std.Target.loongarch)
+  * [m68k](https://ziglang.org/documentation/master/std/#std.Target.m68k)
+  * [mips](https://ziglang.org/documentation/master/std/#std.Target.mips)
+  * [msp430](https://ziglang.org/documentation/master/std/#std.Target.msp430)
+  * [nvptx](https://ziglang.org/documentation/master/std/#std.Target.nvptx)
+  * [powerpc](https://ziglang.org/documentation/master/std/#std.Target.powerpc)
+  * [propeller](https://ziglang.org/documentation/master/std/#std.Target.propeller)
+  * [riscv](https://ziglang.org/documentation/master/std/#std.Target.riscv)
+  * [s390x](https://ziglang.org/documentation/master/std/#std.Target.s390x)
+  * [sparc](https://ziglang.org/documentation/master/std/#std.Target.sparc)
+  * [spirv](https://ziglang.org/documentation/master/std/#std.Target.spirv)
+  * [ve](https://ziglang.org/documentation/master/std/#std.Target.ve)
+  * [wasm](https://ziglang.org/documentation/master/std/#std.Target.wasm)
+  * [x86](https://ziglang.org/documentation/master/std/#std.Target.x86)
+  * [xcore](https://ziglang.org/documentation/master/std/#std.Target.xcore)
+  * [xtensa](https://ziglang.org/documentation/master/std/#std.Target.xtensa)
+
+
+## Global Variables
+## Values
+## Functions `pub fn cCallingConvention[](https://ziglang.org/documentation/master/std/#std.Target.cCallingConvention)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) ?std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).CallingConvention[](https://ziglang.org/documentation/master/std/#std.builtin.CallingConvention)`
+`pub fn cCharSignedness[](https://ziglang.org/documentation/master/std/#std.Target.cCharSignedness)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).Signedness[](https://ziglang.org/documentation/master/std/#std.builtin.Signedness)`
+    
+Default signedness of `char` for the native C compiler for this target Note that char signedness is implementation-defined and many compilers provide an option to override the default signedness e.g. GCC's -funsigned-char / -fsigned-char `pub fn cMaxIntAlignment[](https://ziglang.org/documentation/master/std/#std.Target.cMaxIntAlignment)(target: std[](https://ziglang.org/documentation/master/std/#std).Target[](https://ziglang.org/documentation/master/std/#std.Target)) u16`
+`pub fn cTypeAlignment[](https://ziglang.org/documentation/master/std/#std.Target.cTypeAlignment)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), c_type: CType[](https://ziglang.org/documentation/master/std/#std.Target.CType)) u16`
+`pub fn cTypeBitSize[](https://ziglang.org/documentation/master/std/#std.Target.cTypeBitSize)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), c_type: CType[](https://ziglang.org/documentation/master/std/#std.Target.CType)) u16`
+`pub fn cTypeByteSize[](https://ziglang.org/documentation/master/std/#std.Target.cTypeByteSize)(t: Target[](https://ziglang.org/documentation/master/std/#std.Target), c_type: CType[](https://ziglang.org/documentation/master/std/#std.Target.CType)) u16`
+`pub fn cTypePreferredAlignment[](https://ziglang.org/documentation/master/std/#std.Target.cTypePreferredAlignment)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), c_type: CType[](https://ziglang.org/documentation/master/std/#std.Target.CType)) u16`
+`pub fn dynamicLibSuffix[](https://ziglang.org/documentation/master/std/#std.Target.dynamicLibSuffix)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) [:0]const u8`
+`pub fn exeFileExt[](https://ziglang.org/documentation/master/std/#std.Target.exeFileExt)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) [:0]const u8`
+`pub fn hurdTuple[](https://ziglang.org/documentation/master/std/#std.Target.hurdTuple)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![]u8`
+`pub fn hurdTupleSimple[](https://ziglang.org/documentation/master/std/#std.Target.hurdTupleSimple)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), arch: Cpu[](https://ziglang.org/documentation/master/std/#std.Target.Cpu).Arch[](https://ziglang.org/documentation/master/std/#std.Target.Cpu.Arch), abi: Abi[](https://ziglang.org/documentation/master/std/#std.Target.Abi)) ![]u8`
+`pub inline fn isDarwinLibC[](https://ziglang.org/documentation/master/std/#std.Target.isDarwinLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isFreeBSDLibC[](https://ziglang.org/documentation/master/std/#std.Target.isFreeBSDLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isGnuLibC[](https://ziglang.org/documentation/master/std/#std.Target.isGnuLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isMinGW[](https://ziglang.org/documentation/master/std/#std.Target.isMinGW)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isMuslLibC[](https://ziglang.org/documentation/master/std/#std.Target.isMuslLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isNetBSDLibC[](https://ziglang.org/documentation/master/std/#std.Target.isNetBSDLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub inline fn isWasiLibC[](https://ziglang.org/documentation/master/std/#std.Target.isWasiLibC)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) bool`
+`pub fn libPrefix[](https://ziglang.org/documentation/master/std/#std.Target.libPrefix)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) [:0]const u8`
+`pub fn linuxTriple[](https://ziglang.org/documentation/master/std/#std.Target.linuxTriple)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![]u8`
+`pub fn linuxTripleSimple[](https://ziglang.org/documentation/master/std/#std.Target.linuxTripleSimple)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), arch: Cpu[](https://ziglang.org/documentation/master/std/#std.Target.Cpu).Arch[](https://ziglang.org/documentation/master/std/#std.Target.Cpu.Arch), os_tag: Os[](https://ziglang.org/documentation/master/std/#std.Target.Os).Tag[](https://ziglang.org/documentation/master/std/#std.Target.Os.Tag), abi: Abi[](https://ziglang.org/documentation/master/std/#std.Target.Abi)) ![]u8`
+`pub fn ptrBitWidth[](https://ziglang.org/documentation/master/std/#std.Target.ptrBitWidth)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) u16`
+`pub fn ptrBitWidth_cpu_abi[](https://ziglang.org/documentation/master/std/#std.Target.ptrBitWidth_cpu_abi)(cpu: Cpu[](https://ziglang.org/documentation/master/std/#std.Target.Cpu), abi: Abi[](https://ziglang.org/documentation/master/std/#std.Target.Abi)) u16`
+`pub fn stackAlignment[](https://ziglang.org/documentation/master/std/#std.Target.stackAlignment)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) u16`
+`pub fn standardDynamicLinkerPath[](https://ziglang.org/documentation/master/std/#std.Target.standardDynamicLinkerPath)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) DynamicLinker[](https://ziglang.org/documentation/master/std/#std.Target.DynamicLinker)`
+`pub fn staticLibSuffix[](https://ziglang.org/documentation/master/std/#std.Target.staticLibSuffix)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) [:0]const u8`
+`pub fn toCoffMachine[](https://ziglang.org/documentation/master/std/#std.Target.toCoffMachine)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) std[](https://ziglang.org/documentation/master/std/#std).coff[](https://ziglang.org/documentation/master/std/#std.coff).MachineType[](https://ziglang.org/documentation/master/std/#std.coff.MachineType)`
+`pub fn toElfMachine[](https://ziglang.org/documentation/master/std/#std.Target.toElfMachine)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target)) std[](https://ziglang.org/documentation/master/std/#std).elf[](https://ziglang.org/documentation/master/std/#std.elf).EM[](https://ziglang.org/documentation/master/std/#std.elf.EM)`
+`pub fn zigTriple[](https://ziglang.org/documentation/master/std/#std.Target.zigTriple)(target: Target[](https://ziglang.org/documentation/master/std/#std.Target), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![]u8`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

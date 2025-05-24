@@ -1,0 +1,75 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [gpu](https://ziglang.org/documentation/master/std/#std.gpu)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/gpu.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [DepthMode](https://ziglang.org/documentation/master/std/#std.gpu.DepthMode)
+  * [Origin](https://ziglang.org/documentation/master/std/#std.gpu.Origin)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn binding[](https://ziglang.org/documentation/master/std/#std.gpu.binding)(comptime ptr: anytype, comptime set: u32, comptime bind: u32) void`
+    
+Forms the main linkage for `input` and `output` address spaces. `ptr` must be a reference to variable or struct field. `pub fn depthMode[](https://ziglang.org/documentation/master/std/#std.gpu.depthMode)(comptime entry_point: anytype, comptime mode: DepthMode[](https://ziglang.org/documentation/master/std/#std.gpu.DepthMode)) void`
+    
+Only valid with the `Fragment` calling convention. `pub fn fragmentCoord[](https://ziglang.org/documentation/master/std/#std.gpu.fragmentCoord)(comptime ptr: *addrspace(.input) @Vector(4, f32)) void`
+    
+Output fragment depth from a `Fragment` entrypoint `ptr` must be a reference to variable or struct field. `pub fn fragmentDepth[](https://ziglang.org/documentation/master/std/#std.gpu.fragmentDepth)(comptime ptr: *addrspace(.output) f32) void`
+    
+Output fragment depth from a `Fragment` entrypoint `ptr` must be a reference to variable or struct field. `pub fn fragmentOrigin[](https://ziglang.org/documentation/master/std/#std.gpu.fragmentOrigin)(comptime entry_point: anytype, comptime origin: Origin[](https://ziglang.org/documentation/master/std/#std.gpu.Origin)) void`
+    
+The coordinates appear to originate in the specified `origin`. Only valid with the `Fragment` calling convention. `pub fn globalInvocationId[](https://ziglang.org/documentation/master/std/#std.gpu.globalInvocationId)(comptime ptr: *addrspace(.input) @Vector(3, u32)) void`
+    
+Will make `ptr` contain the location of the current invocation within the global workgroup. Each component is equal to the index of the local workgroup multiplied by the size of the local workgroup plus `localInvocationId[](https://ziglang.org/documentation/master/std/#std.gpu.localInvocationId)`. `ptr` must be a reference to variable or struct field. `pub fn instanceIndex[](https://ziglang.org/documentation/master/std/#std.gpu.instanceIndex)(comptime ptr: *addrspace(.input) u32) void`
+    
+Will make `ptr` contain the index of the instance that is being processed by the current vertex shader invocation. `ptr` must be a reference to variable or struct field. `pub fn localInvocationId[](https://ziglang.org/documentation/master/std/#std.gpu.localInvocationId)(comptime ptr: *addrspace(.input) @Vector(3, u32)) void`
+    
+Will make that variable contain the location of the current cluster culling, task, mesh, or compute shader invocation within the local workgroup. Each component ranges from zero through to the size of the workgroup in that dimension minus one. `ptr` must be a reference to variable or struct field. `pub fn location[](https://ziglang.org/documentation/master/std/#std.gpu.location)(comptime ptr: anytype, comptime loc: u32) void`
+    
+Forms the main linkage for `input` and `output` address spaces. `ptr` must be a reference to variable or struct field. `pub fn position[](https://ziglang.org/documentation/master/std/#std.gpu.position)(comptime ptr: *addrspace(.output) @Vector(4, f32)) void`
+    
+Output vertex position from a `Vertex` entrypoint `ptr` must be a reference to variable or struct field. `pub fn vertexIndex[](https://ziglang.org/documentation/master/std/#std.gpu.vertexIndex)(comptime ptr: *addrspace(.input) u32) void`
+    
+Will make `ptr` contain the index of the vertex that is being processed by the current vertex shader invocation. `ptr` must be a reference to variable or struct field. `pub fn workgroupSize[](https://ziglang.org/documentation/master/std/#std.gpu.workgroupSize)(comptime entry_point: anytype, comptime size: @Vector(3, u32)) void`
+    
+Indicates the workgroup size in the `x`, `y`, and `z` dimensions. Only valid with the `GLCompute` or `Kernel` calling conventions. `pub fn workgroupSizeHint[](https://ziglang.org/documentation/master/std/#std.gpu.workgroupSizeHint)(comptime entry_point: anytype, comptime size: @Vector(3, u32)) void`
+    
+A hint to the client, which indicates the workgroup size in the `x`, `y`, and `z` dimensions. Only valid with the `GLCompute` or `Kernel` calling conventions.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

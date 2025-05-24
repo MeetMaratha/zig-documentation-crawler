@@ -1,0 +1,98 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [Uri](https://ziglang.org/documentation/master/std/#std.Uri)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/Uri.zig)
+Uniform Resource Identifier (URI) parsing roughly adhering to <https://tools.ietf.org/html/rfc3986>. Does not do perfect grammar and character class checking, but should be robust against URIs in the wild.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+scheme: []const u8
+```
+
+```
+user: ?Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = null
+```
+
+```
+password: ?Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = null
+```
+
+```
+host: ?Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = null
+```
+
+```
+port: ?u16 = null
+```
+
+```
+path: Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component).empty[](https://ziglang.org/documentation/master/std/#std.Uri.Component.empty)
+```
+
+```
+query: ?Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = null
+```
+
+```
+fragment: ?Component[](https://ziglang.org/documentation/master/std/#std.Uri.Component) = null
+```
+
+## Types
+  * [Component](https://ziglang.org/documentation/master/std/#std.Uri.Component)
+  * [WriteToStreamOptions](https://ziglang.org/documentation/master/std/#std.Uri.WriteToStreamOptions)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn format[](https://ziglang.org/documentation/master/std/#std.Uri.format)( uri: Uri[](https://ziglang.org/documentation/master/std/#std.Uri), comptime fmt_str: []const u8, _: std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) @TypeOf(writer).Error!void`
+`pub fn parse[](https://ziglang.org/documentation/master/std/#std.Uri.parse)(text: []const u8) ParseError[](https://ziglang.org/documentation/master/std/#std.Uri.ParseError)!Uri[](https://ziglang.org/documentation/master/std/#std.Uri)`
+    
+Parses the URI or returns an error. The return value will contain strings pointing into the original `text`. Each component that is provided, will be non-`null`. `pub fn parseAfterScheme[](https://ziglang.org/documentation/master/std/#std.Uri.parseAfterScheme)(scheme: []const u8, text: []const u8) ParseError[](https://ziglang.org/documentation/master/std/#std.Uri.ParseError)!Uri[](https://ziglang.org/documentation/master/std/#std.Uri)`
+    
+Parses the URI or returns an error. This function is not compliant, but is required to parse some forms of URIs in the wild, such as HTTP Location headers. The return value will contain strings pointing into the original `text`. Each component that is provided, will be non-`null`. `pub fn percentDecodeBackwards[](https://ziglang.org/documentation/master/std/#std.Uri.percentDecodeBackwards)(output: []u8, input: []const u8) []u8`
+    
+Percent decodes all %XX where XX is a valid hex number. `output` may alias `input` if `output.ptr <= input.ptr`. Mutates and returns a subslice of `output`. `pub fn percentDecodeInPlace[](https://ziglang.org/documentation/master/std/#std.Uri.percentDecodeInPlace)(buffer: []u8) []u8`
+    
+Percent decodes all %XX where XX is a valid hex number. Mutates and returns a subslice of `buffer`. `pub fn resolve_inplace[](https://ziglang.org/documentation/master/std/#std.Uri.resolve_inplace)(base: Uri[](https://ziglang.org/documentation/master/std/#std.Uri), new: []const u8, aux_buf: *[]u8) ResolveInPlaceError[](https://ziglang.org/documentation/master/std/#std.Uri.ResolveInPlaceError)!Uri[](https://ziglang.org/documentation/master/std/#std.Uri)`
+    
+Resolves a URI against a base URI, conforming to RFC 3986, Section 5. Copies `new` to the beginning of `aux_buf.*`, allowing the slices to overlap, then parses `new` as a URI, and then resolves the path in place. If a merge needs to take place, the newly constructed path will be stored in `aux_buf.*` just after the copied `new`, and `aux_buf.*` will be modified to only contain the remaining unused space. `pub fn writeToStream[](https://ziglang.org/documentation/master/std/#std.Uri.writeToStream)( uri: Uri[](https://ziglang.org/documentation/master/std/#std.Uri), options: WriteToStreamOptions[](https://ziglang.org/documentation/master/std/#std.Uri.WriteToStreamOptions), writer: anytype, ) @TypeOf(writer).Error!void`
+
+## Error Sets
+  * [ParseError](https://ziglang.org/documentation/master/std/#std.Uri.ParseError)
+  * [ResolveInPlaceError](https://ziglang.org/documentation/master/std/#std.Uri.ResolveInPlaceError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

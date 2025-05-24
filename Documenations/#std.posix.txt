@@ -1,0 +1,610 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [posix](https://ziglang.org/documentation/master/std/#std.posix)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/posix.zig)
+POSIX API layer.
+This is more cross platform than using OS-specific APIs, however, it is lower-level and less portable than other namespaces such as `std.fs[](https://ziglang.org/documentation/master/std/#std.fs)` and `std.process[](https://ziglang.org/documentation/master/std/#std.process)`.
+These APIs are generally lowered to libc function calls if and only if libc is linked. Most operating systems other than Windows, Linux, and WASI require always linking libc because they use it as the stable syscall ABI.
+Operating systems that are not POSIX-compliant are sometimes supported by this API layer; sometimes not. Generally, an implementation will be provided only if such implementation is straightforward on that operating system. Otherwise, programmers are expected to use OS-specific logic to deal with the exception.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ACCMODE](https://ziglang.org/documentation/master/std/#std.posix.ACCMODE)
+  * [Arg0Expand](https://ziglang.org/documentation/master/std/#std.posix.Arg0Expand)
+  * [RebootCommand](https://ziglang.org/documentation/master/std/#std.posix.RebootCommand)
+  * [ShutdownHow](https://ziglang.org/documentation/master/std/#std.posix.ShutdownHow)
+  * [TCSA](https://ziglang.org/documentation/master/std/#std.posix.TCSA)
+  * [WaitPidResult](https://ziglang.org/documentation/master/std/#std.posix.WaitPidResult)
+  * [iovec](https://ziglang.org/documentation/master/std/#std.posix.iovec)
+  * [iovec_const](https://ziglang.org/documentation/master/std/#std.posix.iovec_const)
+  * [socket_t](https://ziglang.org/documentation/master/std/#std.posix.socket_t)
+  * [system](https://ziglang.org/documentation/master/std/#std.posix.system)
+  * [winsize](https://ziglang.org/documentation/master/std/#std.posix.winsize)
+
+
+## Namespaces
+  * [LOCK](https://ziglang.org/documentation/master/std/#std.posix.LOCK)
+  * [LOG](https://ziglang.org/documentation/master/std/#std.posix.LOG)
+
+
+## Global Variables
+## Values
+[AF](https://ziglang.org/documentation/master/std/#std.posix.AF)| |   
+---|---|---  
+[AF_SUN](https://ziglang.org/documentation/master/std/#std.posix.AF_SUN)| |   
+[AI](https://ziglang.org/documentation/master/std/#std.posix.AI)| |   
+[ARCH](https://ziglang.org/documentation/master/std/#std.posix.ARCH)| |   
+[AT](https://ziglang.org/documentation/master/std/#std.posix.AT)| |   
+[AT_SUN](https://ziglang.org/documentation/master/std/#std.posix.AT_SUN)| |   
+[CLOCK](https://ziglang.org/documentation/master/std/#std.posix.CLOCK)| |   
+[CPU_COUNT](https://ziglang.org/documentation/master/std/#std.posix.CPU_COUNT)| |   
+[CSIZE](https://ziglang.org/documentation/master/std/#std.posix.CSIZE)| |   
+[CTL](https://ziglang.org/documentation/master/std/#std.posix.CTL)| |   
+[DT](https://ziglang.org/documentation/master/std/#std.posix.DT)| |   
+[E](https://ziglang.org/documentation/master/std/#std.posix.E)| |   
+[Elf_Symndx](https://ziglang.org/documentation/master/std/#std.posix.Elf_Symndx)| |   
+[F](https://ziglang.org/documentation/master/std/#std.posix.F)| |   
+[FD_CLOEXEC](https://ziglang.org/documentation/master/std/#std.posix.FD_CLOEXEC)| |   
+[F_OK](https://ziglang.org/documentation/master/std/#std.posix.F_OK)| |   
+[Flock](https://ziglang.org/documentation/master/std/#std.posix.Flock)| |   
+[HOST_NAME_MAX](https://ziglang.org/documentation/master/std/#std.posix.HOST_NAME_MAX)| |   
+[HW](https://ziglang.org/documentation/master/std/#std.posix.HW)| |   
+[IFF](https://ziglang.org/documentation/master/std/#std.posix.IFF)| |   
+[IFNAMESIZE](https://ziglang.org/documentation/master/std/#std.posix.IFNAMESIZE)| |   
+[IOV_MAX](https://ziglang.org/documentation/master/std/#std.posix.IOV_MAX)| |   
+[IPPROTO](https://ziglang.org/documentation/master/std/#std.posix.IPPROTO)| |   
+[KERN](https://ziglang.org/documentation/master/std/#std.posix.KERN)| |   
+[Kevent](https://ziglang.org/documentation/master/std/#std.posix.Kevent)| |   
+[MADV](https://ziglang.org/documentation/master/std/#std.posix.MADV)| |   
+[MAP](https://ziglang.org/documentation/master/std/#std.posix.MAP)| |   
+[MAX_ADDR_LEN](https://ziglang.org/documentation/master/std/#std.posix.MAX_ADDR_LEN)| |   
+[MFD](https://ziglang.org/documentation/master/std/#std.posix.MFD)| |   
+[MREMAP](https://ziglang.org/documentation/master/std/#std.posix.MREMAP)| |   
+[MSF](https://ziglang.org/documentation/master/std/#std.posix.MSF)| |   
+[MSG](https://ziglang.org/documentation/master/std/#std.posix.MSG)| |   
+[NAME_MAX](https://ziglang.org/documentation/master/std/#std.posix.NAME_MAX)| |   
+[NCCS](https://ziglang.org/documentation/master/std/#std.posix.NCCS)| |   
+[NSIG](https://ziglang.org/documentation/master/std/#std.posix.NSIG)| |   
+[O](https://ziglang.org/documentation/master/std/#std.posix.O)| |   
+[PATH_MAX](https://ziglang.org/documentation/master/std/#std.posix.PATH_MAX)| |   
+[POLL](https://ziglang.org/documentation/master/std/#std.posix.POLL)| |   
+[POSIX_FADV](https://ziglang.org/documentation/master/std/#std.posix.POSIX_FADV)| |   
+[PR](https://ziglang.org/documentation/master/std/#std.posix.PR)| |   
+[PROT](https://ziglang.org/documentation/master/std/#std.posix.PROT)| |   
+[REG](https://ziglang.org/documentation/master/std/#std.posix.REG)| |   
+[RLIM](https://ziglang.org/documentation/master/std/#std.posix.RLIM)| |   
+[RR](https://ziglang.org/documentation/master/std/#std.posix.RR)| |   
+[R_OK](https://ziglang.org/documentation/master/std/#std.posix.R_OK)| |   
+[S](https://ziglang.org/documentation/master/std/#std.posix.S)| |   
+[SA](https://ziglang.org/documentation/master/std/#std.posix.SA)| |   
+[SC](https://ziglang.org/documentation/master/std/#std.posix.SC)| |   
+[SEEK](https://ziglang.org/documentation/master/std/#std.posix.SEEK)| |   
+[SHUT](https://ziglang.org/documentation/master/std/#std.posix.SHUT)| |   
+[SIG](https://ziglang.org/documentation/master/std/#std.posix.SIG)| |   
+[SIOCGIFINDEX](https://ziglang.org/documentation/master/std/#std.posix.SIOCGIFINDEX)| |   
+[SO](https://ziglang.org/documentation/master/std/#std.posix.SO)| |   
+[SOCK](https://ziglang.org/documentation/master/std/#std.posix.SOCK)| |   
+[SOL](https://ziglang.org/documentation/master/std/#std.posix.SOL)| |   
+[STDERR_FILENO](https://ziglang.org/documentation/master/std/#std.posix.STDERR_FILENO)| |   
+[STDIN_FILENO](https://ziglang.org/documentation/master/std/#std.posix.STDIN_FILENO)| |   
+[STDOUT_FILENO](https://ziglang.org/documentation/master/std/#std.posix.STDOUT_FILENO)| |   
+[SYS](https://ziglang.org/documentation/master/std/#std.posix.SYS)| |   
+[Sigaction](https://ziglang.org/documentation/master/std/#std.posix.Sigaction)| |   
+[Stat](https://ziglang.org/documentation/master/std/#std.posix.Stat)| |   
+[T](https://ziglang.org/documentation/master/std/#std.posix.T)| |   
+[TCP](https://ziglang.org/documentation/master/std/#std.posix.TCP)| |   
+[V](https://ziglang.org/documentation/master/std/#std.posix.V)| |   
+[VDSO](https://ziglang.org/documentation/master/std/#std.posix.VDSO)| |   
+[W](https://ziglang.org/documentation/master/std/#std.posix.W)| |   
+[W_OK](https://ziglang.org/documentation/master/std/#std.posix.W_OK)| |   
+[X_OK](https://ziglang.org/documentation/master/std/#std.posix.X_OK)| |   
+[_SC](https://ziglang.org/documentation/master/std/#std.posix._SC)| |   
+[addrinfo](https://ziglang.org/documentation/master/std/#std.posix.addrinfo)| |   
+[blkcnt_t](https://ziglang.org/documentation/master/std/#std.posix.blkcnt_t)| |   
+[blksize_t](https://ziglang.org/documentation/master/std/#std.posix.blksize_t)| |   
+[cc_t](https://ziglang.org/documentation/master/std/#std.posix.cc_t)| |   
+[clock_t](https://ziglang.org/documentation/master/std/#std.posix.clock_t)| |   
+[clockid_t](https://ziglang.org/documentation/master/std/#std.posix.clockid_t)| |   
+[cpu_set_t](https://ziglang.org/documentation/master/std/#std.posix.cpu_set_t)| |   
+[dev_t](https://ziglang.org/documentation/master/std/#std.posix.dev_t)| |   
+[dl_phdr_info](https://ziglang.org/documentation/master/std/#std.posix.dl_phdr_info)| |   
+[fd_t](https://ziglang.org/documentation/master/std/#std.posix.fd_t)| |   
+[file_obj](https://ziglang.org/documentation/master/std/#std.posix.file_obj)| |   
+[gid_t](https://ziglang.org/documentation/master/std/#std.posix.gid_t)| |   
+[ifreq](https://ziglang.org/documentation/master/std/#std.posix.ifreq)| |   
+[ino_t](https://ziglang.org/documentation/master/std/#std.posix.ino_t)| |   
+[mcontext_t](https://ziglang.org/documentation/master/std/#std.posix.mcontext_t)| |   
+[mode_t](https://ziglang.org/documentation/master/std/#std.posix.mode_t)| |   
+[msghdr](https://ziglang.org/documentation/master/std/#std.posix.msghdr)| |   
+[msghdr_const](https://ziglang.org/documentation/master/std/#std.posix.msghdr_const)| |   
+[nfds_t](https://ziglang.org/documentation/master/std/#std.posix.nfds_t)| |   
+[nlink_t](https://ziglang.org/documentation/master/std/#std.posix.nlink_t)| |   
+[off_t](https://ziglang.org/documentation/master/std/#std.posix.off_t)| |   
+[pid_t](https://ziglang.org/documentation/master/std/#std.posix.pid_t)| |   
+[pollfd](https://ziglang.org/documentation/master/std/#std.posix.pollfd)| |   
+[port_event](https://ziglang.org/documentation/master/std/#std.posix.port_event)| |   
+[port_notify](https://ziglang.org/documentation/master/std/#std.posix.port_notify)| |   
+[port_t](https://ziglang.org/documentation/master/std/#std.posix.port_t)| |   
+[rlim_t](https://ziglang.org/documentation/master/std/#std.posix.rlim_t)| |   
+[rlimit](https://ziglang.org/documentation/master/std/#std.posix.rlimit)| |   
+[rlimit_resource](https://ziglang.org/documentation/master/std/#std.posix.rlimit_resource)| |   
+[rusage](https://ziglang.org/documentation/master/std/#std.posix.rusage)| |   
+[sa_family_t](https://ziglang.org/documentation/master/std/#std.posix.sa_family_t)| |   
+[siginfo_t](https://ziglang.org/documentation/master/std/#std.posix.siginfo_t)| |   
+[sigrtmax](https://ziglang.org/documentation/master/std/#std.posix.sigrtmax)| |   
+[sigrtmin](https://ziglang.org/documentation/master/std/#std.posix.sigrtmin)| |   
+[sigset_t](https://ziglang.org/documentation/master/std/#std.posix.sigset_t)| |   
+[sockaddr](https://ziglang.org/documentation/master/std/#std.posix.sockaddr)| |   
+[socklen_t](https://ziglang.org/documentation/master/std/#std.posix.socklen_t)| |   
+[speed_t](https://ziglang.org/documentation/master/std/#std.posix.speed_t)| |   
+[stack_t](https://ziglang.org/documentation/master/std/#std.posix.stack_t)| |   
+[tc_cflag_t](https://ziglang.org/documentation/master/std/#std.posix.tc_cflag_t)| |   
+[tc_iflag_t](https://ziglang.org/documentation/master/std/#std.posix.tc_iflag_t)| |   
+[tc_lflag_t](https://ziglang.org/documentation/master/std/#std.posix.tc_lflag_t)| |   
+[tc_oflag_t](https://ziglang.org/documentation/master/std/#std.posix.tc_oflag_t)| |   
+[termios](https://ziglang.org/documentation/master/std/#std.posix.termios)| |   
+[time_t](https://ziglang.org/documentation/master/std/#std.posix.time_t)| |   
+[timerfd_clockid_t](https://ziglang.org/documentation/master/std/#std.posix.timerfd_clockid_t)| |   
+[timespec](https://ziglang.org/documentation/master/std/#std.posix.timespec)| |   
+[timestamp_t](https://ziglang.org/documentation/master/std/#std.posix.timestamp_t)| |   
+[timeval](https://ziglang.org/documentation/master/std/#std.posix.timeval)| |   
+[timezone](https://ziglang.org/documentation/master/std/#std.posix.timezone)| |   
+[ucontext_t](https://ziglang.org/documentation/master/std/#std.posix.ucontext_t)| |   
+[uid_t](https://ziglang.org/documentation/master/std/#std.posix.uid_t)| |   
+[unexpected_error_tracing](https://ziglang.org/documentation/master/std/#std.posix.unexpected_error_tracing)| | Whether or not `error.Unexpected` will print its value and a stack trace.  
+[user_desc](https://ziglang.org/documentation/master/std/#std.posix.user_desc)| |   
+[utsname](https://ziglang.org/documentation/master/std/#std.posix.utsname)| |   
+## Functions `pub fn abort[](https://ziglang.org/documentation/master/std/#std.posix.abort)() noreturn`
+    
+Causes abnormal process termination. If linking against libc, this calls the abort() libc function. Otherwise it raises SIGABRT followed by SIGKILL and finally lo Invokes the current signal handler for SIGABRT, if any. `pub fn accept[](https://ziglang.org/documentation/master/std/#std.posix.accept)( sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), addr: ?*sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), addr_size: ?*socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t), flags: u32, ) AcceptError[](https://ziglang.org/documentation/master/std/#std.posix.AcceptError)!socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t)`
+    
+Accept a connection on a socket. If `sockfd` is opened in non blocking mode, the function will return error.WouldBlock when EAGAIN is received. `pub fn access[](https://ziglang.org/documentation/master/std/#std.posix.access)(path: []const u8, mode: u32) AccessError[](https://ziglang.org/documentation/master/std/#std.posix.AccessError)!void`
+    
+check user's permissions for a file `pub fn accessZ[](https://ziglang.org/documentation/master/std/#std.posix.accessZ)(path: [*:0]const u8, mode: u32) AccessError[](https://ziglang.org/documentation/master/std/#std.posix.AccessError)!void`
+    
+Same as `access[](https://ziglang.org/documentation/master/std/#std.posix.access)` except `path` is null-terminated. `pub fn bind[](https://ziglang.org/documentation/master/std/#std.posix.bind)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), addr: *const sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), len: socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t)) BindError[](https://ziglang.org/documentation/master/std/#std.posix.BindError)!void`
+    
+addr is `*const T` where T is one of the sockaddr `pub fn chdir[](https://ziglang.org/documentation/master/std/#std.posix.chdir)(dir_path: []const u8) ChangeCurDirError[](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)!void`
+    
+Changes the current working directory of the calling process. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn chdirW[](https://ziglang.org/documentation/master/std/#std.posix.chdirW)(dir_path: []const u16) ChangeCurDirError[](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)!void`
+    
+Windows-only. Same as `chdir[](https://ziglang.org/documentation/master/std/#std.posix.chdir)` except the parameter is WTF16 LE encoded. `pub fn chdirZ[](https://ziglang.org/documentation/master/std/#std.posix.chdirZ)(dir_path: [*:0]const u8) ChangeCurDirError[](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)!void`
+    
+Same as `chdir[](https://ziglang.org/documentation/master/std/#std.posix.chdir)` except the parameter is null-terminated. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn clock_getres[](https://ziglang.org/documentation/master/std/#std.posix.clock_getres)(clock_id: clockid_t[](https://ziglang.org/documentation/master/std/#std.posix.clockid_t), res: *timespec[](https://ziglang.org/documentation/master/std/#std.posix.timespec)) ClockGetTimeError[](https://ziglang.org/documentation/master/std/#std.posix.ClockGetTimeError)!void`
+`pub fn clock_gettime[](https://ziglang.org/documentation/master/std/#std.posix.clock_gettime)(clock_id: clockid_t[](https://ziglang.org/documentation/master/std/#std.posix.clockid_t)) ClockGetTimeError[](https://ziglang.org/documentation/master/std/#std.posix.ClockGetTimeError)!timespec[](https://ziglang.org/documentation/master/std/#std.posix.timespec)`
+`pub fn close[](https://ziglang.org/documentation/master/std/#std.posix.close)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) void`
+    
+Closes the file descriptor. `pub fn connect[](https://ziglang.org/documentation/master/std/#std.posix.connect)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), sock_addr: *const sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), len: socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t)) ConnectError[](https://ziglang.org/documentation/master/std/#std.posix.ConnectError)!void`
+    
+Initiate a connection on a socket. If `sockfd` is opened in non blocking mode, the function will return error.WouldBlock when EAGAIN or EINPROGRESS is received. `pub fn copy_file_range[](https://ziglang.org/documentation/master/std/#std.posix.copy_file_range)(fd_in: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), off_in: u64, fd_out: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), off_out: u64, len: usize, flags: u32) CopyFileRangeError[](https://ziglang.org/documentation/master/std/#std.posix.CopyFileRangeError)!usize`
+    
+Transfer data between file descriptors at specified offsets. `pub fn dl_iterate_phdr[](https://ziglang.org/documentation/master/std/#std.posix.dl_iterate_phdr)( context: anytype, comptime Error: type, comptime callback: fn (info: *dl_phdr_info[](https://ziglang.org/documentation/master/std/#std.posix.dl_phdr_info), size: usize, context: @TypeOf(context)) Error!void, ) Error!void`
+`pub fn dn_expand[](https://ziglang.org/documentation/master/std/#std.posix.dn_expand)( msg: []const u8, comp_dn: []const u8, exp_dn: []u8, ) DnExpandError[](https://ziglang.org/documentation/master/std/#std.posix.DnExpandError)!usize`
+`pub fn dup[](https://ziglang.org/documentation/master/std/#std.posix.dup)(old_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) !fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn dup2[](https://ziglang.org/documentation/master/std/#std.posix.dup2)(old_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), new_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) !void`
+`pub fn epoll_create1[](https://ziglang.org/documentation/master/std/#std.posix.epoll_create1)(flags: u32) EpollCreateError[](https://ziglang.org/documentation/master/std/#std.posix.EpollCreateError)!i32`
+`pub fn epoll_ctl[](https://ziglang.org/documentation/master/std/#std.posix.epoll_ctl)(epfd: i32, op: u32, fd: i32, event: ?*system[](https://ziglang.org/documentation/master/std/#std.posix.system).epoll_event[](https://ziglang.org/documentation/master/std/#std.posix.system.epoll_event)) EpollCtlError[](https://ziglang.org/documentation/master/std/#std.posix.EpollCtlError)!void`
+`pub fn epoll_wait[](https://ziglang.org/documentation/master/std/#std.posix.epoll_wait)(epfd: i32, events: []system[](https://ziglang.org/documentation/master/std/#std.posix.system).epoll_event[](https://ziglang.org/documentation/master/std/#std.posix.system.epoll_event), timeout: i32) usize`
+    
+Waits for an I/O event on an epoll file descriptor. Returns the number of file descriptors ready for the requested I/O, or zero if no file descriptor became ready during the requested timeout milliseconds. `pub fn errno[](https://ziglang.org/documentation/master/std/#std.posix.errno)(rc: anytype) E[](https://ziglang.org/documentation/master/std/#std.posix.E)`
+    
+Obtains errno from the return value of a system function call. `pub fn eventfd[](https://ziglang.org/documentation/master/std/#std.posix.eventfd)(initval: u32, flags: u32) EventFdError[](https://ziglang.org/documentation/master/std/#std.posix.EventFdError)!i32`
+`pub fn execveZ[](https://ziglang.org/documentation/master/std/#std.posix.execveZ)( path: [*:0]const u8, child_argv: [*:null]const ?[*:0]const u8, envp: [*:null]const ?[*:0]const u8, ) ExecveError[](https://ziglang.org/documentation/master/std/#std.posix.ExecveError)`
+    
+This function ignores PATH environment variable. See `execvpeZ[](https://ziglang.org/documentation/master/std/#std.posix.execvpeZ)` for that. `pub fn execvpeZ[](https://ziglang.org/documentation/master/std/#std.posix.execvpeZ)( file: [*:0]const u8, argv_ptr: [*:null]const ?[*:0]const u8, envp: [*:null]const ?[*:0]const u8, ) ExecveError[](https://ziglang.org/documentation/master/std/#std.posix.ExecveError)`
+    
+This function also uses the PATH environment variable to get the full path to the executable. If `file` is an absolute path, this is the same as `execveZ[](https://ziglang.org/documentation/master/std/#std.posix.execveZ)`. `pub fn execvpeZ_expandArg0[](https://ziglang.org/documentation/master/std/#std.posix.execvpeZ_expandArg0)( comptime arg0_expand: Arg0Expand[](https://ziglang.org/documentation/master/std/#std.posix.Arg0Expand), file: [*:0]const u8, child_argv: switch (arg0_expand) { .expand => [*:null]?[*:0]const u8, .no_expand => [*:null]const ?[*:0]const u8, }, envp: [*:null]const ?[*:0]const u8, ) ExecveError[](https://ziglang.org/documentation/master/std/#std.posix.ExecveError)`
+    
+Like `execvpeZ[](https://ziglang.org/documentation/master/std/#std.posix.execvpeZ)` except if `arg0_expand` is `.expand`, then `argv` is mutable, and `argv[0]` is expanded to be the same absolute path that is passed to the execve syscall. If this function returns with an error, `argv[0]` will be restored to the value it was when it was passed in. `pub fn exit[](https://ziglang.org/documentation/master/std/#std.posix.exit)(status: u8) noreturn`
+    
+Exits all threads of the program with the specified status code. `pub fn faccessat[](https://ziglang.org/documentation/master/std/#std.posix.faccessat)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), path: []const u8, mode: u32, flags: u32) AccessError[](https://ziglang.org/documentation/master/std/#std.posix.AccessError)!void`
+    
+Check user's permissions for a file, based on an open directory handle. `pub fn faccessatW[](https://ziglang.org/documentation/master/std/#std.posix.faccessatW)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_path_w: [*:0]const u16) AccessError[](https://ziglang.org/documentation/master/std/#std.posix.AccessError)!void`
+    
+Same as `faccessat[](https://ziglang.org/documentation/master/std/#std.posix.faccessat)` except asserts the target is Windows and the path parameter is NtDll-prefixed, null-terminated, WTF-16 encoded. `pub fn faccessatZ[](https://ziglang.org/documentation/master/std/#std.posix.faccessatZ)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), path: [*:0]const u8, mode: u32, flags: u32) AccessError[](https://ziglang.org/documentation/master/std/#std.posix.AccessError)!void`
+    
+Same as `faccessat[](https://ziglang.org/documentation/master/std/#std.posix.faccessat)` except the path parameter is null-terminated. `pub fn fanotify_init[](https://ziglang.org/documentation/master/std/#std.posix.fanotify_init)(flags: std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).fanotify[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify).InitFlags[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify.InitFlags), event_f_flags: u32) FanotifyInitError[](https://ziglang.org/documentation/master/std/#std.posix.FanotifyInitError)!i32`
+`pub fn fanotify_mark[](https://ziglang.org/documentation/master/std/#std.posix.fanotify_mark)( fanotify_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), flags: std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).fanotify[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify).MarkFlags[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify.MarkFlags), mask: std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).fanotify[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify).MarkMask[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify.MarkMask), dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname: ?[]const u8, ) FanotifyMarkError[](https://ziglang.org/documentation/master/std/#std.posix.FanotifyMarkError)!void`
+`pub fn fanotify_markZ[](https://ziglang.org/documentation/master/std/#std.posix.fanotify_markZ)( fanotify_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), flags: std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).fanotify[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify).MarkFlags[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify.MarkFlags), mask: std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).fanotify[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify).MarkMask[](https://ziglang.org/documentation/master/std/#std.os.linux.fanotify.MarkMask), dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname: ?[*:0]const u8, ) FanotifyMarkError[](https://ziglang.org/documentation/master/std/#std.posix.FanotifyMarkError)!void`
+`pub fn fchdir[](https://ziglang.org/documentation/master/std/#std.posix.fchdir)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) FchdirError[](https://ziglang.org/documentation/master/std/#std.posix.FchdirError)!void`
+`pub fn fchmod[](https://ziglang.org/documentation/master/std/#std.posix.fchmod)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) FChmodError[](https://ziglang.org/documentation/master/std/#std.posix.FChmodError)!void`
+    
+Changes the mode of the file referred to by the file descriptor. `pub inline fn fchmodat[](https://ziglang.org/documentation/master/std/#std.posix.fchmodat)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), path: []const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t), flags: u32) FChmodAtError[](https://ziglang.org/documentation/master/std/#std.posix.FChmodAtError)!void`
+    
+Changes the `mode` of `path` relative to the directory referred to by `dirfd`. The process must have the correct privileges in order to do this successfully, or must have the effective user ID matching the owner of the file. `pub fn fchown[](https://ziglang.org/documentation/master/std/#std.posix.fchown)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), owner: ?uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t), group: ?gid_t[](https://ziglang.org/documentation/master/std/#std.posix.gid_t)) FChownError[](https://ziglang.org/documentation/master/std/#std.posix.FChownError)!void`
+    
+Changes the owner and group of the file referred to by the file descriptor. The process must have the correct privileges in order to do this successfully. The group may be changed by the owner of the directory to any group of which the owner is a member. If the owner or group is specified as `null`, the ID is not changed. `pub fn fcntl[](https://ziglang.org/documentation/master/std/#std.posix.fcntl)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), cmd: i32, arg: usize) FcntlError[](https://ziglang.org/documentation/master/std/#std.posix.FcntlError)!usize`
+`pub fn fdatasync[](https://ziglang.org/documentation/master/std/#std.posix.fdatasync)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) SyncError[](https://ziglang.org/documentation/master/std/#std.posix.SyncError)!void`
+    
+Write all pending file contents for the specified file descriptor to the underlying filesystem, but not necessarily the metadata. `pub fn flock[](https://ziglang.org/documentation/master/std/#std.posix.flock)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), operation: i32) FlockError[](https://ziglang.org/documentation/master/std/#std.posix.FlockError)!void`
+    
+Depending on the operating system `flock[](https://ziglang.org/documentation/master/std/#std.posix.flock)` may or may not interact with `fcntl[](https://ziglang.org/documentation/master/std/#std.posix.fcntl)` locks made by other processes. `pub fn fork[](https://ziglang.org/documentation/master/std/#std.posix.fork)() ForkError[](https://ziglang.org/documentation/master/std/#std.posix.ForkError)!pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t)`
+`pub fn fstat[](https://ziglang.org/documentation/master/std/#std.posix.fstat)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) FStatError[](https://ziglang.org/documentation/master/std/#std.posix.FStatError)!Stat[](https://ziglang.org/documentation/master/std/#std.posix.Stat)`
+    
+Return information about a file descriptor. `pub fn fstatat[](https://ziglang.org/documentation/master/std/#std.posix.fstatat)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname: []const u8, flags: u32) FStatAtError[](https://ziglang.org/documentation/master/std/#std.posix.FStatAtError)!Stat[](https://ziglang.org/documentation/master/std/#std.posix.Stat)`
+    
+Similar to `fstat[](https://ziglang.org/documentation/master/std/#std.posix.fstat)`, but returns stat of a resource pointed to by `pathname` which is relative to `dirfd` handle. On WASI, `pathname` should be encoded as valid UTF-8. On other platforms, `pathname` is an opaque sequence of bytes with no particular encoding. See also `fstatatZ[](https://ziglang.org/documentation/master/std/#std.posix.fstatatZ)` and `std.os.fstatat_wasi[](https://ziglang.org/documentation/master/std/#std.os.fstatat_wasi)`. `pub fn fstatatZ[](https://ziglang.org/documentation/master/std/#std.posix.fstatatZ)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname: [*:0]const u8, flags: u32) FStatAtError[](https://ziglang.org/documentation/master/std/#std.posix.FStatAtError)!Stat[](https://ziglang.org/documentation/master/std/#std.posix.Stat)`
+    
+Same as `fstatat[](https://ziglang.org/documentation/master/std/#std.posix.fstatat)` but `pathname` is null-terminated. See also `fstatat[](https://ziglang.org/documentation/master/std/#std.posix.fstatat)`. `pub fn fsync[](https://ziglang.org/documentation/master/std/#std.posix.fsync)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) SyncError[](https://ziglang.org/documentation/master/std/#std.posix.SyncError)!void`
+    
+Write all pending file contents and metadata modifications for the specified file descriptor to the underlying filesystem. `pub fn ftruncate[](https://ziglang.org/documentation/master/std/#std.posix.ftruncate)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), length: u64) TruncateError[](https://ziglang.org/documentation/master/std/#std.posix.TruncateError)!void`
+    
+Length must be positive when treated as an i64. `pub fn futimens[](https://ziglang.org/documentation/master/std/#std.posix.futimens)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), times: ?*const [2]timespec[](https://ziglang.org/documentation/master/std/#std.posix.timespec)) FutimensError[](https://ziglang.org/documentation/master/std/#std.posix.FutimensError)!void`
+`pub fn getcwd[](https://ziglang.org/documentation/master/std/#std.posix.getcwd)(out_buffer: []u8) GetCwdError[](https://ziglang.org/documentation/master/std/#std.posix.GetCwdError)![]u8`
+    
+The result is a slice of out_buffer, indexed from 0. `pub fn getenv[](https://ziglang.org/documentation/master/std/#std.posix.getenv)(key: []const u8) ?[:0]const u8`
+    
+Get an environment variable. See also `getenvZ[](https://ziglang.org/documentation/master/std/#std.posix.getenvZ)`. `pub fn getenvZ[](https://ziglang.org/documentation/master/std/#std.posix.getenvZ)(key: [*:0]const u8) ?[:0]const u8`
+    
+Get an environment variable with a null-terminated name. See also `getenv[](https://ziglang.org/documentation/master/std/#std.posix.getenv)`. `pub fn geteuid[](https://ziglang.org/documentation/master/std/#std.posix.geteuid)() uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)`
+`pub fn gethostname[](https://ziglang.org/documentation/master/std/#std.posix.gethostname)(name_buffer: *[HOST_NAME_MAX[](https://ziglang.org/documentation/master/std/#std.posix.HOST_NAME_MAX)]u8) GetHostNameError[](https://ziglang.org/documentation/master/std/#std.posix.GetHostNameError)![]u8`
+`pub fn getpeername[](https://ziglang.org/documentation/master/std/#std.posix.getpeername)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), addr: *sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), addrlen: *socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t)) GetSockNameError[](https://ziglang.org/documentation/master/std/#std.posix.GetSockNameError)!void`
+`pub fn getrandom[](https://ziglang.org/documentation/master/std/#std.posix.getrandom)(buffer: []u8) GetRandomError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!void`
+    
+Obtain a series of random bytes. These bytes can be used to seed user-space random number generators or for cryptographic purposes. When linking against libc, this calls the appropriate OS-specific library call. Otherwise it uses the zig standard library implementation. `pub fn getrlimit[](https://ziglang.org/documentation/master/std/#std.posix.getrlimit)(resource: rlimit_resource[](https://ziglang.org/documentation/master/std/#std.posix.rlimit_resource)) GetrlimitError[](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)!rlimit[](https://ziglang.org/documentation/master/std/#std.posix.rlimit)`
+`pub fn getrusage[](https://ziglang.org/documentation/master/std/#std.posix.getrusage)(who: i32) rusage[](https://ziglang.org/documentation/master/std/#std.posix.rusage)`
+`pub fn getsockname[](https://ziglang.org/documentation/master/std/#std.posix.getsockname)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), addr: *sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), addrlen: *socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t)) GetSockNameError[](https://ziglang.org/documentation/master/std/#std.posix.GetSockNameError)!void`
+`pub fn getsockopt[](https://ziglang.org/documentation/master/std/#std.posix.getsockopt)(fd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), level: i32, optname: u32, opt: []u8) GetSockOptError[](https://ziglang.org/documentation/master/std/#std.posix.GetSockOptError)!void`
+`pub fn getsockoptError[](https://ziglang.org/documentation/master/std/#std.posix.getsockoptError)(sockfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) ConnectError[](https://ziglang.org/documentation/master/std/#std.posix.ConnectError)!void`
+`pub fn gettimeofday[](https://ziglang.org/documentation/master/std/#std.posix.gettimeofday)(tv: ?*timeval[](https://ziglang.org/documentation/master/std/#std.posix.timeval), tz: ?*timezone[](https://ziglang.org/documentation/master/std/#std.posix.timezone)) void`
+`pub fn getuid[](https://ziglang.org/documentation/master/std/#std.posix.getuid)() uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)`
+`pub fn inotify_add_watch[](https://ziglang.org/documentation/master/std/#std.posix.inotify_add_watch)(inotify_fd: i32, pathname: []const u8, mask: u32) INotifyAddWatchError[](https://ziglang.org/documentation/master/std/#std.posix.INotifyAddWatchError)!i32`
+    
+add a watch to an initialized inotify instance `pub fn inotify_add_watchZ[](https://ziglang.org/documentation/master/std/#std.posix.inotify_add_watchZ)(inotify_fd: i32, pathname: [*:0]const u8, mask: u32) INotifyAddWatchError[](https://ziglang.org/documentation/master/std/#std.posix.INotifyAddWatchError)!i32`
+    
+Same as `inotify_add_watch[](https://ziglang.org/documentation/master/std/#std.posix.inotify_add_watch)` except pathname is null-terminated. `pub fn inotify_init1[](https://ziglang.org/documentation/master/std/#std.posix.inotify_init1)(flags: u32) INotifyInitError[](https://ziglang.org/documentation/master/std/#std.posix.INotifyInitError)!i32`
+    
+initialize an inotify instance `pub fn inotify_rm_watch[](https://ziglang.org/documentation/master/std/#std.posix.inotify_rm_watch)(inotify_fd: i32, wd: i32) void`
+    
+remove an existing watch from an inotify instance `pub fn ioctl_SIOCGIFINDEX[](https://ziglang.org/documentation/master/std/#std.posix.ioctl_SIOCGIFINDEX)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), ifr: *ifreq[](https://ziglang.org/documentation/master/std/#std.posix.ifreq)) IoCtl_SIOCGIFINDEX_Error[](https://ziglang.org/documentation/master/std/#std.posix.IoCtl_SIOCGIFINDEX_Error)!void`
+`pub fn isatty[](https://ziglang.org/documentation/master/std/#std.posix.isatty)(handle: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) bool`
+    
+Test whether a file descriptor refers to a terminal. `pub fn kevent[](https://ziglang.org/documentation/master/std/#std.posix.kevent)( kq: i32, changelist: []const Kevent[](https://ziglang.org/documentation/master/std/#std.posix.Kevent), eventlist: []Kevent[](https://ziglang.org/documentation/master/std/#std.posix.Kevent), timeout: ?*const timespec[](https://ziglang.org/documentation/master/std/#std.posix.timespec), ) KEventError[](https://ziglang.org/documentation/master/std/#std.posix.KEventError)!usize`
+`pub fn kill[](https://ziglang.org/documentation/master/std/#std.posix.kill)(pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), sig: u8) KillError[](https://ziglang.org/documentation/master/std/#std.posix.KillError)!void`
+`pub fn kqueue[](https://ziglang.org/documentation/master/std/#std.posix.kqueue)() KQueueError[](https://ziglang.org/documentation/master/std/#std.posix.KQueueError)!i32`
+`pub fn link[](https://ziglang.org/documentation/master/std/#std.posix.link)(oldpath: []const u8, newpath: []const u8) LinkError[](https://ziglang.org/documentation/master/std/#std.posix.LinkError)!void`
+    
+On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn linkZ[](https://ziglang.org/documentation/master/std/#std.posix.linkZ)(oldpath: [*:0]const u8, newpath: [*:0]const u8) LinkError[](https://ziglang.org/documentation/master/std/#std.posix.LinkError)!void`
+    
+On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn linkat[](https://ziglang.org/documentation/master/std/#std.posix.linkat)( olddir: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), oldpath: []const u8, newdir: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), newpath: []const u8, flags: i32, ) LinkatError[](https://ziglang.org/documentation/master/std/#std.posix.LinkatError)!void`
+    
+On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn linkatZ[](https://ziglang.org/documentation/master/std/#std.posix.linkatZ)( olddir: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), oldpath: [*:0]const u8, newdir: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), newpath: [*:0]const u8, flags: i32, ) LinkatError[](https://ziglang.org/documentation/master/std/#std.posix.LinkatError)!void`
+    
+On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn listen[](https://ziglang.org/documentation/master/std/#std.posix.listen)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), backlog: u31) ListenError[](https://ziglang.org/documentation/master/std/#std.posix.ListenError)!void`
+`pub fn lseek_CUR[](https://ziglang.org/documentation/master/std/#std.posix.lseek_CUR)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), offset: i64) SeekError[](https://ziglang.org/documentation/master/std/#std.posix.SeekError)!void`
+    
+Repositions read/write file offset relative to the current offset. `pub fn lseek_CUR_get[](https://ziglang.org/documentation/master/std/#std.posix.lseek_CUR_get)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) SeekError[](https://ziglang.org/documentation/master/std/#std.posix.SeekError)!u64`
+    
+Returns the read/write file offset relative to the beginning. `pub fn lseek_END[](https://ziglang.org/documentation/master/std/#std.posix.lseek_END)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), offset: i64) SeekError[](https://ziglang.org/documentation/master/std/#std.posix.SeekError)!void`
+    
+Repositions read/write file offset relative to the end. `pub fn lseek_SET[](https://ziglang.org/documentation/master/std/#std.posix.lseek_SET)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), offset: u64) SeekError[](https://ziglang.org/documentation/master/std/#std.posix.SeekError)!void`
+    
+Repositions read/write file offset relative to the beginning. `pub fn madvise[](https://ziglang.org/documentation/master/std/#std.posix.madvise)(ptr: [*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, length: usize, advice: u32) MadviseError[](https://ziglang.org/documentation/master/std/#std.posix.MadviseError)!void`
+    
+Give advice about use of memory. This syscall is optional and is sometimes configured to be disabled. `pub fn memfd_create[](https://ziglang.org/documentation/master/std/#std.posix.memfd_create)(name: []const u8, flags: u32) MemFdCreateError[](https://ziglang.org/documentation/master/std/#std.posix.MemFdCreateError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn memfd_createZ[](https://ziglang.org/documentation/master/std/#std.posix.memfd_createZ)(name: [*:0]const u8, flags: u32) MemFdCreateError[](https://ziglang.org/documentation/master/std/#std.posix.MemFdCreateError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn mincore[](https://ziglang.org/documentation/master/std/#std.posix.mincore)(ptr: [*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, length: usize, vec: [*]u8) MincoreError[](https://ziglang.org/documentation/master/std/#std.posix.MincoreError)!void`
+    
+Determine whether pages are resident in memory. `pub fn mkdir[](https://ziglang.org/documentation/master/std/#std.posix.mkdir)(dir_path: []const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+Create a directory. `mode` is ignored on Windows and WASI. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn mkdirW[](https://ziglang.org/documentation/master/std/#std.posix.mkdirW)(dir_path_w: []const u16, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+Windows-only. Same as `mkdir[](https://ziglang.org/documentation/master/std/#std.posix.mkdir)` but the parameters is WTF16LE encoded. `pub fn mkdirZ[](https://ziglang.org/documentation/master/std/#std.posix.mkdirZ)(dir_path: [*:0]const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+Same as `mkdir[](https://ziglang.org/documentation/master/std/#std.posix.mkdir)` but the parameter is null-terminated. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn mkdirat[](https://ziglang.org/documentation/master/std/#std.posix.mkdirat)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_dir_path: []const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+On Windows, `sub_dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `sub_dir_path` should be encoded as valid UTF-8. On other platforms, `sub_dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn mkdiratW[](https://ziglang.org/documentation/master/std/#std.posix.mkdiratW)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_path_w: []const u16, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+Windows-only. Same as `mkdirat[](https://ziglang.org/documentation/master/std/#std.posix.mkdirat)` except the parameter WTF16 LE encoded. `pub fn mkdiratWasi[](https://ziglang.org/documentation/master/std/#std.posix.mkdiratWasi)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_dir_path: []const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+`pub fn mkdiratZ[](https://ziglang.org/documentation/master/std/#std.posix.mkdiratZ)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_dir_path: [*:0]const u8, mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) MakeDirError[](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)!void`
+    
+Same as `mkdirat[](https://ziglang.org/documentation/master/std/#std.posix.mkdirat)` except the parameters are null-terminated. `pub fn mmap[](https://ziglang.org/documentation/master/std/#std.posix.mmap)( ptr: ?[*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, length: usize, prot: u32, flags: system[](https://ziglang.org/documentation/master/std/#std.posix.system).MAP[](https://ziglang.org/documentation/master/std/#std.posix.system.MAP), fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), offset: u64, ) MMapError[](https://ziglang.org/documentation/master/std/#std.posix.MMapError)![]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8`
+    
+Map files or devices into memory. `length` does not need to be aligned. Use of a mapped region can result in these signals:
+  * SIGSEGV - Attempted write into a region mapped as read-only.
+  * SIGBUS - Attempted access to a portion of the buffer that does not correspond to the file
+
+`pub fn mprotect[](https://ziglang.org/documentation/master/std/#std.posix.mprotect)(memory: []align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, protection: u32) MProtectError[](https://ziglang.org/documentation/master/std/#std.posix.MProtectError)!void`
+`pub fn mremap[](https://ziglang.org/documentation/master/std/#std.posix.mremap)( old_address: ?[*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, old_len: usize, new_len: usize, flags: system[](https://ziglang.org/documentation/master/std/#std.posix.system).MREMAP[](https://ziglang.org/documentation/master/std/#std.posix.system.MREMAP), new_address: ?[*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, ) MRemapError[](https://ziglang.org/documentation/master/std/#std.posix.MRemapError)![]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8`
+`pub fn msync[](https://ziglang.org/documentation/master/std/#std.posix.msync)(memory: []align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8, flags: i32) MSyncError[](https://ziglang.org/documentation/master/std/#std.posix.MSyncError)!void`
+`pub fn munmap[](https://ziglang.org/documentation/master/std/#std.posix.munmap)(memory: []align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) const u8) void`
+    
+Deletes the mappings for the specified address range, causing further references to addresses within the range to generate invalid memory references. Note that while POSIX allows unmapping a region in the middle of an existing mapping, Zig's munmap function does not, for two reasons:
+  * It violates the Zig principle that resource deallocation must succeed.
+  * The Windows function, VirtualFree, has this restriction.
+
+`pub fn name_to_handle_at[](https://ziglang.org/documentation/master/std/#std.posix.name_to_handle_at)( dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname: []const u8, handle: *std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).file_handle[](https://ziglang.org/documentation/master/std/#std.os.linux.file_handle), mount_id: *i32, flags: u32, ) NameToFileHandleAtError[](https://ziglang.org/documentation/master/std/#std.posix.NameToFileHandleAtError)!void`
+`pub fn name_to_handle_atZ[](https://ziglang.org/documentation/master/std/#std.posix.name_to_handle_atZ)( dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pathname_z: [*:0]const u8, handle: *std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).linux[](https://ziglang.org/documentation/master/std/#std.os.linux).file_handle[](https://ziglang.org/documentation/master/std/#std.os.linux.file_handle), mount_id: *i32, flags: u32, ) NameToFileHandleAtError[](https://ziglang.org/documentation/master/std/#std.posix.NameToFileHandleAtError)!void`
+`pub fn nanosleep[](https://ziglang.org/documentation/master/std/#std.posix.nanosleep)(seconds: u64, nanoseconds: u64) void`
+    
+Spurious wakeups are possible and no precision of timing is guaranteed. `pub fn open[](https://ziglang.org/documentation/master/std/#std.posix.open)(file_path: []const u8, flags: O[](https://ziglang.org/documentation/master/std/#std.posix.O), perm: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) OpenError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Open and possibly create a file. Keeps trying if it gets interrupted. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. See also `openZ[](https://ziglang.org/documentation/master/std/#std.posix.openZ)`. `pub fn openZ[](https://ziglang.org/documentation/master/std/#std.posix.openZ)(file_path: [*:0]const u8, flags: O[](https://ziglang.org/documentation/master/std/#std.posix.O), perm: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) OpenError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Open and possibly create a file. Keeps trying if it gets interrupted. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. See also `open[](https://ziglang.org/documentation/master/std/#std.posix.open)`. `pub fn openat[](https://ziglang.org/documentation/master/std/#std.posix.openat)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, flags: O[](https://ziglang.org/documentation/master/std/#std.posix.O), mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) OpenError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Open and possibly create a file. Keeps trying if it gets interrupted. `file_path` is relative to the open directory handle `dir_fd`. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. See also `openatZ[](https://ziglang.org/documentation/master/std/#std.posix.openatZ)`. `pub fn openatWasi[](https://ziglang.org/documentation/master/std/#std.posix.openatWasi)( dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, lookup_flags: wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).lookupflags_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.lookupflags_t), oflags: wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).oflags_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.oflags_t), fdflags: wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).fdflags_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.fdflags_t), base: wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).rights_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.rights_t), inheriting: wasi[](https://ziglang.org/documentation/master/std/#std.os.wasi).rights_t[](https://ziglang.org/documentation/master/std/#std.os.wasi.rights_t), ) OpenError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Open and possibly create a file in WASI. `pub fn openatZ[](https://ziglang.org/documentation/master/std/#std.posix.openatZ)(dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: [*:0]const u8, flags: O[](https://ziglang.org/documentation/master/std/#std.posix.O), mode: mode_t[](https://ziglang.org/documentation/master/std/#std.posix.mode_t)) OpenError[](https://ziglang.org/documentation/master/std/#std.posix.OpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Open and possibly create a file. Keeps trying if it gets interrupted. `file_path` is relative to the open directory handle `dir_fd`. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. See also `openat[](https://ziglang.org/documentation/master/std/#std.posix.openat)`. `pub fn perf_event_open[](https://ziglang.org/documentation/master/std/#std.posix.perf_event_open)( attr: *system[](https://ziglang.org/documentation/master/std/#std.posix.system).perf_event_attr[](https://ziglang.org/documentation/master/std/#std.posix.system.perf_event_attr), pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), cpu: i32, group_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), flags: usize, ) PerfEventOpenError[](https://ziglang.org/documentation/master/std/#std.posix.PerfEventOpenError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn pipe[](https://ziglang.org/documentation/master/std/#std.posix.pipe)() PipeError[](https://ziglang.org/documentation/master/std/#std.posix.PipeError)![2]fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+    
+Creates a unidirectional data channel that can be used for interprocess communication. `pub fn pipe2[](https://ziglang.org/documentation/master/std/#std.posix.pipe2)(flags: O[](https://ziglang.org/documentation/master/std/#std.posix.O)) PipeError[](https://ziglang.org/documentation/master/std/#std.posix.PipeError)![2]fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn poll[](https://ziglang.org/documentation/master/std/#std.posix.poll)(fds: []pollfd[](https://ziglang.org/documentation/master/std/#std.posix.pollfd), timeout: i32) PollError[](https://ziglang.org/documentation/master/std/#std.posix.PollError)!usize`
+`pub fn ppoll[](https://ziglang.org/documentation/master/std/#std.posix.ppoll)(fds: []pollfd[](https://ziglang.org/documentation/master/std/#std.posix.pollfd), timeout: ?*const timespec[](https://ziglang.org/documentation/master/std/#std.posix.timespec), mask: ?*const sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t)) PPollError[](https://ziglang.org/documentation/master/std/#std.posix.PPollError)!usize`
+`pub fn prctl[](https://ziglang.org/documentation/master/std/#std.posix.prctl)(option: PR[](https://ziglang.org/documentation/master/std/#std.posix.PR), args: anytype) PrctlError[](https://ziglang.org/documentation/master/std/#std.posix.PrctlError)!u31`
+`pub fn pread[](https://ziglang.org/documentation/master/std/#std.posix.pread)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), buf: []u8, offset: u64) PReadError[](https://ziglang.org/documentation/master/std/#std.posix.PReadError)!usize`
+    
+Number of bytes read is returned. Upon reading end-of-file, zero is returned. `pub fn preadv[](https://ziglang.org/documentation/master/std/#std.posix.preadv)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), iov: []const iovec[](https://ziglang.org/documentation/master/std/#std.posix.iovec), offset: u64) PReadError[](https://ziglang.org/documentation/master/std/#std.posix.PReadError)!usize`
+    
+Number of bytes read is returned. Upon reading end-of-file, zero is returned. `pub fn ptrace[](https://ziglang.org/documentation/master/std/#std.posix.ptrace)(request: u32, pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), addr: usize, signal: usize) PtraceError[](https://ziglang.org/documentation/master/std/#std.posix.PtraceError)!void`
+`pub fn pwrite[](https://ziglang.org/documentation/master/std/#std.posix.pwrite)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), bytes: []const u8, offset: u64) PWriteError[](https://ziglang.org/documentation/master/std/#std.posix.PWriteError)!usize`
+    
+Write to a file descriptor, with a position offset. Retries when interrupted by a signal. Returns the number of bytes written. If nonzero bytes were supplied, this will be nonzero. `pub fn pwritev[](https://ziglang.org/documentation/master/std/#std.posix.pwritev)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), iov: []const iovec_const[](https://ziglang.org/documentation/master/std/#std.posix.iovec_const), offset: u64) PWriteError[](https://ziglang.org/documentation/master/std/#std.posix.PWriteError)!usize`
+    
+Write multiple buffers to a file descriptor, with a position offset. Retries when interrupted by a signal. Returns the number of bytes written. If nonzero bytes were supplied, this will be nonzero. `pub fn raise[](https://ziglang.org/documentation/master/std/#std.posix.raise)(sig: u8) RaiseError[](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)!void`
+`pub fn read[](https://ziglang.org/documentation/master/std/#std.posix.read)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), buf: []u8) ReadError[](https://ziglang.org/documentation/master/std/#std.posix.ReadError)!usize`
+    
+Returns the number of bytes that were read, which can be less than buf.len. If 0 bytes were read, that means EOF. If `fd` is opened in non blocking mode, the function will return error.WouldBlock when EAGAIN is received. `pub fn readlink[](https://ziglang.org/documentation/master/std/#std.posix.readlink)(file_path: []const u8, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Read value of a symbolic link. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. The return value is a slice of `out_buffer` from index 0. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, the result is encoded as UTF-8. On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn readlinkW[](https://ziglang.org/documentation/master/std/#std.posix.readlinkW)(file_path: []const u16, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Windows-only. Same as `readlink[](https://ziglang.org/documentation/master/std/#std.posix.readlink)` except `file_path` is WTF16 LE encoded. The result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). See also `readlinkZ[](https://ziglang.org/documentation/master/std/#std.posix.readlinkZ)`. `pub fn readlinkZ[](https://ziglang.org/documentation/master/std/#std.posix.readlinkZ)(file_path: [*:0]const u8, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Same as `readlink[](https://ziglang.org/documentation/master/std/#std.posix.readlink)` except `file_path` is null-terminated. `pub fn readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Similar to `readlink[](https://ziglang.org/documentation/master/std/#std.posix.readlink)` except reads value of a symbolink link **relative** to `dirfd` directory handle. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. The return value is a slice of `out_buffer` from index 0. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, the result is encoded as UTF-8. On other platforms, the result is an opaque sequence of bytes with no particular encoding. See also `readlinkatWasi[](https://ziglang.org/documentation/master/std/#std.posix.readlinkatWasi)`, `realinkatZ` and `realinkatW`. `pub fn readlinkatW[](https://ziglang.org/documentation/master/std/#std.posix.readlinkatW)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u16, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Windows-only. Same as `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)` except `file_path` is null-terminated, WTF16 LE encoded. The result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). See also `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)`. `pub fn readlinkatWasi[](https://ziglang.org/documentation/master/std/#std.posix.readlinkatWasi)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+WASI-only. Same as `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)` but targets WASI. See also `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)`. `pub fn readlinkatZ[](https://ziglang.org/documentation/master/std/#std.posix.readlinkatZ)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: [*:0]const u8, out_buffer: []u8) ReadLinkError[](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)![]u8`
+    
+Same as `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)` except `file_path` is null-terminated. See also `readlinkat[](https://ziglang.org/documentation/master/std/#std.posix.readlinkat)`. `pub fn readv[](https://ziglang.org/documentation/master/std/#std.posix.readv)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), iov: []const iovec[](https://ziglang.org/documentation/master/std/#std.posix.iovec)) ReadError[](https://ziglang.org/documentation/master/std/#std.posix.ReadError)!usize`
+    
+Number of bytes read is returned. Upon reading end-of-file, zero is returned. `pub fn realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)(pathname: []const u8, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Return the canonicalized absolute pathname. `pub fn realpathW[](https://ziglang.org/documentation/master/std/#std.posix.realpathW)(pathname: []const u16, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Same as `realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)` except `pathname` is WTF16LE-encoded. `pub fn realpathZ[](https://ziglang.org/documentation/master/std/#std.posix.realpathZ)(pathname: [*:0]const u8, out_buffer: *[max_path_bytes[](https://ziglang.org/documentation/master/std/#std.fs.max_path_bytes)]u8) RealPathError[](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)![]u8`
+    
+Same as `realpath[](https://ziglang.org/documentation/master/std/#std.posix.realpath)` except `pathname` is null-terminated. `pub fn reboot[](https://ziglang.org/documentation/master/std/#std.posix.reboot)(cmd: RebootCommand[](https://ziglang.org/documentation/master/std/#std.posix.RebootCommand)) RebootError[](https://ziglang.org/documentation/master/std/#std.posix.RebootError)!void`
+`pub fn recv[](https://ziglang.org/documentation/master/std/#std.posix.recv)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), buf: []u8, flags: u32) RecvFromError[](https://ziglang.org/documentation/master/std/#std.posix.RecvFromError)!usize`
+`pub fn recvfrom[](https://ziglang.org/documentation/master/std/#std.posix.recvfrom)( sockfd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), buf: []u8, flags: u32, src_addr: ?*sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), addrlen: ?*socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t), ) RecvFromError[](https://ziglang.org/documentation/master/std/#std.posix.RecvFromError)!usize`
+    
+If `sockfd` is opened in non blocking mode, the function will return error.WouldBlock when EAGAIN is received. `pub fn rename[](https://ziglang.org/documentation/master/std/#std.posix.rename)(old_path: []const u8, new_path: []const u8) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Change the name or location of a file. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn renameW[](https://ziglang.org/documentation/master/std/#std.posix.renameW)(old_path: [*:0]const u16, new_path: [*:0]const u16) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Same as `rename[](https://ziglang.org/documentation/master/std/#std.posix.rename)` except the parameters are null-terminated and WTF16LE encoded. Assumes target is Windows. `pub fn renameZ[](https://ziglang.org/documentation/master/std/#std.posix.renameZ)(old_path: [*:0]const u8, new_path: [*:0]const u8) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Same as `rename[](https://ziglang.org/documentation/master/std/#std.posix.rename)` except the parameters are null-terminated. `pub fn renameat[](https://ziglang.org/documentation/master/std/#std.posix.renameat)( old_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), old_path: []const u8, new_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), new_path: []const u8, ) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Change the name or location of a file based on an open directory handle. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. `pub fn renameatW[](https://ziglang.org/documentation/master/std/#std.posix.renameatW)( old_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), old_path_w: []const u16, new_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), new_path_w: []const u16, ReplaceIfExists: windows[](https://ziglang.org/documentation/master/std/#std.os.windows).BOOLEAN[](https://ziglang.org/documentation/master/std/#std.os.windows.BOOLEAN), ) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Same as `renameat[](https://ziglang.org/documentation/master/std/#std.posix.renameat)` but Windows-only and the path parameters are [WTF-16](https://simonsapin.github.io/wtf-8/#potentially-ill-formed-utf-16) encoded. `pub fn renameatZ[](https://ziglang.org/documentation/master/std/#std.posix.renameatZ)( old_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), old_path: [*:0]const u8, new_dir_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), new_path: [*:0]const u8, ) RenameError[](https://ziglang.org/documentation/master/std/#std.posix.RenameError)!void`
+    
+Same as `renameat[](https://ziglang.org/documentation/master/std/#std.posix.renameat)` except the parameters are null-terminated. `pub fn res_mkquery[](https://ziglang.org/documentation/master/std/#std.posix.res_mkquery)( op: u4, dname: []const u8, class: u8, ty: u8, data: []const u8, newrr: ?[*]const u8, buf: []u8, ) usize`
+`pub fn rmdir[](https://ziglang.org/documentation/master/std/#std.posix.rmdir)(dir_path: []const u8) DeleteDirError[](https://ziglang.org/documentation/master/std/#std.posix.DeleteDirError)!void`
+    
+Deletes an empty directory. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn rmdirW[](https://ziglang.org/documentation/master/std/#std.posix.rmdirW)(dir_path_w: []const u16) DeleteDirError[](https://ziglang.org/documentation/master/std/#std.posix.DeleteDirError)!void`
+    
+Windows-only. Same as `rmdir[](https://ziglang.org/documentation/master/std/#std.posix.rmdir)` except the parameter is WTF-16 LE encoded. `pub fn rmdirZ[](https://ziglang.org/documentation/master/std/#std.posix.rmdirZ)(dir_path: [*:0]const u8) DeleteDirError[](https://ziglang.org/documentation/master/std/#std.posix.DeleteDirError)!void`
+    
+Same as `rmdir[](https://ziglang.org/documentation/master/std/#std.posix.rmdir)` except the parameter is null-terminated. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn sched_getaffinity[](https://ziglang.org/documentation/master/std/#std.posix.sched_getaffinity)(pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t)) SchedGetAffinityError[](https://ziglang.org/documentation/master/std/#std.posix.SchedGetAffinityError)!cpu_set_t[](https://ziglang.org/documentation/master/std/#std.posix.cpu_set_t)`
+`pub fn send[](https://ziglang.org/documentation/master/std/#std.posix.send)( sockfd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), buf: []const u8, flags: u32, ) SendError[](https://ziglang.org/documentation/master/std/#std.posix.SendError)!usize`
+    
+Transmit a message to another socket. `pub fn sendfile[](https://ziglang.org/documentation/master/std/#std.posix.sendfile)( out_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), in_fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), in_offset: u64, in_len: u64, headers: []const iovec_const[](https://ziglang.org/documentation/master/std/#std.posix.iovec_const), trailers: []const iovec_const[](https://ziglang.org/documentation/master/std/#std.posix.iovec_const), flags: u32, ) SendFileError[](https://ziglang.org/documentation/master/std/#std.posix.SendFileError)!usize`
+    
+Transfer data between file descriptors, with optional headers and trailers. `pub fn sendmsg[](https://ziglang.org/documentation/master/std/#std.posix.sendmsg)( sockfd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), msg: *const msghdr_const[](https://ziglang.org/documentation/master/std/#std.posix.msghdr_const), flags: u32, ) SendMsgError[](https://ziglang.org/documentation/master/std/#std.posix.SendMsgError)!usize`
+`pub fn sendto[](https://ziglang.org/documentation/master/std/#std.posix.sendto)( sockfd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), buf: []const u8, flags: u32, dest_addr: ?*const sockaddr[](https://ziglang.org/documentation/master/std/#std.posix.sockaddr), addrlen: socklen_t[](https://ziglang.org/documentation/master/std/#std.posix.socklen_t), ) SendToError[](https://ziglang.org/documentation/master/std/#std.posix.SendToError)!usize`
+    
+Transmit a message to another socket. `pub fn setegid[](https://ziglang.org/documentation/master/std/#std.posix.setegid)(uid: uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)) SetEidError[](https://ziglang.org/documentation/master/std/#std.posix.SetEidError)!void`
+`pub fn seteuid[](https://ziglang.org/documentation/master/std/#std.posix.seteuid)(uid: uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)) SetEidError[](https://ziglang.org/documentation/master/std/#std.posix.SetEidError)!void`
+`pub fn setgid[](https://ziglang.org/documentation/master/std/#std.posix.setgid)(gid: gid_t[](https://ziglang.org/documentation/master/std/#std.posix.gid_t)) SetIdError[](https://ziglang.org/documentation/master/std/#std.posix.SetIdError)!void`
+`pub fn setpgid[](https://ziglang.org/documentation/master/std/#std.posix.setpgid)(pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), pgid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t)) SetPgidError[](https://ziglang.org/documentation/master/std/#std.posix.SetPgidError)!void`
+`pub fn setregid[](https://ziglang.org/documentation/master/std/#std.posix.setregid)(rgid: gid_t[](https://ziglang.org/documentation/master/std/#std.posix.gid_t), egid: gid_t[](https://ziglang.org/documentation/master/std/#std.posix.gid_t)) SetIdError[](https://ziglang.org/documentation/master/std/#std.posix.SetIdError)!void`
+`pub fn setreuid[](https://ziglang.org/documentation/master/std/#std.posix.setreuid)(ruid: uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t), euid: uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)) SetIdError[](https://ziglang.org/documentation/master/std/#std.posix.SetIdError)!void`
+`pub fn setrlimit[](https://ziglang.org/documentation/master/std/#std.posix.setrlimit)(resource: rlimit_resource[](https://ziglang.org/documentation/master/std/#std.posix.rlimit_resource), limits: rlimit[](https://ziglang.org/documentation/master/std/#std.posix.rlimit)) SetrlimitError[](https://ziglang.org/documentation/master/std/#std.posix.SetrlimitError)!void`
+`pub fn setsockopt[](https://ziglang.org/documentation/master/std/#std.posix.setsockopt)(fd: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), level: i32, optname: u32, opt: []const u8) SetSockOptError[](https://ziglang.org/documentation/master/std/#std.posix.SetSockOptError)!void`
+    
+Set a socket's options. `pub fn setuid[](https://ziglang.org/documentation/master/std/#std.posix.setuid)(uid: uid_t[](https://ziglang.org/documentation/master/std/#std.posix.uid_t)) SetIdError[](https://ziglang.org/documentation/master/std/#std.posix.SetIdError)!void`
+`pub fn shutdown[](https://ziglang.org/documentation/master/std/#std.posix.shutdown)(sock: socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t), how: ShutdownHow[](https://ziglang.org/documentation/master/std/#std.posix.ShutdownHow)) ShutdownError[](https://ziglang.org/documentation/master/std/#std.posix.ShutdownError)!void`
+    
+Shutdown socket send/receive operations `pub fn sigaction[](https://ziglang.org/documentation/master/std/#std.posix.sigaction)(sig: u8, noalias act: ?*const Sigaction[](https://ziglang.org/documentation/master/std/#std.posix.Sigaction), noalias oact: ?*Sigaction[](https://ziglang.org/documentation/master/std/#std.posix.Sigaction)) void`
+    
+Examine and change a signal action. `pub fn sigaddset[](https://ziglang.org/documentation/master/std/#std.posix.sigaddset)(set: *sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t), sig: u8) void`
+`pub fn sigaltstack[](https://ziglang.org/documentation/master/std/#std.posix.sigaltstack)(ss: ?*stack_t[](https://ziglang.org/documentation/master/std/#std.posix.stack_t), old_ss: ?*stack_t[](https://ziglang.org/documentation/master/std/#std.posix.stack_t)) SigaltstackError[](https://ziglang.org/documentation/master/std/#std.posix.SigaltstackError)!void`
+`pub fn sigdelset[](https://ziglang.org/documentation/master/std/#std.posix.sigdelset)(set: *sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t), sig: u8) void`
+`pub fn sigemptyset[](https://ziglang.org/documentation/master/std/#std.posix.sigemptyset)() sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t)`
+    
+Return an empty sigset_t. `pub fn sigfillset[](https://ziglang.org/documentation/master/std/#std.posix.sigfillset)() sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t)`
+    
+Return a filled sigset_t. `pub fn sigismember[](https://ziglang.org/documentation/master/std/#std.posix.sigismember)(set: *const sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t), sig: u8) bool`
+`pub fn signalfd[](https://ziglang.org/documentation/master/std/#std.posix.signalfd)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), mask: *const sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t), flags: u32) !fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn sigprocmask[](https://ziglang.org/documentation/master/std/#std.posix.sigprocmask)(flags: u32, noalias set: ?*const sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t), noalias oldset: ?*sigset_t[](https://ziglang.org/documentation/master/std/#std.posix.sigset_t)) void`
+    
+Sets the thread signal mask. `pub fn socket[](https://ziglang.org/documentation/master/std/#std.posix.socket)(domain: u32, socket_type: u32, protocol: u32) SocketError[](https://ziglang.org/documentation/master/std/#std.posix.SocketError)!socket_t[](https://ziglang.org/documentation/master/std/#std.posix.socket_t)`
+`pub fn symlink[](https://ziglang.org/documentation/master/std/#std.posix.symlink)(target_path: []const u8, sym_link_path: []const u8) SymLinkError[](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)!void`
+    
+Creates a symbolic link named `sym_link_path` which contains the string `target_path`. A symbolic link (also known as a soft link) may point to an existing file or to a nonexistent one; the latter case is known as a dangling link. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. If `sym_link_path` exists, it will not be overwritten. See also `symlinkZ.` `pub fn symlinkZ[](https://ziglang.org/documentation/master/std/#std.posix.symlinkZ)(target_path: [*:0]const u8, sym_link_path: [*:0]const u8) SymLinkError[](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)!void`
+    
+This is the same as `symlink[](https://ziglang.org/documentation/master/std/#std.posix.symlink)` except the parameters are null-terminated pointers. See also `symlink[](https://ziglang.org/documentation/master/std/#std.posix.symlink)`. `pub fn symlinkat[](https://ziglang.org/documentation/master/std/#std.posix.symlinkat)(target_path: []const u8, newdirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sym_link_path: []const u8) SymLinkError[](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)!void`
+    
+Similar to `symlink[](https://ziglang.org/documentation/master/std/#std.posix.symlink)`, however, creates a symbolic link named `sym_link_path` which contains the string `target_path` **relative** to `newdirfd` directory handle. A symbolic link (also known as a soft link) may point to an existing file or to a nonexistent one; the latter case is known as a dangling link. On Windows, both paths should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, both paths should be encoded as valid UTF-8. On other platforms, both paths are an opaque sequence of bytes with no particular encoding. If `sym_link_path` exists, it will not be overwritten. See also `symlinkatWasi[](https://ziglang.org/documentation/master/std/#std.posix.symlinkatWasi)`, `symlinkatZ[](https://ziglang.org/documentation/master/std/#std.posix.symlinkatZ)` and `symlinkatW`. `pub fn symlinkatWasi[](https://ziglang.org/documentation/master/std/#std.posix.symlinkatWasi)(target_path: []const u8, newdirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sym_link_path: []const u8) SymLinkError[](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)!void`
+    
+WASI-only. The same as `symlinkat[](https://ziglang.org/documentation/master/std/#std.posix.symlinkat)` but targeting WASI. See also `symlinkat[](https://ziglang.org/documentation/master/std/#std.posix.symlinkat)`. `pub fn symlinkatZ[](https://ziglang.org/documentation/master/std/#std.posix.symlinkatZ)(target_path: [*:0]const u8, newdirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sym_link_path: [*:0]const u8) SymLinkError[](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)!void`
+    
+The same as `symlinkat[](https://ziglang.org/documentation/master/std/#std.posix.symlinkat)` except the parameters are null-terminated pointers. See also `symlinkat[](https://ziglang.org/documentation/master/std/#std.posix.symlinkat)`. `pub fn sync[](https://ziglang.org/documentation/master/std/#std.posix.sync)() void`
+    
+Write all pending file contents and metadata modifications to all filesystems. `pub fn syncfs[](https://ziglang.org/documentation/master/std/#std.posix.syncfs)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) SyncError[](https://ziglang.org/documentation/master/std/#std.posix.SyncError)!void`
+    
+Write all pending file contents and metadata modifications to the filesystem which contains the specified file. `pub fn sysctl[](https://ziglang.org/documentation/master/std/#std.posix.sysctl)( name: []const c_int, oldp: ?*anyopaque, oldlenp: ?*usize, newp: ?*anyopaque, newlen: usize, ) SysCtlError[](https://ziglang.org/documentation/master/std/#std.posix.SysCtlError)!void`
+`pub fn sysctlbynameZ[](https://ziglang.org/documentation/master/std/#std.posix.sysctlbynameZ)( name: [*:0]const u8, oldp: ?*anyopaque, oldlenp: ?*usize, newp: ?*anyopaque, newlen: usize, ) SysCtlError[](https://ziglang.org/documentation/master/std/#std.posix.SysCtlError)!void`
+`pub fn tcgetattr[](https://ziglang.org/documentation/master/std/#std.posix.tcgetattr)(handle: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) TermiosGetError[](https://ziglang.org/documentation/master/std/#std.posix.TermiosGetError)!termios[](https://ziglang.org/documentation/master/std/#std.posix.termios)`
+`pub fn tcgetpgrp[](https://ziglang.org/documentation/master/std/#std.posix.tcgetpgrp)(handle: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)) TermioGetPgrpError[](https://ziglang.org/documentation/master/std/#std.posix.TermioGetPgrpError)!pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t)`
+    
+Returns the process group ID for the TTY associated with the given handle. `pub fn tcsetattr[](https://ziglang.org/documentation/master/std/#std.posix.tcsetattr)(handle: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), optional_action: TCSA[](https://ziglang.org/documentation/master/std/#std.posix.TCSA), termios_p: termios[](https://ziglang.org/documentation/master/std/#std.posix.termios)) TermiosSetError[](https://ziglang.org/documentation/master/std/#std.posix.TermiosSetError)!void`
+`pub fn tcsetpgrp[](https://ziglang.org/documentation/master/std/#std.posix.tcsetpgrp)(handle: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), pgrp: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t)) TermioSetPgrpError[](https://ziglang.org/documentation/master/std/#std.posix.TermioSetPgrpError)!void`
+    
+Sets the controlling process group ID for given TTY. handle must be valid fd_t to a TTY associated with calling process. pgrp must be a valid process group, and the calling process must be a member of that group. `pub fn timerfd_create[](https://ziglang.org/documentation/master/std/#std.posix.timerfd_create)(clock_id: system[](https://ziglang.org/documentation/master/std/#std.posix.system).timerfd_clockid_t[](https://ziglang.org/documentation/master/std/#std.posix.system.timerfd_clockid_t), flags: system[](https://ziglang.org/documentation/master/std/#std.posix.system).TFD[](https://ziglang.org/documentation/master/std/#std.posix.system.TFD)) TimerFdCreateError[](https://ziglang.org/documentation/master/std/#std.posix.TimerFdCreateError)!fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t)`
+`pub fn timerfd_gettime[](https://ziglang.org/documentation/master/std/#std.posix.timerfd_gettime)(fd: i32) TimerFdGetError[](https://ziglang.org/documentation/master/std/#std.posix.TimerFdGetError)!system[](https://ziglang.org/documentation/master/std/#std.posix.system).itimerspec[](https://ziglang.org/documentation/master/std/#std.posix.system.itimerspec)`
+`pub fn timerfd_settime[](https://ziglang.org/documentation/master/std/#std.posix.timerfd_settime)( fd: i32, flags: system[](https://ziglang.org/documentation/master/std/#std.posix.system).TFD[](https://ziglang.org/documentation/master/std/#std.posix.system.TFD).TIMER[](https://ziglang.org/documentation/master/std/#std.posix.system.TFD.TIMER), new_value: *const system[](https://ziglang.org/documentation/master/std/#std.posix.system).itimerspec[](https://ziglang.org/documentation/master/std/#std.posix.system.itimerspec), old_value: ?*system[](https://ziglang.org/documentation/master/std/#std.posix.system).itimerspec[](https://ziglang.org/documentation/master/std/#std.posix.system.itimerspec), ) TimerFdSetError[](https://ziglang.org/documentation/master/std/#std.posix.TimerFdSetError)!void`
+`pub fn toPosixPath[](https://ziglang.org/documentation/master/std/#std.posix.toPosixPath)(file_path: []const u8) error{NameTooLong}![PATH_MAX[](https://ziglang.org/documentation/master/std/#std.posix.PATH_MAX) - 1:0]u8`
+    
+Used to convert a slice to a null terminated slice on the stack. `pub fn uname[](https://ziglang.org/documentation/master/std/#std.posix.uname)() utsname[](https://ziglang.org/documentation/master/std/#std.posix.utsname)`
+`pub fn unexpectedErrno[](https://ziglang.org/documentation/master/std/#std.posix.unexpectedErrno)(err: E[](https://ziglang.org/documentation/master/std/#std.posix.E)) UnexpectedError[](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)`
+    
+Call this when you made a syscall or something that sets errno and you get an unexpected error. `pub fn unlink[](https://ziglang.org/documentation/master/std/#std.posix.unlink)(file_path: []const u8) UnlinkError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkError)!void`
+    
+Delete a name and possibly the file it refers to. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. See also `unlinkZ[](https://ziglang.org/documentation/master/std/#std.posix.unlinkZ)`. `pub fn unlinkW[](https://ziglang.org/documentation/master/std/#std.posix.unlinkW)(file_path_w: []const u16) UnlinkError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkError)!void`
+    
+Windows-only. Same as `unlink[](https://ziglang.org/documentation/master/std/#std.posix.unlink)` except the parameter is null-terminated, WTF16 LE encoded. `pub fn unlinkZ[](https://ziglang.org/documentation/master/std/#std.posix.unlinkZ)(file_path: [*:0]const u8) UnlinkError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkError)!void`
+    
+Same as `unlink[](https://ziglang.org/documentation/master/std/#std.posix.unlink)` except the parameter is null terminated. `pub fn unlinkat[](https://ziglang.org/documentation/master/std/#std.posix.unlinkat)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, flags: u32) UnlinkatError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkatError)!void`
+    
+Delete a file name and possibly the file it refers to, based on an open directory handle. On Windows, `file_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `file_path` should be encoded as valid UTF-8. On other platforms, `file_path` is an opaque sequence of bytes with no particular encoding. Asserts that the path parameter has no null bytes. `pub fn unlinkatW[](https://ziglang.org/documentation/master/std/#std.posix.unlinkatW)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), sub_path_w: []const u16, flags: u32) UnlinkatError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkatError)!void`
+    
+Same as `unlinkat[](https://ziglang.org/documentation/master/std/#std.posix.unlinkat)` but `sub_path_w` is WTF16LE, NT prefixed. Windows only. `pub fn unlinkatWasi[](https://ziglang.org/documentation/master/std/#std.posix.unlinkatWasi)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path: []const u8, flags: u32) UnlinkatError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkatError)!void`
+    
+WASI-only. Same as `unlinkat[](https://ziglang.org/documentation/master/std/#std.posix.unlinkat)` but targeting WASI. See also `unlinkat[](https://ziglang.org/documentation/master/std/#std.posix.unlinkat)`. `pub fn unlinkatZ[](https://ziglang.org/documentation/master/std/#std.posix.unlinkatZ)(dirfd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), file_path_c: [*:0]const u8, flags: u32) UnlinkatError[](https://ziglang.org/documentation/master/std/#std.posix.UnlinkatError)!void`
+    
+Same as `unlinkat[](https://ziglang.org/documentation/master/std/#std.posix.unlinkat)` but `file_path` is a null-terminated string. `pub fn wait4[](https://ziglang.org/documentation/master/std/#std.posix.wait4)(pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), flags: u32, ru: ?*rusage[](https://ziglang.org/documentation/master/std/#std.posix.rusage)) WaitPidResult[](https://ziglang.org/documentation/master/std/#std.posix.WaitPidResult)`
+`pub fn waitpid[](https://ziglang.org/documentation/master/std/#std.posix.waitpid)(pid: pid_t[](https://ziglang.org/documentation/master/std/#std.posix.pid_t), flags: u32) WaitPidResult[](https://ziglang.org/documentation/master/std/#std.posix.WaitPidResult)`
+    
+Use this version of the `waitpid[](https://ziglang.org/documentation/master/std/#std.posix.waitpid)` wrapper if you spawned your child process using explicit `fork[](https://ziglang.org/documentation/master/std/#std.posix.fork)` and `execve` method. `pub fn write[](https://ziglang.org/documentation/master/std/#std.posix.write)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), bytes: []const u8) WriteError[](https://ziglang.org/documentation/master/std/#std.posix.WriteError)!usize`
+    
+Write to a file descriptor. Retries when interrupted by a signal. Returns the number of bytes written. If nonzero bytes were supplied, this will be nonzero. `pub fn writev[](https://ziglang.org/documentation/master/std/#std.posix.writev)(fd: fd_t[](https://ziglang.org/documentation/master/std/#std.posix.fd_t), iov: []const iovec_const[](https://ziglang.org/documentation/master/std/#std.posix.iovec_const)) WriteError[](https://ziglang.org/documentation/master/std/#std.posix.WriteError)!usize`
+    
+Write multiple buffers to a file descriptor. Retries when interrupted by a signal. Returns the number of bytes written. If nonzero bytes were supplied, this will be nonzero.
+## Error Sets
+  * [AcceptError](https://ziglang.org/documentation/master/std/#std.posix.AcceptError)
+  * [AccessError](https://ziglang.org/documentation/master/std/#std.posix.AccessError)
+  * [BindError](https://ziglang.org/documentation/master/std/#std.posix.BindError)
+  * [ChangeCurDirError](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)
+  * [ClockGetTimeError](https://ziglang.org/documentation/master/std/#std.posix.ClockGetTimeError)
+  * [ConnectError](https://ziglang.org/documentation/master/std/#std.posix.ConnectError)
+  * [CopyFileRangeError](https://ziglang.org/documentation/master/std/#std.posix.CopyFileRangeError)
+  * [DeleteDirError](https://ziglang.org/documentation/master/std/#std.posix.DeleteDirError)
+  * [DnExpandError](https://ziglang.org/documentation/master/std/#std.posix.DnExpandError)
+  * [EpollCreateError](https://ziglang.org/documentation/master/std/#std.posix.EpollCreateError)
+  * [EpollCtlError](https://ziglang.org/documentation/master/std/#std.posix.EpollCtlError)
+  * [EventFdError](https://ziglang.org/documentation/master/std/#std.posix.EventFdError)
+  * [ExecveError](https://ziglang.org/documentation/master/std/#std.posix.ExecveError)
+  * [FChmodAtError](https://ziglang.org/documentation/master/std/#std.posix.FChmodAtError)
+  * [FChmodError](https://ziglang.org/documentation/master/std/#std.posix.FChmodError)
+  * [FChownError](https://ziglang.org/documentation/master/std/#std.posix.FChownError)
+  * [FStatAtError](https://ziglang.org/documentation/master/std/#std.posix.FStatAtError)
+  * [FStatError](https://ziglang.org/documentation/master/std/#std.posix.FStatError)
+  * [FanotifyInitError](https://ziglang.org/documentation/master/std/#std.posix.FanotifyInitError)
+  * [FanotifyMarkError](https://ziglang.org/documentation/master/std/#std.posix.FanotifyMarkError)
+  * [FchdirError](https://ziglang.org/documentation/master/std/#std.posix.FchdirError)
+  * [FcntlError](https://ziglang.org/documentation/master/std/#std.posix.FcntlError)
+  * [FlockError](https://ziglang.org/documentation/master/std/#std.posix.FlockError)
+  * [ForkError](https://ziglang.org/documentation/master/std/#std.posix.ForkError)
+  * [FutimensError](https://ziglang.org/documentation/master/std/#std.posix.FutimensError)
+  * [GetCwdError](https://ziglang.org/documentation/master/std/#std.posix.GetCwdError)
+  * [GetHostNameError](https://ziglang.org/documentation/master/std/#std.posix.GetHostNameError)
+  * [GetRandomError](https://ziglang.org/documentation/master/std/#std.posix.OpenError)
+  * [GetSockNameError](https://ziglang.org/documentation/master/std/#std.posix.GetSockNameError)
+  * [GetSockOptError](https://ziglang.org/documentation/master/std/#std.posix.GetSockOptError)
+  * [GetrlimitError](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)
+  * [INotifyAddWatchError](https://ziglang.org/documentation/master/std/#std.posix.INotifyAddWatchError)
+  * [INotifyInitError](https://ziglang.org/documentation/master/std/#std.posix.INotifyInitError)
+  * [IoCtl_SIOCGIFINDEX_Error](https://ziglang.org/documentation/master/std/#std.posix.IoCtl_SIOCGIFINDEX_Error)
+  * [KEventError](https://ziglang.org/documentation/master/std/#std.posix.KEventError)
+  * [KQueueError](https://ziglang.org/documentation/master/std/#std.posix.KQueueError)
+  * [KillError](https://ziglang.org/documentation/master/std/#std.posix.KillError)
+  * [LinkError](https://ziglang.org/documentation/master/std/#std.posix.LinkError)
+  * [LinkatError](https://ziglang.org/documentation/master/std/#std.posix.LinkatError)
+  * [ListenError](https://ziglang.org/documentation/master/std/#std.posix.ListenError)
+  * [MMapError](https://ziglang.org/documentation/master/std/#std.posix.MMapError)
+  * [MProtectError](https://ziglang.org/documentation/master/std/#std.posix.MProtectError)
+  * [MRemapError](https://ziglang.org/documentation/master/std/#std.posix.MRemapError)
+  * [MSyncError](https://ziglang.org/documentation/master/std/#std.posix.MSyncError)
+  * [MadviseError](https://ziglang.org/documentation/master/std/#std.posix.MadviseError)
+  * [MakeDirError](https://ziglang.org/documentation/master/std/#std.posix.MakeDirError)
+  * [MemFdCreateError](https://ziglang.org/documentation/master/std/#std.posix.MemFdCreateError)
+  * [MincoreError](https://ziglang.org/documentation/master/std/#std.posix.MincoreError)
+  * [NameToFileHandleAtError](https://ziglang.org/documentation/master/std/#std.posix.NameToFileHandleAtError)
+  * [OpenError](https://ziglang.org/documentation/master/std/#std.posix.OpenError)
+  * [PPollError](https://ziglang.org/documentation/master/std/#std.posix.PPollError)
+  * [PReadError](https://ziglang.org/documentation/master/std/#std.posix.PReadError)
+  * [PWriteError](https://ziglang.org/documentation/master/std/#std.posix.PWriteError)
+  * [PerfEventOpenError](https://ziglang.org/documentation/master/std/#std.posix.PerfEventOpenError)
+  * [PipeError](https://ziglang.org/documentation/master/std/#std.posix.PipeError)
+  * [PollError](https://ziglang.org/documentation/master/std/#std.posix.PollError)
+  * [PrctlError](https://ziglang.org/documentation/master/std/#std.posix.PrctlError)
+  * [PtraceError](https://ziglang.org/documentation/master/std/#std.posix.PtraceError)
+  * [RaiseError](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)
+  * [ReadError](https://ziglang.org/documentation/master/std/#std.posix.ReadError)
+  * [ReadLinkError](https://ziglang.org/documentation/master/std/#std.posix.ReadLinkError)
+  * [RealPathError](https://ziglang.org/documentation/master/std/#std.posix.RealPathError)
+  * [RebootError](https://ziglang.org/documentation/master/std/#std.posix.RebootError)
+  * [RecvFromError](https://ziglang.org/documentation/master/std/#std.posix.RecvFromError)
+  * [RenameError](https://ziglang.org/documentation/master/std/#std.posix.RenameError)
+  * [SchedGetAffinityError](https://ziglang.org/documentation/master/std/#std.posix.SchedGetAffinityError)
+  * [SeekError](https://ziglang.org/documentation/master/std/#std.posix.SeekError)
+  * [SendError](https://ziglang.org/documentation/master/std/#std.posix.SendError)
+  * [SendFileError](https://ziglang.org/documentation/master/std/#std.posix.SendFileError)
+  * [SendMsgError](https://ziglang.org/documentation/master/std/#std.posix.SendMsgError)
+  * [SendToError](https://ziglang.org/documentation/master/std/#std.posix.SendToError)
+  * [SetEidError](https://ziglang.org/documentation/master/std/#std.posix.SetEidError)
+  * [SetIdError](https://ziglang.org/documentation/master/std/#std.posix.SetIdError)
+  * [SetPgidError](https://ziglang.org/documentation/master/std/#std.posix.SetPgidError)
+  * [SetSockOptError](https://ziglang.org/documentation/master/std/#std.posix.SetSockOptError)
+  * [SetrlimitError](https://ziglang.org/documentation/master/std/#std.posix.SetrlimitError)
+  * [ShutdownError](https://ziglang.org/documentation/master/std/#std.posix.ShutdownError)
+  * [SigaltstackError](https://ziglang.org/documentation/master/std/#std.posix.SigaltstackError)
+  * [SocketError](https://ziglang.org/documentation/master/std/#std.posix.SocketError)
+  * [SymLinkError](https://ziglang.org/documentation/master/std/#std.posix.SymLinkError)
+  * [SyncError](https://ziglang.org/documentation/master/std/#std.posix.SyncError)
+  * [SysCtlError](https://ziglang.org/documentation/master/std/#std.posix.SysCtlError)
+  * [TIOCError](https://ziglang.org/documentation/master/std/#std.posix.TIOCError)
+  * [TermioGetPgrpError](https://ziglang.org/documentation/master/std/#std.posix.TermioGetPgrpError)
+  * [TermioSetPgrpError](https://ziglang.org/documentation/master/std/#std.posix.TermioSetPgrpError)
+  * [TermiosGetError](https://ziglang.org/documentation/master/std/#std.posix.TermiosGetError)
+  * [TermiosSetError](https://ziglang.org/documentation/master/std/#std.posix.TermiosSetError)
+  * [TimerFdCreateError](https://ziglang.org/documentation/master/std/#std.posix.TimerFdCreateError)
+  * [TimerFdGetError](https://ziglang.org/documentation/master/std/#std.posix.TimerFdGetError)
+  * [TimerFdSetError](https://ziglang.org/documentation/master/std/#std.posix.TimerFdSetError)
+  * [TruncateError](https://ziglang.org/documentation/master/std/#std.posix.TruncateError)
+  * [UnexpectedError](https://ziglang.org/documentation/master/std/#std.posix.UnexpectedError)
+  * [UnlinkError](https://ziglang.org/documentation/master/std/#std.posix.UnlinkError)
+  * [UnlinkatError](https://ziglang.org/documentation/master/std/#std.posix.UnlinkatError)
+  * [WriteError](https://ziglang.org/documentation/master/std/#std.posix.WriteError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

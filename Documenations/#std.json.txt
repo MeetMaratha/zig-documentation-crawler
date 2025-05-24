@@ -1,0 +1,115 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [json](https://ziglang.org/documentation/master/std/#std.json)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/json.zig)
+JSON parsing and stringification conforming to RFC 8259. <https://datatracker.ietf.org/doc/html/rfc8259>
+The low-level `Scanner[](https://ziglang.org/documentation/master/std/#std.json.scanner.Scanner)` API produces `Token[](https://ziglang.org/documentation/master/std/#std.json.scanner.Token)`s from an input slice or successive slices of inputs, The `Reader[](https://ziglang.org/documentation/master/std/#std.json.scanner.Reader)` API connects a `std.io.Reader` to a `Scanner[](https://ziglang.org/documentation/master/std/#std.json.scanner.Scanner)`.
+The high-level `parseFromSlice[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromSlice)` and `parseFromTokenSource[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromTokenSource)` deserialize a JSON document into a Zig type. Parse into a dynamically-typed `Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value)` to load any JSON value for runtime inspection.
+The low-level `writeStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStream)` emits syntax-conformant JSON tokens to a `std.io.Writer`. The high-level `stringify[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringify)` serializes a Zig or `Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value)` type into JSON.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [AllocWhen](https://ziglang.org/documentation/master/std/#std.json.scanner.AllocWhen)
+  * [Array](https://ziglang.org/documentation/master/std/#std.json.dynamic.Array)
+  * [ArrayHashMap](https://ziglang.org/documentation/master/std/#std.json.hashmap.ArrayHashMap)
+  * [Diagnostics](https://ziglang.org/documentation/master/std/#std.json.scanner.Diagnostics)
+  * [Formatter](https://ziglang.org/documentation/master/std/#std.json.fmt.Formatter)
+  * [ObjectMap](https://ziglang.org/documentation/master/std/#std.json.dynamic.ObjectMap)
+  * [ParseError](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)
+  * [ParseOptions](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions)
+  * [Parsed](https://ziglang.org/documentation/master/std/#std.json.static.Parsed)
+  * [Reader](https://ziglang.org/documentation/master/std/#std.json.scanner.Reader)
+  * [Scanner](https://ziglang.org/documentation/master/std/#std.json.scanner.Scanner)
+  * [StringifyOptions](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions)
+  * [Token](https://ziglang.org/documentation/master/std/#std.json.scanner.Token)
+  * [TokenType](https://ziglang.org/documentation/master/std/#std.json.scanner.TokenType)
+  * [Value](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value)
+  * [WriteStream](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)
+
+
+## Namespaces
+## Global Variables
+## Values
+[default_buffer_size](https://ziglang.org/documentation/master/std/#std.json.scanner.default_buffer_size)| | Used by `json.reader`.  
+---|---|---  
+[default_max_value_len](https://ziglang.org/documentation/master/std/#std.json.scanner.default_max_value_len)| | For security, the maximum size allocated to store a single string or number value is limited to 4MiB by default. This limit can be specified by calling `nextAllocMax()` instead of `nextAlloc()`.  
+## Functions `pub fn encodeJsonString[](https://ziglang.org/documentation/master/std/#std.json.stringify.encodeJsonString)(string: []const u8, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), writer: anytype) !void`
+    
+Write `string` to `writer` as a JSON encoded string. `pub fn encodeJsonStringChars[](https://ziglang.org/documentation/master/std/#std.json.stringify.encodeJsonStringChars)(chars: []const u8, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), writer: anytype) !void`
+    
+Write `chars` to `writer` as JSON encoded string characters. `pub fn fmt[](https://ziglang.org/documentation/master/std/#std.json.fmt.fmt)(value: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions)) Formatter[](https://ziglang.org/documentation/master/std/#std.json.fmt.Formatter)(@TypeOf(value))`
+    
+Returns a formatter that formats the given value using stringify. `pub fn innerParse[](https://ziglang.org/documentation/master/std/#std.json.static.innerParse)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), source: anytype, options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)(@TypeOf(source.*))!T`
+    
+This is an internal function called recursively during the implementation of `parseFromTokenSourceLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromTokenSourceLeaky)` and similar. It is exposed primarily to enable custom `jsonParse()` methods to call back into the `parseFrom*` system, such as if you're implementing a custom container of type `T`; you can call `innerParse(T, ...)` for each of the container's items. Note that `null` fields are not allowed on the `options` when calling this function. (The `options` you get in your `jsonParse` method has no `null` fields.) `pub fn innerParseFromValue[](https://ziglang.org/documentation/master/std/#std.json.static.innerParseFromValue)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), source: Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value), options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseFromValueError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseFromValueError)!T`
+    
+This is an internal function called recursively during the implementation of `parseFromValueLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromValueLeaky)`. It is exposed primarily to enable custom `jsonParseFromValue()` methods to call back into the `parseFromValue*` system, such as if you're implementing a custom container of type `T`; you can call `innerParseFromValue(T, ...)` for each of the container's items. `pub fn isNumberFormattedLikeAnInteger[](https://ziglang.org/documentation/master/std/#std.json.scanner.isNumberFormattedLikeAnInteger)(value: []const u8) bool`
+    
+For the slice you get from a `Token.number` or `Token.allocated_number`, this function returns true if the number doesn't contain any fraction or exponent components, and is not `-0`. Note, the numeric value encoded by the value may still be an integer, such as `1.0`. This function is meant to give a hint about whether integer parsing or float parsing should be used on the value. This function will not give meaningful results on non-numeric input. `pub fn parseFromSlice[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromSlice)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), s: []const u8, options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)(Scanner[](https://ziglang.org/documentation/master/std/#std.json.scanner.Scanner))!Parsed[](https://ziglang.org/documentation/master/std/#std.json.static.Parsed)(T)`
+    
+Parses the json document from `s` and returns the result packaged in a `std.json.Parsed[](https://ziglang.org/documentation/master/std/#std.json.static.Parsed)`. You must call `deinit()` of the returned object to clean up allocated resources. If you are using a `std.heap.ArenaAllocator[](https://ziglang.org/documentation/master/std/#std.heap.arena_allocator.ArenaAllocator)` or similar, consider calling `parseFromSliceLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromSliceLeaky)` instead. Note that `error.BufferUnderrun` is not actually possible to return from this function. `pub fn parseFromSliceLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromSliceLeaky)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), s: []const u8, options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)(Scanner[](https://ziglang.org/documentation/master/std/#std.json.scanner.Scanner))!T`
+    
+Parses the json document from `s` and returns the result. Allocations made during this operation are not carefully tracked and may not be possible to individually clean up. It is recommended to use a `std.heap.ArenaAllocator[](https://ziglang.org/documentation/master/std/#std.heap.arena_allocator.ArenaAllocator)` or similar. `pub fn parseFromTokenSource[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromTokenSource)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), scanner_or_reader: anytype, options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)(@TypeOf(scanner_or_reader.*))!Parsed[](https://ziglang.org/documentation/master/std/#std.json.static.Parsed)(T)`
+    
+`scanner_or_reader` must be either a `*std.json.Scanner` with complete input or a `*std.json.Reader`. Note that `error.BufferUnderrun` is not actually possible to return from this function. `pub fn parseFromTokenSourceLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromTokenSourceLeaky)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), scanner_or_reader: anytype, options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseError)(@TypeOf(scanner_or_reader.*))!T`
+    
+`scanner_or_reader` must be either a `*std.json.Scanner` with complete input or a `*std.json.Reader`. Allocations made during this operation are not carefully tracked and may not be possible to individually clean up. It is recommended to use a `std.heap.ArenaAllocator[](https://ziglang.org/documentation/master/std/#std.heap.arena_allocator.ArenaAllocator)` or similar. `pub fn parseFromValue[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromValue)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), source: Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value), options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseFromValueError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseFromValueError)!Parsed[](https://ziglang.org/documentation/master/std/#std.json.static.Parsed)(T)`
+    
+Like `parseFromSlice[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromSlice)`, but the input is an already-parsed `std.json.Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value)` object. Only `options.ignore_unknown_fields` is used from `options`. `pub fn parseFromValueLeaky[](https://ziglang.org/documentation/master/std/#std.json.static.parseFromValueLeaky)( comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), source: Value[](https://ziglang.org/documentation/master/std/#std.json.dynamic.Value), options: ParseOptions[](https://ziglang.org/documentation/master/std/#std.json.static.ParseOptions), ) ParseFromValueError[](https://ziglang.org/documentation/master/std/#std.json.static.ParseFromValueError)!T`
+`pub fn reader[](https://ziglang.org/documentation/master/std/#std.json.scanner.reader)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), io_reader: anytype) Reader[](https://ziglang.org/documentation/master/std/#std.json.scanner.Reader)(default_buffer_size[](https://ziglang.org/documentation/master/std/#std.json.scanner.default_buffer_size), @TypeOf(io_reader))`
+    
+Calls `std.json.Reader[](https://ziglang.org/documentation/master/std/#std.json.scanner.Reader)` with `std.json.default_buffer_size[](https://ziglang.org/documentation/master/std/#std.json.scanner.default_buffer_size)`. `pub fn stringify[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringify)( value: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), out_stream: anytype, ) @TypeOf(out_stream).Error!void`
+    
+Writes the given value to the `std.io.Writer[](https://ziglang.org/documentation/master/std/#std.io.GenericWriter)` stream. See `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)` for how the given value is serialized into JSON. The maximum nesting depth of the output JSON document is 256. See also `stringifyMaxDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyMaxDepth)` and `stringifyArbitraryDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyArbitraryDepth)`. `pub fn stringifyAlloc[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyAlloc)( allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), value: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), ) error{OutOfMemory}![]u8`
+    
+Calls `stringifyArbitraryDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyArbitraryDepth)` and stores the result in dynamically allocated memory instead of taking a `std.io.Writer[](https://ziglang.org/documentation/master/std/#std.io.GenericWriter)`. `pub fn stringifyArbitraryDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyArbitraryDepth)( allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), value: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), out_stream: anytype, ) WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)(@TypeOf(out_stream), .checked_to_arbitrary_depth).Error!void`
+    
+Like `stringify[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringify)` but takes an allocator to facilitate safety checks while allowing arbitrary nesting depth. These safety checks can be helpful when debugging custom `jsonStringify` implementations; See `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)`. `pub fn stringifyMaxDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringifyMaxDepth)( value: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), out_stream: anytype, comptime max_depth: ?usize, ) @TypeOf(out_stream).Error!void`
+    
+Like `stringify[](https://ziglang.org/documentation/master/std/#std.json.stringify.stringify)` with configurable nesting depth. `max_depth` is rounded up to the nearest multiple of 8. Give `null` for `max_depth` to disable some safety checks and allow arbitrary nesting depth. See `writeStreamMaxDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStreamMaxDepth)` for more info. `pub fn validate[](https://ziglang.org/documentation/master/std/#std.json.scanner.validate)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), s: []const u8) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!bool`
+    
+Scan the input and check for malformed JSON. On `SyntaxError` or `UnexpectedEndOfInput`, returns `false`. Returns any errors from the allocator as-is, which is unlikely, but can be caused by extreme nesting depth in the input. `pub fn writeStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStream)( out_stream: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), ) WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)(@TypeOf(out_stream), .{ .checked_to_fixed_depth = 256 })`
+    
+See `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)` for documentation. Equivalent to calling `writeStreamMaxDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStreamMaxDepth)` with a depth of `256`. `pub fn writeStreamArbitraryDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStreamArbitraryDepth)( allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), out_stream: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), ) WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)(@TypeOf(out_stream), .checked_to_arbitrary_depth)`
+    
+See `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)` for documentation. This version of the write stream enables safety checks to arbitrarily deep nesting levels by using the given allocator. The caller should call `deinit()` on the returned object to free allocated memory. `pub fn writeStreamMaxDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStreamMaxDepth)( out_stream: anytype, options: StringifyOptions[](https://ziglang.org/documentation/master/std/#std.json.stringify.StringifyOptions), comptime max_depth: ?usize, ) WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)( @TypeOf(out_stream), if (max_depth) |d| .{ .checked_to_fixed_depth = d } else .assumed_correct, )`
+    
+See `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)` for documentation. The returned object includes 1 bit of size per `max_depth` to enable safety checks on the order of method calls; see the grammar in the `WriteStream[](https://ziglang.org/documentation/master/std/#std.json.stringify.WriteStream)` documentation. `max_depth` is rounded up to the nearest multiple of 8. If the nesting depth exceeds `max_depth`, it is detectable illegal behavior. Give `null` for `max_depth` to disable safety checks for the grammar and allow arbitrary nesting depth. In `ReleaseFast` and `ReleaseSmall`, `max_depth` is ignored, effectively equivalent to passing `null`. Alternatively, see `writeStreamArbitraryDepth[](https://ziglang.org/documentation/master/std/#std.json.stringify.writeStreamArbitraryDepth)` to do safety checks to arbitrary depth.
+## Error Sets
+  * [Error](https://ziglang.org/documentation/master/std/#std.json.scanner.Error)
+  * [ParseFromValueError](https://ziglang.org/documentation/master/std/#std.json.static.ParseFromValueError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,61 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [dynamic_library](https://ziglang.org/documentation/master/std/#std.dynamic_library)
+  * [DynLib](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/dynamic_library.zig)
+Cross-platform dynamic library loading and symbol lookup. Platform-specific functionality is available through the `inner` field.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+inner: InnerType[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.InnerType)
+```
+
+## Types
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn close[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.close)(self: *DynLib[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib)) void`
+    
+Trusts the file. `pub fn lookup[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.lookup)(self: *DynLib[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib), comptime T: type, name: [:0]const u8) ?T`
+`pub fn open[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.open)(path: []const u8) Error[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.Error)!DynLib[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib)`
+    
+Trusts the file. Malicious file will be able to execute arbitrary code. `pub fn openZ[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.openZ)(path_c: [*:0]const u8) Error[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.Error)!DynLib[](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib)`
+    
+Trusts the file. Malicious file will be able to execute arbitrary code.
+## Error Sets
+  * [Error](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib.Error)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,99 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [coff](https://ziglang.org/documentation/master/std/#std.coff)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/coff.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [BaseRelocation](https://ziglang.org/documentation/master/std/#std.coff.BaseRelocation)
+  * [BaseRelocationDirectoryEntry](https://ziglang.org/documentation/master/std/#std.coff.BaseRelocationDirectoryEntry)
+  * [BaseRelocationType](https://ziglang.org/documentation/master/std/#std.coff.BaseRelocationType)
+  * [BaseType](https://ziglang.org/documentation/master/std/#std.coff.BaseType)
+  * [Coff](https://ziglang.org/documentation/master/std/#std.coff.Coff)
+  * [CoffHeader](https://ziglang.org/documentation/master/std/#std.coff.CoffHeader)
+  * [CoffHeaderFlags](https://ziglang.org/documentation/master/std/#std.coff.CoffHeaderFlags)
+  * [ComdatSelection](https://ziglang.org/documentation/master/std/#std.coff.ComdatSelection)
+  * [ComplexType](https://ziglang.org/documentation/master/std/#std.coff.ComplexType)
+  * [DebugDirectoryEntry](https://ziglang.org/documentation/master/std/#std.coff.DebugDirectoryEntry)
+  * [DebugInfoDefinition](https://ziglang.org/documentation/master/std/#std.coff.DebugInfoDefinition)
+  * [DebugType](https://ziglang.org/documentation/master/std/#std.coff.DebugType)
+  * [DirectoryEntry](https://ziglang.org/documentation/master/std/#std.coff.DirectoryEntry)
+  * [DllFlags](https://ziglang.org/documentation/master/std/#std.coff.DllFlags)
+  * [FileDefinition](https://ziglang.org/documentation/master/std/#std.coff.FileDefinition)
+  * [FunctionDefinition](https://ziglang.org/documentation/master/std/#std.coff.FunctionDefinition)
+  * [ImageDataDirectory](https://ziglang.org/documentation/master/std/#std.coff.ImageDataDirectory)
+  * [ImageRelAmd64](https://ziglang.org/documentation/master/std/#std.coff.ImageRelAmd64)
+  * [ImageRelArm64](https://ziglang.org/documentation/master/std/#std.coff.ImageRelArm64)
+  * [ImportDirectoryEntry](https://ziglang.org/documentation/master/std/#std.coff.ImportDirectoryEntry)
+  * [ImportHeader](https://ziglang.org/documentation/master/std/#std.coff.ImportHeader)
+  * [ImportHintNameEntry](https://ziglang.org/documentation/master/std/#std.coff.ImportHintNameEntry)
+  * [ImportNameType](https://ziglang.org/documentation/master/std/#std.coff.ImportNameType)
+  * [ImportType](https://ziglang.org/documentation/master/std/#std.coff.ImportType)
+  * [MachineType](https://ziglang.org/documentation/master/std/#std.coff.MachineType)
+  * [OptionalHeader](https://ziglang.org/documentation/master/std/#std.coff.OptionalHeader)
+  * [OptionalHeaderPE32](https://ziglang.org/documentation/master/std/#std.coff.OptionalHeaderPE32)
+  * [OptionalHeaderPE64](https://ziglang.org/documentation/master/std/#std.coff.OptionalHeaderPE64)
+  * [Relocation](https://ziglang.org/documentation/master/std/#std.coff.Relocation)
+  * [SectionDefinition](https://ziglang.org/documentation/master/std/#std.coff.SectionDefinition)
+  * [SectionHeader](https://ziglang.org/documentation/master/std/#std.coff.SectionHeader)
+  * [SectionHeaderFlags](https://ziglang.org/documentation/master/std/#std.coff.SectionHeaderFlags)
+  * [SectionNumber](https://ziglang.org/documentation/master/std/#std.coff.SectionNumber)
+  * [StorageClass](https://ziglang.org/documentation/master/std/#std.coff.StorageClass)
+  * [Strtab](https://ziglang.org/documentation/master/std/#std.coff.Strtab)
+  * [Subsystem](https://ziglang.org/documentation/master/std/#std.coff.Subsystem)
+  * [SymType](https://ziglang.org/documentation/master/std/#std.coff.SymType)
+  * [Symbol](https://ziglang.org/documentation/master/std/#std.coff.Symbol)
+  * [Symtab](https://ziglang.org/documentation/master/std/#std.coff.Symtab)
+  * [WeakExternalDefinition](https://ziglang.org/documentation/master/std/#std.coff.WeakExternalDefinition)
+  * [WeakExternalFlag](https://ziglang.org/documentation/master/std/#std.coff.WeakExternalFlag)
+
+
+## Namespaces
+  * [ImportLookupEntry32](https://ziglang.org/documentation/master/std/#std.coff.ImportLookupEntry32)
+  * [ImportLookupEntry64](https://ziglang.org/documentation/master/std/#std.coff.ImportLookupEntry64)
+
+
+## Global Variables
+## Values
+[IMAGE_NT_OPTIONAL_HDR32_MAGIC](https://ziglang.org/documentation/master/std/#std.coff.IMAGE_NT_OPTIONAL_HDR32_MAGIC)| |   
+---|---|---  
+[IMAGE_NT_OPTIONAL_HDR64_MAGIC](https://ziglang.org/documentation/master/std/#std.coff.IMAGE_NT_OPTIONAL_HDR64_MAGIC)| |   
+[IMAGE_NUMBEROF_DIRECTORY_ENTRIES](https://ziglang.org/documentation/master/std/#std.coff.IMAGE_NUMBEROF_DIRECTORY_ENTRIES)| |   
+## Functions
+## Error Sets
+  * [CoffError](https://ziglang.org/documentation/master/std/#std.coff.CoffError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

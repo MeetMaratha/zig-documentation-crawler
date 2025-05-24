@@ -1,0 +1,61 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [bit_set](https://ziglang.org/documentation/master/std/#std.bit_set)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/bit_set.zig)
+This file defines several variants of bit sets. A bit set is a densely stored set of integers with a known maximum, in which each integer gets a single bit. Bit sets have very fast presence checks, update operations, and union and intersection operations. However, if the number of possible items is very large and the number of actual items in a given set is usually small, they may be less memory efficient than an array set.
+There are five variants defined here:
+IntegerBitSet: A bit set with static size, which is backed by a single integer. This set is good for sets with a small size, but may generate inefficient code for larger sets, especially in debug mode.
+ArrayBitSet: A bit set with static size, which is backed by an array of usize. This set is good for sets with a larger size, but may use more bytes than necessary if your set is small.
+StaticBitSet: Picks either IntegerBitSet or ArrayBitSet depending on the requested size. The interfaces of these two types match exactly, except for fields.
+DynamicBitSet: A bit set with runtime-known size, backed by an allocated slice of usize.
+DynamicBitSetUnmanaged: A variant of DynamicBitSet which does not store a pointer to its allocator, in order to save space.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ArrayBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.ArrayBitSet)
+  * [DynamicBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSet)
+  * [DynamicBitSetUnmanaged](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)
+  * [IntegerBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)
+  * [IteratorOptions](https://ziglang.org/documentation/master/std/#std.bit_set.IteratorOptions)
+  * [Range](https://ziglang.org/documentation/master/std/#std.bit_set.Range)
+  * [StaticBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

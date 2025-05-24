@@ -1,0 +1,66 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [BitStack](https://ziglang.org/documentation/master/std/#std.BitStack)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/BitStack.zig)
+Effectively a stack of u1 values implemented using ArrayList(u8).
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+bytes: std[](https://ziglang.org/documentation/master/std/#std).ArrayList[](https://ziglang.org/documentation/master/std/#std.ArrayList)(u8)
+```
+
+```
+bit_len: usize = 0
+```
+
+## Types
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.BitStack.deinit)(self: *@This()) void`
+`pub fn ensureTotalCapacity[](https://ziglang.org/documentation/master/std/#std.BitStack.ensureTotalCapacity)(self: *@This(), bit_capacity: usize) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn init[](https://ziglang.org/documentation/master/std/#std.BitStack.init)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) @This()`
+`pub fn peek[](https://ziglang.org/documentation/master/std/#std.BitStack.peek)(self: *const @This()) u1`
+`pub fn peekWithState[](https://ziglang.org/documentation/master/std/#std.BitStack.peekWithState)(buf: []const u8, bit_len: usize) u1`
+    
+Standalone function for working with a fixed-size buffer. `pub fn pop[](https://ziglang.org/documentation/master/std/#std.BitStack.pop)(self: *@This()) u1`
+`pub fn popWithState[](https://ziglang.org/documentation/master/std/#std.BitStack.popWithState)(buf: []const u8, bit_len: *usize) u1`
+    
+Standalone function for working with a fixed-size buffer. `pub fn push[](https://ziglang.org/documentation/master/std/#std.BitStack.push)(self: *@This(), b: u1) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn pushWithStateAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.BitStack.pushWithStateAssumeCapacity)(buf: []u8, bit_len: *usize, b: u1) void`
+    
+Standalone function for working with a fixed-size buffer.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

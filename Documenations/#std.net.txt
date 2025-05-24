@@ -1,0 +1,72 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [net](https://ziglang.org/documentation/master/std/#std.net)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/net.zig)
+Cross-platform networking abstractions.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Address](https://ziglang.org/documentation/master/std/#std.net.Address)
+  * [AddressList](https://ziglang.org/documentation/master/std/#std.net.AddressList)
+  * [Ip4Address](https://ziglang.org/documentation/master/std/#std.net.Ip4Address)
+  * [Ip6Address](https://ziglang.org/documentation/master/std/#std.net.Ip6Address)
+  * [Server](https://ziglang.org/documentation/master/std/#std.net.Server)
+  * [Stream](https://ziglang.org/documentation/master/std/#std.net.Stream)
+
+
+## Namespaces
+## Global Variables
+## Values
+[has_unix_sockets](https://ziglang.org/documentation/master/std/#std.net.has_unix_sockets)| |   
+---|---|---  
+## Functions `pub fn connectUnixSocket[](https://ziglang.org/documentation/master/std/#std.net.connectUnixSocket)(path: []const u8) !Stream[](https://ziglang.org/documentation/master/std/#std.net.Stream)`
+`pub fn getAddressList[](https://ziglang.org/documentation/master/std/#std.net.getAddressList)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), name: []const u8, port: u16) GetAddressListError[](https://ziglang.org/documentation/master/std/#std.net.GetAddressListError)!*AddressList[](https://ziglang.org/documentation/master/std/#std.net.AddressList)`
+    
+Call `AddressList.deinit[](https://ziglang.org/documentation/master/std/#std.net.AddressList.deinit)` on the result. `pub fn isValidHostName[](https://ziglang.org/documentation/master/std/#std.net.isValidHostName)(hostname: []const u8) bool`
+`pub fn tcpConnectToAddress[](https://ziglang.org/documentation/master/std/#std.net.tcpConnectToAddress)(address: Address[](https://ziglang.org/documentation/master/std/#std.net.Address)) TcpConnectToAddressError[](https://ziglang.org/documentation/master/std/#std.net.TcpConnectToAddressError)!Stream[](https://ziglang.org/documentation/master/std/#std.net.Stream)`
+`pub fn tcpConnectToHost[](https://ziglang.org/documentation/master/std/#std.net.tcpConnectToHost)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), name: []const u8, port: u16) TcpConnectToHostError[](https://ziglang.org/documentation/master/std/#std.net.TcpConnectToHostError)!Stream[](https://ziglang.org/documentation/master/std/#std.net.Stream)`
+    
+All memory allocated with `allocator` will be freed before this function returns.
+## Error Sets
+  * [IPParseError](https://ziglang.org/documentation/master/std/#std.net.IPParseError)
+  * [IPv4ParseError](https://ziglang.org/documentation/master/std/#std.net.IPv4ParseError)
+  * [IPv6InterfaceError](https://ziglang.org/documentation/master/std/#std.net.IPv6InterfaceError)
+  * [IPv6ParseError](https://ziglang.org/documentation/master/std/#std.net.IPv6ParseError)
+  * [IPv6ResolveError](https://ziglang.org/documentation/master/std/#std.net.IPv6ResolveError)
+  * [TcpConnectToAddressError](https://ziglang.org/documentation/master/std/#std.net.TcpConnectToAddressError)
+  * [TcpConnectToHostError](https://ziglang.org/documentation/master/std/#std.net.TcpConnectToHostError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

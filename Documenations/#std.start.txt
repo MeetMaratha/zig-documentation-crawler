@@ -1,0 +1,49 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [start](https://ziglang.org/documentation/master/std/#std.start)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/start.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+## Namespaces
+## Global Variables
+## Values
+[simplified_logic](https://ziglang.org/documentation/master/std/#std.start.simplified_logic)| |   
+---|---|---  
+## Functions `pub inline fn callMain[](https://ziglang.org/documentation/master/std/#std.start.callMain)() u8`
+`pub fn call_wWinMain[](https://ziglang.org/documentation/master/std/#std.start.call_wWinMain)() std[](https://ziglang.org/documentation/master/std/#std).os[](https://ziglang.org/documentation/master/std/#std.os).windows[](https://ziglang.org/documentation/master/std/#std.os.windows).INT[](https://ziglang.org/documentation/master/std/#std.os.windows.INT)`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

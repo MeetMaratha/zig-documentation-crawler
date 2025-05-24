@@ -1,0 +1,88 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [testing](https://ziglang.org/documentation/master/std/#std.testing)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/testing.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [FailingAllocator](https://ziglang.org/documentation/master/std/#std.testing.FailingAllocator)
+  * [FuzzInputOptions](https://ziglang.org/documentation/master/std/#std.testing.FuzzInputOptions)
+  * [TmpDir](https://ziglang.org/documentation/master/std/#std.testing.TmpDir)
+
+
+## Namespaces
+## Global Variables
+[allocator_instance](https://ziglang.org/documentation/master/std/#std.testing.allocator_instance)| `std[](https://ziglang.org/documentation/master/std/#std).heap[](https://ziglang.org/documentation/master/std/#std.heap).GeneralPurposeAllocator[](https://ziglang.org/documentation/master/std/#std.heap.GeneralPurposeAllocator)(.{ .stack_trace_frames = if (std[](https://ziglang.org/documentation/master/std/#std).debug[](https://ziglang.org/documentation/master/std/#std.debug).sys_can_stack_trace[](https://ziglang.org/documentation/master/std/#std.debug.sys_can_stack_trace)) 10 else 0, .resize_stack_traces = true,.canary = @truncate(0x2731e675c3a701ba), })`|   
+---|---|---  
+[log_level](https://ziglang.org/documentation/master/std/#std.testing.log_level)| | TODO <https://github.com/ziglang/zig/issues/5738>  
+[random_seed](https://ziglang.org/documentation/master/std/#std.testing.random_seed)| `u32`| Provides deterministic randomness in unit tests. Initialized on startup. Read-only after that.  
+## Values
+[allocator](https://ziglang.org/documentation/master/std/#std.testing.allocator)| | This should only be used in temporary test programs.  
+---|---|---  
+[backend_can_print](https://ziglang.org/documentation/master/std/#std.testing.backend_can_print)| |   
+[failing_allocator](https://ziglang.org/documentation/master/std/#std.testing.failing_allocator)| |   
+## Functions `pub fn checkAllAllocationFailures[](https://ziglang.org/documentation/master/std/#std.testing.checkAllAllocationFailures)(backing_allocator: std[](https://ziglang.org/documentation/master/std/#std).mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime test_fn: anytype, extra_args: anytype) !void`
+    
+Exhaustively check that allocation failures within `test_fn` are handled without introducing memory leaks. If used with the `testing.allocator` as the `backing_allocator`, it will also be able to detect double frees, etc (when runtime safety is enabled). `pub fn expect[](https://ziglang.org/documentation/master/std/#std.testing.expect)(ok: bool) !void`
+    
+This function is intended to be used only in tests. When `ok` is false, returns a test failure error. `pub inline fn expectApproxEqAbs[](https://ziglang.org/documentation/master/std/#std.testing.expectApproxEqAbs)(expected: anytype, actual: anytype, tolerance: anytype) !void`
+    
+This function is intended to be used only in tests. When the actual value is not approximately equal to the expected value, prints diagnostics to stderr to show exactly how they are not equal, then returns a test failure error. See `math.approxEqAbs[](https://ziglang.org/documentation/master/std/#std.math.approxEqAbs)` for more information on the tolerance parameter. The types must be floating-point. `actual` and `expected` are coerced to a common type using peer type resolution. `pub inline fn expectApproxEqRel[](https://ziglang.org/documentation/master/std/#std.testing.expectApproxEqRel)(expected: anytype, actual: anytype, tolerance: anytype) !void`
+    
+This function is intended to be used only in tests. When the actual value is not approximately equal to the expected value, prints diagnostics to stderr to show exactly how they are not equal, then returns a test failure error. See `math.approxEqRel[](https://ziglang.org/documentation/master/std/#std.math.approxEqRel)` for more information on the tolerance parameter. The types must be floating-point. `actual` and `expected` are coerced to a common type using peer type resolution. `pub inline fn expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(expected: anytype, actual: anytype) !void`
+    
+This function is intended to be used only in tests. When the two values are not equal, prints diagnostics to stderr to show exactly how they are not equal, then returns a test failure error. `actual` and `expected` are coerced to a common type using peer type resolution. `pub inline fn expectEqualDeep[](https://ziglang.org/documentation/master/std/#std.testing.expectEqualDeep)(expected: anytype, actual: anytype) error{TestExpectedEqual}!void`
+    
+This function is intended to be used only in tests. When the two values are not deeply equal, prints diagnostics to stderr to show exactly how they are not equal, then returns a test failure error. `actual` and `expected` are coerced to a common type using peer type resolution. `pub fn expectEqualSentinel[](https://ziglang.org/documentation/master/std/#std.testing.expectEqualSentinel)(comptime T: type, comptime sentinel: T, expected: [:sentinel]const T, actual: [:sentinel]const T) !void`
+    
+This function is intended to be used only in tests. Checks that two slices or two arrays are equal, including that their sentinel (if any) are the same. Will error if given another type. `pub fn expectEqualSlices[](https://ziglang.org/documentation/master/std/#std.testing.expectEqualSlices)(comptime T: type, expected: []const T, actual: []const T) !void`
+    
+This function is intended to be used only in tests. When the two slices are not equal, prints diagnostics to stderr to show exactly how they are not equal (with the differences highlighted in red), then returns a test failure error. The colorized output is optional and controlled by the return of `std.io.tty.detectConfig()`. If your inputs are UTF-8 encoded strings, consider calling `expectEqualStrings[](https://ziglang.org/documentation/master/std/#std.testing.expectEqualStrings)` instead. `pub fn expectEqualStrings[](https://ziglang.org/documentation/master/std/#std.testing.expectEqualStrings)(expected: []const u8, actual: []const u8) !void`
+`pub fn expectError[](https://ziglang.org/documentation/master/std/#std.testing.expectError)(expected_error: anyerror, actual_error_union: anytype) !void`
+    
+This function is intended to be used only in tests. It prints diagnostics to stderr and then returns a test failure error when actual_error_union is not expected_error. `pub fn expectFmt[](https://ziglang.org/documentation/master/std/#std.testing.expectFmt)(expected: []const u8, comptime template: []const u8, args: anytype) !void`
+    
+This function is intended to be used only in tests. When the formatted result of the template and its arguments does not equal the expected text, it prints diagnostics to stderr to show how they are not equal, then returns an error. It depends on `expectEqualStrings()` for printing diagnostics. `pub fn expectStringEndsWith[](https://ziglang.org/documentation/master/std/#std.testing.expectStringEndsWith)(actual: []const u8, expected_ends_with: []const u8) !void`
+`pub fn expectStringStartsWith[](https://ziglang.org/documentation/master/std/#std.testing.expectStringStartsWith)(actual: []const u8, expected_starts_with: []const u8) !void`
+`pub inline fn fuzz[](https://ziglang.org/documentation/master/std/#std.testing.fuzz)( context: anytype, comptime testOne: fn (context: @TypeOf(context), input: []const u8) anyerror!void, options: FuzzInputOptions[](https://ziglang.org/documentation/master/std/#std.testing.FuzzInputOptions), ) anyerror!void`
+    
+Inline to avoid coverage instrumentation. `pub fn refAllDecls[](https://ziglang.org/documentation/master/std/#std.testing.refAllDecls)(comptime T: type) void`
+    
+Given a type, references all the declarations inside, so that the semantic analyzer sees them. `pub fn refAllDeclsRecursive[](https://ziglang.org/documentation/master/std/#std.testing.refAllDeclsRecursive)(comptime T: type) void`
+    
+Given a type, recursively references all the declarations inside, so that the semantic analyzer sees them. For deep types, you may use `@setEvalBranchQuota`. `pub fn tmpDir[](https://ziglang.org/documentation/master/std/#std.testing.tmpDir)(opts: std[](https://ziglang.org/documentation/master/std/#std).fs[](https://ziglang.org/documentation/master/std/#std.fs).Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir).OpenOptions[](https://ziglang.org/documentation/master/std/#std.fs.Dir.OpenOptions)) TmpDir[](https://ziglang.org/documentation/master/std/#std.testing.TmpDir)`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,46 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [pie](https://ziglang.org/documentation/master/std/#std.pie)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/pie.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn relocate[](https://ziglang.org/documentation/master/std/#std.pie.relocate)(phdrs: []elf[](https://ziglang.org/documentation/master/std/#std.elf).Phdr[](https://ziglang.org/documentation/master/std/#std.elf.Phdr)) void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

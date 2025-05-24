@@ -1,0 +1,114 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [bit_set](https://ziglang.org/documentation/master/std/#std.bit_set)
+  * [DynamicBitSetUnmanaged](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/bit_set.zig)
+A bit set with runtime-known size, backed by an allocated slice of usize. The allocator must be tracked externally by the user.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+bit_length: usize = 0
+```
+
+The number of valid items in this bit set
+```
+masks: [*]MaskInt[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.MaskInt) = empty_masks_ptr[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.empty_masks_ptr)
+```
+
+The bit masks, ordered with lower indices first. Padding bits at the end must be zeroed.
+## Types
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.Iterator)
+  * [MaskInt](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.MaskInt)
+  * [ShiftInt](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.ShiftInt)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub inline fn capacity[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.capacity)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) usize`
+    
+Returns the number of bits in this bit set `pub fn clone[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.clone)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), new_allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)`
+    
+Creates a duplicate of this bit set, using the new allocator. `pub fn count[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) usize`
+    
+Returns the total number of set bits in this bit set. `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.deinit)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+    
+Deinitializes the array and releases its memory. The passed allocator must be the same one used for init* or resize in the past. `pub fn eql[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.eql)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), other: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) bool`
+    
+Returns true iff every corresponding bit in both bit sets are the same. `pub fn findFirstSet[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.findFirstSet)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) ?usize`
+    
+Finds the index of the first set bit. If no bits are set, returns null. `pub fn findLastSet[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.findLastSet)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) ?usize`
+    
+Finds the index of the last set bit. If no bits are set, returns null. `pub fn initEmpty[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.initEmpty)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), bit_length: usize) !Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)`
+    
+Creates a bit set with no elements present. If bit_length is not zero, deinit must eventually be called. `pub fn initFull[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.initFull)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), bit_length: usize) !Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)`
+    
+Creates a bit set with all elements present. If bit_length is not zero, deinit must eventually be called. `pub fn isSet[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.isSet)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), index: usize) bool`
+    
+Returns true if the bit at the specified index is present in the set, false otherwise. `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.iterator)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), comptime options: IteratorOptions[](https://ziglang.org/documentation/master/std/#std.bit_set.IteratorOptions)) Iterator[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.Iterator)(options)`
+    
+Iterates through the items in the set, according to the options. The default options (.{}) will iterate indices of set bits in ascending order. Modifications to the underlying bit set may or may not be observed by the iterator. Resizing the underlying bit set invalidates the iterator. `pub fn resize[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.resize)(self: *@This(), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_len: usize, fill: bool) !void`
+    
+Resizes to a new bit_length. If the new length is larger than the old length, fills any added bits with `fill`. If new_len is not zero, deinit must eventually be called. `pub fn set[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.set)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), index: usize) void`
+    
+Adds a specific bit to the bit set `pub fn setAll[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.setAll)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Set all bits to 1. `pub fn setIntersection[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.setIntersection)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), other: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Performs an intersection of two bit sets, and stores the result in the first one. Bits in the result are set if the corresponding bits were set in both inputs. The two sets must both be the same bit_length. `pub fn setRangeValue[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.setRangeValue)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), range: Range[](https://ziglang.org/documentation/master/std/#std.bit_set.Range), value: bool) void`
+    
+Changes the value of all bits in the specified range to match the passed boolean. `pub fn setUnion[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.setUnion)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), other: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Performs a union of two bit sets, and stores the result in the first one. Bits in the result are set if the corresponding bits were set in either input. The two sets must both be the same bit_length. `pub fn setValue[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.setValue)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), index: usize, value: bool) void`
+    
+Changes the value of the specified bit of the bit set to match the passed boolean. `pub fn subsetOf[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.subsetOf)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), other: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) bool`
+    
+Returns true iff the first bit set is the subset of the second one. `pub fn supersetOf[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.supersetOf)(self: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), other: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) bool`
+    
+Returns true iff the first bit set is the superset of the second one. `pub fn toggle[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.toggle)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), index: usize) void`
+    
+Flips a specific bit in the bit set `pub fn toggleAll[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.toggleAll)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Flips every bit in the bit set. `pub fn toggleFirstSet[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.toggleFirstSet)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) ?usize`
+    
+Finds the index of the first set bit, and unsets it. If no bits are set, returns null. `pub fn toggleSet[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.toggleSet)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), toggles: Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Flips all bits in this bit set which are present in the toggles bit set. Both sets must have the same bit_length. `pub fn unset[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.unset)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged), index: usize) void`
+    
+Removes a specific bit from the bit set `pub fn unsetAll[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged.unsetAll)(self: *Self[](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)) void`
+    
+Set all bits to 0.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

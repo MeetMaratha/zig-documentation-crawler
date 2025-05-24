@@ -1,0 +1,497 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [elf](https://ziglang.org/documentation/master/std/#std.elf)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/elf.zig)
+Executable and Linkable Format.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Addr](https://ziglang.org/documentation/master/std/#std.elf.Addr)
+  * [Auxv](https://ziglang.org/documentation/master/std/#std.elf.Auxv)
+  * [COMPRESS](https://ziglang.org/documentation/master/std/#std.elf.COMPRESS)
+  * [Chdr](https://ziglang.org/documentation/master/std/#std.elf.Chdr)
+  * [Dyn](https://ziglang.org/documentation/master/std/#std.elf.Dyn)
+  * [EM](https://ziglang.org/documentation/master/std/#std.elf.EM)
+  * [ET](https://ziglang.org/documentation/master/std/#std.elf.ET)
+  * [Ehdr](https://ziglang.org/documentation/master/std/#std.elf.Ehdr)
+  * [Elf32_Addr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Addr)
+  * [Elf32_Chdr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Chdr)
+  * [Elf32_Conflict](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Addr)
+  * [Elf32_Dyn](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Dyn)
+  * [Elf32_Ehdr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Ehdr)
+  * [Elf32_Lib](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Lib)
+  * [Elf32_Move](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Move)
+  * [Elf32_Nhdr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Nhdr)
+  * [Elf32_Off](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Off)
+  * [Elf32_Phdr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Phdr)
+  * [Elf32_RegInfo](https://ziglang.org/documentation/master/std/#std.elf.Elf32_RegInfo)
+  * [Elf32_Rel](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Rel)
+  * [Elf32_Rela](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Rela)
+  * [Elf32_Relr](https://ziglang.org/documentation/master/std/#std.elf.Word)
+  * [Elf32_Section](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Section)
+  * [Elf32_Shdr](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Shdr)
+  * [Elf32_Sxword](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Sxword)
+  * [Elf32_Sym](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Sym)
+  * [Elf32_Syminfo](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Syminfo)
+  * [Elf32_Verneed](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Verneed)
+  * [Elf32_Xword](https://ziglang.org/documentation/master/std/#std.elf.Elf32_Xword)
+  * [Elf32_auxv_t](https://ziglang.org/documentation/master/std/#std.elf.Elf32_auxv_t)
+  * [Elf32_gptab](https://ziglang.org/documentation/master/std/#std.elf.Elf32_gptab)
+  * [Elf64_Addr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Addr)
+  * [Elf64_Chdr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Chdr)
+  * [Elf64_Dyn](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Dyn)
+  * [Elf64_Ehdr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Ehdr)
+  * [Elf64_Lib](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Lib)
+  * [Elf64_Move](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Move)
+  * [Elf64_Nhdr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Nhdr)
+  * [Elf64_Off](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Off)
+  * [Elf64_Phdr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Phdr)
+  * [Elf64_Rel](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Rel)
+  * [Elf64_Rela](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Rela)
+  * [Elf64_Relr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Xword)
+  * [Elf64_Section](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Section)
+  * [Elf64_Shdr](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Shdr)
+  * [Elf64_Sxword](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Sxword)
+  * [Elf64_Sym](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Sym)
+  * [Elf64_Syminfo](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Syminfo)
+  * [Elf64_Verneed](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Verneed)
+  * [Elf64_Xword](https://ziglang.org/documentation/master/std/#std.elf.Elf64_Xword)
+  * [Elf64_auxv_t](https://ziglang.org/documentation/master/std/#std.elf.Elf64_auxv_t)
+  * [Elf_MIPS_ABIFlags_v0](https://ziglang.org/documentation/master/std/#std.elf.Elf_MIPS_ABIFlags_v0)
+  * [Elf_Options](https://ziglang.org/documentation/master/std/#std.elf.Elf_Options)
+  * [Elf_Options_Hw](https://ziglang.org/documentation/master/std/#std.elf.Elf_Options_Hw)
+  * [Half](https://ziglang.org/documentation/master/std/#std.elf.Half)
+  * [Header](https://ziglang.org/documentation/master/std/#std.elf.Header)
+  * [OSABI](https://ziglang.org/documentation/master/std/#std.elf.OSABI)
+  * [Phdr](https://ziglang.org/documentation/master/std/#std.elf.Phdr)
+  * [ProgramHeaderIterator](https://ziglang.org/documentation/master/std/#std.elf.ProgramHeaderIterator)
+  * [R_AARCH64](https://ziglang.org/documentation/master/std/#std.elf.R_AARCH64)
+  * [R_PPC64](https://ziglang.org/documentation/master/std/#std.elf.R_PPC64)
+  * [R_RISCV](https://ziglang.org/documentation/master/std/#std.elf.R_RISCV)
+  * [R_X86_64](https://ziglang.org/documentation/master/std/#std.elf.R_X86_64)
+  * [Rel](https://ziglang.org/documentation/master/std/#std.elf.Rel)
+  * [Rela](https://ziglang.org/documentation/master/std/#std.elf.Rela)
+  * [STV](https://ziglang.org/documentation/master/std/#std.elf.STV)
+  * [SectionHeaderIterator](https://ziglang.org/documentation/master/std/#std.elf.SectionHeaderIterator)
+  * [Shdr](https://ziglang.org/documentation/master/std/#std.elf.Shdr)
+  * [Sword](https://ziglang.org/documentation/master/std/#std.elf.Sword)
+  * [Sym](https://ziglang.org/documentation/master/std/#std.elf.Sym)
+  * [VER_NDX](https://ziglang.org/documentation/master/std/#std.elf.VER_NDX)
+  * [Verdaux](https://ziglang.org/documentation/master/std/#std.elf.Verdaux)
+  * [Verdef](https://ziglang.org/documentation/master/std/#std.elf.Verdef)
+  * [Vernaux](https://ziglang.org/documentation/master/std/#std.elf.Vernaux)
+  * [Versym](https://ziglang.org/documentation/master/std/#std.elf.Versym)
+  * [Word](https://ziglang.org/documentation/master/std/#std.elf.Word)
+  * [ar_hdr](https://ziglang.org/documentation/master/std/#std.elf.ar_hdr)
+
+
+## Namespaces
+  * [gnu_hash](https://ziglang.org/documentation/master/std/#std.elf.gnu_hash)
+
+
+## Global Variables
+## Values
+[ARFMAG](https://ziglang.org/documentation/master/std/#std.elf.ARFMAG)| | String in ar_fmag at the end of each header.  
+---|---|---  
+[ARMAG](https://ziglang.org/documentation/master/std/#std.elf.ARMAG)| | String that begins an archive file.  
+[AT_BASE](https://ziglang.org/documentation/master/std/#std.elf.AT_BASE)| |   
+[AT_BASE_PLATFORM](https://ziglang.org/documentation/master/std/#std.elf.AT_BASE_PLATFORM)| |   
+[AT_CLKTCK](https://ziglang.org/documentation/master/std/#std.elf.AT_CLKTCK)| |   
+[AT_DCACHEBSIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_DCACHEBSIZE)| |   
+[AT_EGID](https://ziglang.org/documentation/master/std/#std.elf.AT_EGID)| |   
+[AT_ENTRY](https://ziglang.org/documentation/master/std/#std.elf.AT_ENTRY)| |   
+[AT_EUID](https://ziglang.org/documentation/master/std/#std.elf.AT_EUID)| |   
+[AT_EXECFD](https://ziglang.org/documentation/master/std/#std.elf.AT_EXECFD)| |   
+[AT_EXECFN](https://ziglang.org/documentation/master/std/#std.elf.AT_EXECFN)| |   
+[AT_FLAGS](https://ziglang.org/documentation/master/std/#std.elf.AT_FLAGS)| |   
+[AT_FPUCW](https://ziglang.org/documentation/master/std/#std.elf.AT_FPUCW)| |   
+[AT_GID](https://ziglang.org/documentation/master/std/#std.elf.AT_GID)| |   
+[AT_HWCAP](https://ziglang.org/documentation/master/std/#std.elf.AT_HWCAP)| |   
+[AT_HWCAP2](https://ziglang.org/documentation/master/std/#std.elf.AT_HWCAP2)| |   
+[AT_ICACHEBSIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_ICACHEBSIZE)| |   
+[AT_IGNORE](https://ziglang.org/documentation/master/std/#std.elf.AT_IGNORE)| |   
+[AT_IGNOREPPC](https://ziglang.org/documentation/master/std/#std.elf.AT_IGNOREPPC)| |   
+[AT_L1D_CACHEGEOMETRY](https://ziglang.org/documentation/master/std/#std.elf.AT_L1D_CACHEGEOMETRY)| |   
+[AT_L1D_CACHESHAPE](https://ziglang.org/documentation/master/std/#std.elf.AT_L1D_CACHESHAPE)| |   
+[AT_L1D_CACHESIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_L1D_CACHESIZE)| |   
+[AT_L1I_CACHEGEOMETRY](https://ziglang.org/documentation/master/std/#std.elf.AT_L1I_CACHEGEOMETRY)| |   
+[AT_L1I_CACHESHAPE](https://ziglang.org/documentation/master/std/#std.elf.AT_L1I_CACHESHAPE)| |   
+[AT_L1I_CACHESIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_L1I_CACHESIZE)| |   
+[AT_L2_CACHEGEOMETRY](https://ziglang.org/documentation/master/std/#std.elf.AT_L2_CACHEGEOMETRY)| |   
+[AT_L2_CACHESHAPE](https://ziglang.org/documentation/master/std/#std.elf.AT_L2_CACHESHAPE)| |   
+[AT_L2_CACHESIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_L2_CACHESIZE)| |   
+[AT_L3_CACHEGEOMETRY](https://ziglang.org/documentation/master/std/#std.elf.AT_L3_CACHEGEOMETRY)| |   
+[AT_L3_CACHESHAPE](https://ziglang.org/documentation/master/std/#std.elf.AT_L3_CACHESHAPE)| |   
+[AT_L3_CACHESIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_L3_CACHESIZE)| |   
+[AT_NOTELF](https://ziglang.org/documentation/master/std/#std.elf.AT_NOTELF)| |   
+[AT_NULL](https://ziglang.org/documentation/master/std/#std.elf.AT_NULL)| |   
+[AT_PAGESZ](https://ziglang.org/documentation/master/std/#std.elf.AT_PAGESZ)| |   
+[AT_PHDR](https://ziglang.org/documentation/master/std/#std.elf.AT_PHDR)| |   
+[AT_PHENT](https://ziglang.org/documentation/master/std/#std.elf.AT_PHENT)| |   
+[AT_PHNUM](https://ziglang.org/documentation/master/std/#std.elf.AT_PHNUM)| |   
+[AT_PLATFORM](https://ziglang.org/documentation/master/std/#std.elf.AT_PLATFORM)| |   
+[AT_RANDOM](https://ziglang.org/documentation/master/std/#std.elf.AT_RANDOM)| |   
+[AT_SECURE](https://ziglang.org/documentation/master/std/#std.elf.AT_SECURE)| |   
+[AT_SYSINFO](https://ziglang.org/documentation/master/std/#std.elf.AT_SYSINFO)| |   
+[AT_SYSINFO_EHDR](https://ziglang.org/documentation/master/std/#std.elf.AT_SYSINFO_EHDR)| |   
+[AT_UCACHEBSIZE](https://ziglang.org/documentation/master/std/#std.elf.AT_UCACHEBSIZE)| |   
+[AT_UID](https://ziglang.org/documentation/master/std/#std.elf.AT_UID)| |   
+[DF_1_CONFALT](https://ziglang.org/documentation/master/std/#std.elf.DF_1_CONFALT)| |   
+[DF_1_DIRECT](https://ziglang.org/documentation/master/std/#std.elf.DF_1_DIRECT)| |   
+[DF_1_DISPRELDNE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_DISPRELDNE)| |   
+[DF_1_DISPRELPND](https://ziglang.org/documentation/master/std/#std.elf.DF_1_DISPRELPND)| |   
+[DF_1_EDITED](https://ziglang.org/documentation/master/std/#std.elf.DF_1_EDITED)| |   
+[DF_1_ENDFILTEE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_ENDFILTEE)| |   
+[DF_1_GLOBAL](https://ziglang.org/documentation/master/std/#std.elf.DF_1_GLOBAL)| |   
+[DF_1_GLOBAUDIT](https://ziglang.org/documentation/master/std/#std.elf.DF_1_GLOBAUDIT)| |   
+[DF_1_GROUP](https://ziglang.org/documentation/master/std/#std.elf.DF_1_GROUP)| |   
+[DF_1_IGNMULDEF](https://ziglang.org/documentation/master/std/#std.elf.DF_1_IGNMULDEF)| |   
+[DF_1_INITFIRST](https://ziglang.org/documentation/master/std/#std.elf.DF_1_INITFIRST)| |   
+[DF_1_INTERPOSE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_INTERPOSE)| |   
+[DF_1_LOADFLTR](https://ziglang.org/documentation/master/std/#std.elf.DF_1_LOADFLTR)| |   
+[DF_1_NODEFLIB](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NODEFLIB)| |   
+[DF_1_NODELETE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NODELETE)| |   
+[DF_1_NODIRECT](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NODIRECT)| |   
+[DF_1_NODUMP](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NODUMP)| |   
+[DF_1_NOHDR](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NOHDR)| |   
+[DF_1_NOKSYMS](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NOKSYMS)| |   
+[DF_1_NOOPEN](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NOOPEN)| |   
+[DF_1_NORELOC](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NORELOC)| |   
+[DF_1_NOW](https://ziglang.org/documentation/master/std/#std.elf.DF_1_NOW)| |   
+[DF_1_ORIGIN](https://ziglang.org/documentation/master/std/#std.elf.DF_1_ORIGIN)| |   
+[DF_1_PIE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_PIE)| |   
+[DF_1_SINGLETON](https://ziglang.org/documentation/master/std/#std.elf.DF_1_SINGLETON)| |   
+[DF_1_STUB](https://ziglang.org/documentation/master/std/#std.elf.DF_1_STUB)| |   
+[DF_1_SYMINTPOSE](https://ziglang.org/documentation/master/std/#std.elf.DF_1_SYMINTPOSE)| |   
+[DF_1_TRANS](https://ziglang.org/documentation/master/std/#std.elf.DF_1_TRANS)| |   
+[DF_BIND_NOW](https://ziglang.org/documentation/master/std/#std.elf.DF_BIND_NOW)| |   
+[DF_ORIGIN](https://ziglang.org/documentation/master/std/#std.elf.DF_ORIGIN)| |   
+[DF_STATIC_TLS](https://ziglang.org/documentation/master/std/#std.elf.DF_STATIC_TLS)| |   
+[DF_SYMBOLIC](https://ziglang.org/documentation/master/std/#std.elf.DF_SYMBOLIC)| |   
+[DF_TEXTREL](https://ziglang.org/documentation/master/std/#std.elf.DF_TEXTREL)| |   
+[DT_ADDRNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_ADDRNUM)| |   
+[DT_ADDRRNGHI](https://ziglang.org/documentation/master/std/#std.elf.DT_ADDRRNGHI)| |   
+[DT_ADDRRNGLO](https://ziglang.org/documentation/master/std/#std.elf.DT_ADDRRNGLO)| |   
+[DT_ALPHA_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_ALPHA_NUM)| |   
+[DT_ALPHA_PLTRO](https://ziglang.org/documentation/master/std/#std.elf.DT_ALPHA_PLTRO)| |   
+[DT_AUDIT](https://ziglang.org/documentation/master/std/#std.elf.DT_AUDIT)| |   
+[DT_AUXILIARY](https://ziglang.org/documentation/master/std/#std.elf.DT_AUXILIARY)| |   
+[DT_BIND_NOW](https://ziglang.org/documentation/master/std/#std.elf.DT_BIND_NOW)| |   
+[DT_CHECKSUM](https://ziglang.org/documentation/master/std/#std.elf.DT_CHECKSUM)| |   
+[DT_CONFIG](https://ziglang.org/documentation/master/std/#std.elf.DT_CONFIG)| |   
+[DT_DEBUG](https://ziglang.org/documentation/master/std/#std.elf.DT_DEBUG)| |   
+[DT_DEPAUDIT](https://ziglang.org/documentation/master/std/#std.elf.DT_DEPAUDIT)| |   
+[DT_ENCODING](https://ziglang.org/documentation/master/std/#std.elf.DT_ENCODING)| |   
+[DT_EXTRANUM](https://ziglang.org/documentation/master/std/#std.elf.DT_EXTRANUM)| |   
+[DT_FEATURE_1](https://ziglang.org/documentation/master/std/#std.elf.DT_FEATURE_1)| |   
+[DT_FILTER](https://ziglang.org/documentation/master/std/#std.elf.DT_FILTER)| |   
+[DT_FINI](https://ziglang.org/documentation/master/std/#std.elf.DT_FINI)| |   
+[DT_FINI_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.DT_FINI_ARRAY)| |   
+[DT_FINI_ARRAYSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_FINI_ARRAYSZ)| |   
+[DT_FLAGS](https://ziglang.org/documentation/master/std/#std.elf.DT_FLAGS)| |   
+[DT_FLAGS_1](https://ziglang.org/documentation/master/std/#std.elf.DT_FLAGS_1)| |   
+[DT_GNU_CONFLICT](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_CONFLICT)| |   
+[DT_GNU_CONFLICTSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_CONFLICTSZ)| |   
+[DT_GNU_HASH](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_HASH)| |   
+[DT_GNU_LIBLIST](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_LIBLIST)| |   
+[DT_GNU_LIBLISTSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_LIBLISTSZ)| |   
+[DT_GNU_PRELINKED](https://ziglang.org/documentation/master/std/#std.elf.DT_GNU_PRELINKED)| |   
+[DT_HASH](https://ziglang.org/documentation/master/std/#std.elf.DT_HASH)| |   
+[DT_HIOS](https://ziglang.org/documentation/master/std/#std.elf.DT_HIOS)| |   
+[DT_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.DT_HIPROC)| |   
+[DT_IA_64_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_IA_64_NUM)| |   
+[DT_IA_64_PLT_RESERVE](https://ziglang.org/documentation/master/std/#std.elf.DT_IA_64_PLT_RESERVE)| |   
+[DT_INIT](https://ziglang.org/documentation/master/std/#std.elf.DT_INIT)| |   
+[DT_INIT_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.DT_INIT_ARRAY)| |   
+[DT_INIT_ARRAYSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_INIT_ARRAYSZ)| |   
+[DT_JMPREL](https://ziglang.org/documentation/master/std/#std.elf.DT_JMPREL)| |   
+[DT_LOOS](https://ziglang.org/documentation/master/std/#std.elf.DT_LOOS)| |   
+[DT_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.DT_LOPROC)| |   
+[DT_MIPS_AUX_DYNAMIC](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_AUX_DYNAMIC)| |   
+[DT_MIPS_BASE_ADDRESS](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_BASE_ADDRESS)| |   
+[DT_MIPS_COMPACT_SIZE](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_COMPACT_SIZE)| |   
+[DT_MIPS_CONFLICT](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_CONFLICT)| |   
+[DT_MIPS_CONFLICTNO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_CONFLICTNO)| |   
+[DT_MIPS_CXX_FLAGS](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_CXX_FLAGS)| |   
+[DT_MIPS_DELTA_CLASS](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_CLASS)| |   
+[DT_MIPS_DELTA_CLASSSYM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_CLASSSYM)| |   
+[DT_MIPS_DELTA_CLASSSYM_NO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_CLASSSYM_NO)| |   
+[DT_MIPS_DELTA_CLASS_NO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_CLASS_NO)| |   
+[DT_MIPS_DELTA_INSTANCE](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_INSTANCE)| |   
+[DT_MIPS_DELTA_INSTANCE_NO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_INSTANCE_NO)| |   
+[DT_MIPS_DELTA_RELOC](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_RELOC)| |   
+[DT_MIPS_DELTA_RELOC_NO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_RELOC_NO)| |   
+[DT_MIPS_DELTA_SYM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_SYM)| |   
+[DT_MIPS_DELTA_SYM_NO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DELTA_SYM_NO)| |   
+[DT_MIPS_DYNSTR_ALIGN](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_DYNSTR_ALIGN)| |   
+[DT_MIPS_FLAGS](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_FLAGS)| |   
+[DT_MIPS_GOTSYM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_GOTSYM)| |   
+[DT_MIPS_GP_VALUE](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_GP_VALUE)| |   
+[DT_MIPS_HIDDEN_GOTIDX](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_HIDDEN_GOTIDX)| |   
+[DT_MIPS_HIPAGENO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_HIPAGENO)| |   
+[DT_MIPS_ICHECKSUM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_ICHECKSUM)| |   
+[DT_MIPS_INTERFACE](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_INTERFACE)| |   
+[DT_MIPS_INTERFACE_SIZE](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_INTERFACE_SIZE)| |   
+[DT_MIPS_IVERSION](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_IVERSION)| |   
+[DT_MIPS_LIBLIST](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_LIBLIST)| |   
+[DT_MIPS_LIBLISTNO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_LIBLISTNO)| |   
+[DT_MIPS_LOCALPAGE_GOTIDX](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_LOCALPAGE_GOTIDX)| |   
+[DT_MIPS_LOCAL_GOTIDX](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_LOCAL_GOTIDX)| |   
+[DT_MIPS_LOCAL_GOTNO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_LOCAL_GOTNO)| |   
+[DT_MIPS_MSYM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_MSYM)| |   
+[DT_MIPS_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_NUM)| |   
+[DT_MIPS_OPTIONS](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_OPTIONS)| |   
+[DT_MIPS_PERF_SUFFIX](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_PERF_SUFFIX)| |   
+[DT_MIPS_PIXIE_INIT](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_PIXIE_INIT)| |   
+[DT_MIPS_PLTGOT](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_PLTGOT)| |   
+[DT_MIPS_PROTECTED_GOTIDX](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_PROTECTED_GOTIDX)| |   
+[DT_MIPS_RLD_MAP](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_RLD_MAP)| |   
+[DT_MIPS_RLD_MAP_REL](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_RLD_MAP_REL)| |   
+[DT_MIPS_RLD_TEXT_RESOLVE_ADDR](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_RLD_TEXT_RESOLVE_ADDR)| |   
+[DT_MIPS_RLD_VERSION](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_RLD_VERSION)| |   
+[DT_MIPS_RWPLT](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_RWPLT)| |   
+[DT_MIPS_SYMBOL_LIB](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_SYMBOL_LIB)| |   
+[DT_MIPS_SYMTABNO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_SYMTABNO)| |   
+[DT_MIPS_TIME_STAMP](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_TIME_STAMP)| |   
+[DT_MIPS_UNREFEXTNO](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_UNREFEXTNO)| |   
+[DT_MOVEENT](https://ziglang.org/documentation/master/std/#std.elf.DT_MOVEENT)| |   
+[DT_MOVESZ](https://ziglang.org/documentation/master/std/#std.elf.DT_MOVESZ)| |   
+[DT_MOVETAB](https://ziglang.org/documentation/master/std/#std.elf.DT_MOVETAB)| |   
+[DT_NEEDED](https://ziglang.org/documentation/master/std/#std.elf.DT_NEEDED)| |   
+[DT_NIOS2_GP](https://ziglang.org/documentation/master/std/#std.elf.DT_NIOS2_GP)| |   
+[DT_NULL](https://ziglang.org/documentation/master/std/#std.elf.DT_NULL)| |   
+[DT_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_NUM)| |   
+[DT_PLTGOT](https://ziglang.org/documentation/master/std/#std.elf.DT_PLTGOT)| |   
+[DT_PLTPAD](https://ziglang.org/documentation/master/std/#std.elf.DT_PLTPAD)| |   
+[DT_PLTPADSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_PLTPADSZ)| |   
+[DT_PLTREL](https://ziglang.org/documentation/master/std/#std.elf.DT_PLTREL)| |   
+[DT_PLTRELSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_PLTRELSZ)| |   
+[DT_POSFLAG_1](https://ziglang.org/documentation/master/std/#std.elf.DT_POSFLAG_1)| |   
+[DT_PPC64_GLINK](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC64_GLINK)| |   
+[DT_PPC64_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC64_NUM)| |   
+[DT_PPC64_OPD](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC64_OPD)| |   
+[DT_PPC64_OPDSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC64_OPDSZ)| |   
+[DT_PPC64_OPT](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC64_OPT)| |   
+[DT_PPC_GOT](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC_GOT)| |   
+[DT_PPC_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC_NUM)| |   
+[DT_PPC_OPT](https://ziglang.org/documentation/master/std/#std.elf.DT_PPC_OPT)| |   
+[DT_PREINIT_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.DT_PREINIT_ARRAY)| |   
+[DT_PREINIT_ARRAYSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_PREINIT_ARRAYSZ)| |   
+[DT_PROCNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_MIPS_NUM)| |   
+[DT_REL](https://ziglang.org/documentation/master/std/#std.elf.DT_REL)| |   
+[DT_RELA](https://ziglang.org/documentation/master/std/#std.elf.DT_RELA)| |   
+[DT_RELACOUNT](https://ziglang.org/documentation/master/std/#std.elf.DT_RELACOUNT)| |   
+[DT_RELAENT](https://ziglang.org/documentation/master/std/#std.elf.DT_RELAENT)| |   
+[DT_RELASZ](https://ziglang.org/documentation/master/std/#std.elf.DT_RELASZ)| |   
+[DT_RELCOUNT](https://ziglang.org/documentation/master/std/#std.elf.DT_RELCOUNT)| |   
+[DT_RELENT](https://ziglang.org/documentation/master/std/#std.elf.DT_RELENT)| |   
+[DT_RELR](https://ziglang.org/documentation/master/std/#std.elf.DT_RELR)| |   
+[DT_RELRENT](https://ziglang.org/documentation/master/std/#std.elf.DT_RELRENT)| |   
+[DT_RELRSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_RELRSZ)| |   
+[DT_RELSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_RELSZ)| |   
+[DT_RPATH](https://ziglang.org/documentation/master/std/#std.elf.DT_RPATH)| |   
+[DT_RUNPATH](https://ziglang.org/documentation/master/std/#std.elf.DT_RUNPATH)| |   
+[DT_SONAME](https://ziglang.org/documentation/master/std/#std.elf.DT_SONAME)| |   
+[DT_SPARC_NUM](https://ziglang.org/documentation/master/std/#std.elf.DT_SPARC_NUM)| |   
+[DT_SPARC_REGISTER](https://ziglang.org/documentation/master/std/#std.elf.DT_SPARC_REGISTER)| |   
+[DT_STRSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_STRSZ)| |   
+[DT_STRTAB](https://ziglang.org/documentation/master/std/#std.elf.DT_STRTAB)| |   
+[DT_SYMBOLIC](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMBOLIC)| |   
+[DT_SYMENT](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMENT)| |   
+[DT_SYMINENT](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMINENT)| |   
+[DT_SYMINFO](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMINFO)| |   
+[DT_SYMINSZ](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMINSZ)| |   
+[DT_SYMTAB](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMTAB)| |   
+[DT_SYMTAB_SHNDX](https://ziglang.org/documentation/master/std/#std.elf.DT_SYMTAB_SHNDX)| |   
+[DT_TEXTREL](https://ziglang.org/documentation/master/std/#std.elf.DT_TEXTREL)| |   
+[DT_TLSDESC_GOT](https://ziglang.org/documentation/master/std/#std.elf.DT_TLSDESC_GOT)| |   
+[DT_TLSDESC_PLT](https://ziglang.org/documentation/master/std/#std.elf.DT_TLSDESC_PLT)| |   
+[DT_VALNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_VALNUM)| |   
+[DT_VALRNGHI](https://ziglang.org/documentation/master/std/#std.elf.DT_VALRNGHI)| |   
+[DT_VALRNGLO](https://ziglang.org/documentation/master/std/#std.elf.DT_VALRNGLO)| |   
+[DT_VERDEF](https://ziglang.org/documentation/master/std/#std.elf.DT_VERDEF)| |   
+[DT_VERDEFNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_VERDEFNUM)| |   
+[DT_VERNEED](https://ziglang.org/documentation/master/std/#std.elf.DT_VERNEED)| |   
+[DT_VERNEEDNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_VERNEEDNUM)| |   
+[DT_VERSIONTAGNUM](https://ziglang.org/documentation/master/std/#std.elf.DT_VERSIONTAGNUM)| |   
+[DT_VERSYM](https://ziglang.org/documentation/master/std/#std.elf.DT_VERSYM)| |   
+[EI_ABIVERSION](https://ziglang.org/documentation/master/std/#std.elf.EI_ABIVERSION)| |   
+[EI_CLASS](https://ziglang.org/documentation/master/std/#std.elf.EI_CLASS)| |   
+[EI_DATA](https://ziglang.org/documentation/master/std/#std.elf.EI_DATA)| |   
+[EI_NIDENT](https://ziglang.org/documentation/master/std/#std.elf.EI_NIDENT)| |   
+[EI_OSABI](https://ziglang.org/documentation/master/std/#std.elf.EI_OSABI)| |   
+[EI_PAD](https://ziglang.org/documentation/master/std/#std.elf.EI_PAD)| |   
+[EI_VERSION](https://ziglang.org/documentation/master/std/#std.elf.EI_VERSION)| |   
+[ELFCLASS32](https://ziglang.org/documentation/master/std/#std.elf.ELFCLASS32)| |   
+[ELFCLASS64](https://ziglang.org/documentation/master/std/#std.elf.ELFCLASS64)| |   
+[ELFCLASSNONE](https://ziglang.org/documentation/master/std/#std.elf.ELFCLASSNONE)| |   
+[ELFCLASSNUM](https://ziglang.org/documentation/master/std/#std.elf.ELFCLASSNUM)| |   
+[ELFDATA2LSB](https://ziglang.org/documentation/master/std/#std.elf.ELFDATA2LSB)| |   
+[ELFDATA2MSB](https://ziglang.org/documentation/master/std/#std.elf.ELFDATA2MSB)| |   
+[ELFDATANONE](https://ziglang.org/documentation/master/std/#std.elf.ELFDATANONE)| |   
+[ELFDATANUM](https://ziglang.org/documentation/master/std/#std.elf.ELFDATANUM)| |   
+[GRP_COMDAT](https://ziglang.org/documentation/master/std/#std.elf.GRP_COMDAT)| |   
+[MAGIC](https://ziglang.org/documentation/master/std/#std.elf.MAGIC)| |   
+[NT_GNU_BUILD_ID](https://ziglang.org/documentation/master/std/#std.elf.NT_GNU_BUILD_ID)| |   
+[PF_MASKOS](https://ziglang.org/documentation/master/std/#std.elf.PF_MASKOS)| | Bits for operating system-specific semantics.  
+[PF_MASKPROC](https://ziglang.org/documentation/master/std/#std.elf.PF_MASKPROC)| | Bits for processor-specific semantics.  
+[PF_R](https://ziglang.org/documentation/master/std/#std.elf.PF_R)| | Read  
+[PF_W](https://ziglang.org/documentation/master/std/#std.elf.PF_W)| | Write  
+[PF_X](https://ziglang.org/documentation/master/std/#std.elf.PF_X)| | Execute  
+[PT_DYNAMIC](https://ziglang.org/documentation/master/std/#std.elf.PT_DYNAMIC)| | Dynamic linking information  
+[PT_GNU_EH_FRAME](https://ziglang.org/documentation/master/std/#std.elf.PT_GNU_EH_FRAME)| | GCC .eh_frame_hdr segment  
+[PT_GNU_RELRO](https://ziglang.org/documentation/master/std/#std.elf.PT_GNU_RELRO)| | Read-only after relocation  
+[PT_GNU_STACK](https://ziglang.org/documentation/master/std/#std.elf.PT_GNU_STACK)| | Indicates stack executability  
+[PT_HIOS](https://ziglang.org/documentation/master/std/#std.elf.PT_HIOS)| | End of OS-specific  
+[PT_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.PT_HIPROC)| | End of processor-specific  
+[PT_HISUNW](https://ziglang.org/documentation/master/std/#std.elf.PT_HISUNW)| |   
+[PT_INTERP](https://ziglang.org/documentation/master/std/#std.elf.PT_INTERP)| | Program interpreter  
+[PT_LOAD](https://ziglang.org/documentation/master/std/#std.elf.PT_LOAD)| | Loadable program segment  
+[PT_LOOS](https://ziglang.org/documentation/master/std/#std.elf.PT_LOOS)| | Start of OS-specific  
+[PT_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.PT_LOPROC)| | Start of processor-specific  
+[PT_LOSUNW](https://ziglang.org/documentation/master/std/#std.elf.PT_LOSUNW)| |   
+[PT_NOTE](https://ziglang.org/documentation/master/std/#std.elf.PT_NOTE)| | Auxiliary information  
+[PT_NULL](https://ziglang.org/documentation/master/std/#std.elf.PT_NULL)| | Program header table entry unused  
+[PT_NUM](https://ziglang.org/documentation/master/std/#std.elf.PT_NUM)| | Number of defined types  
+[PT_PHDR](https://ziglang.org/documentation/master/std/#std.elf.PT_PHDR)| | Entry for header table itself  
+[PT_SHLIB](https://ziglang.org/documentation/master/std/#std.elf.PT_SHLIB)| | Reserved  
+[PT_SUNWBSS](https://ziglang.org/documentation/master/std/#std.elf.PT_SUNWBSS)| | Sun specific segment  
+[PT_SUNWSTACK](https://ziglang.org/documentation/master/std/#std.elf.PT_SUNWSTACK)| | Stack segment  
+[PT_TLS](https://ziglang.org/documentation/master/std/#std.elf.PT_TLS)| | Thread-local storage segment  
+[Relr](https://ziglang.org/documentation/master/std/#std.elf.Relr)| |   
+[SHF_ALLOC](https://ziglang.org/documentation/master/std/#std.elf.SHF_ALLOC)| | Section occupies memory during program execution.  
+[SHF_ARM_PURECODE](https://ziglang.org/documentation/master/std/#std.elf.SHF_ARM_PURECODE)| | Make code section unreadable when in execute-only mode  
+[SHF_COMPRESSED](https://ziglang.org/documentation/master/std/#std.elf.SHF_COMPRESSED)| | Identifies a section containing compressed data.  
+[SHF_EXCLUDE](https://ziglang.org/documentation/master/std/#std.elf.SHF_EXCLUDE)| | This section is excluded from the final executable or shared library.  
+[SHF_EXECINSTR](https://ziglang.org/documentation/master/std/#std.elf.SHF_EXECINSTR)| | Section contains executable machine instructions.  
+[SHF_GNU_RETAIN](https://ziglang.org/documentation/master/std/#std.elf.SHF_GNU_RETAIN)| | Not to be GCed by the linker  
+[SHF_GROUP](https://ziglang.org/documentation/master/std/#std.elf.SHF_GROUP)| | This section is a member of a section group.  
+[SHF_HEX_GPREL](https://ziglang.org/documentation/master/std/#std.elf.SHF_HEX_GPREL)| | All sections with the GPREL flag are grouped into a global data area for faster accesses  
+[SHF_INFO_LINK](https://ziglang.org/documentation/master/std/#std.elf.SHF_INFO_LINK)| | A field in this section holds a section header table index.  
+[SHF_LINK_ORDER](https://ziglang.org/documentation/master/std/#std.elf.SHF_LINK_ORDER)| | Adds special ordering requirements for link editors.  
+[SHF_MASKOS](https://ziglang.org/documentation/master/std/#std.elf.SHF_MASKOS)| | Start of target-specific flags.  
+[SHF_MASKPROC](https://ziglang.org/documentation/master/std/#std.elf.SHF_MASKPROC)| | Bits indicating processor-specific flags.  
+[SHF_MERGE](https://ziglang.org/documentation/master/std/#std.elf.SHF_MERGE)| | The data in this section may be merged.  
+[SHF_MIPS_ADDR](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_ADDR)| | Address size to be inferred from section entry size.  
+[SHF_MIPS_GPREL](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_GPREL)| | Section must be part of global data area.  
+[SHF_MIPS_LOCAL](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_LOCAL)| | Section data local to process.  
+[SHF_MIPS_MERGE](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_MERGE)| | This section should be merged.  
+[SHF_MIPS_NAMES](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_NAMES)| | Linker must generate implicit hidden weak names.  
+[SHF_MIPS_NODUPES](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_NODUPES)| | Section contains text/data which may be replicated in other sections. Linker must retain only one copy.  
+[SHF_MIPS_NOSTRIP](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_NOSTRIP)| | Do not strip this section.  
+[SHF_MIPS_STRING](https://ziglang.org/documentation/master/std/#std.elf.SHF_MIPS_STRING)| | Section data is string data by default.  
+[SHF_OS_NONCONFORMING](https://ziglang.org/documentation/master/std/#std.elf.SHF_OS_NONCONFORMING)| | This section requires special OS-specific processing to avoid incorrect behavior.  
+[SHF_STRINGS](https://ziglang.org/documentation/master/std/#std.elf.SHF_STRINGS)| | The data in this section is null-terminated strings.  
+[SHF_TLS](https://ziglang.org/documentation/master/std/#std.elf.SHF_TLS)| | This section holds Thread-Local Storage.  
+[SHF_WRITE](https://ziglang.org/documentation/master/std/#std.elf.SHF_WRITE)| | Section data should be writable during execution.  
+[SHF_X86_64_LARGE](https://ziglang.org/documentation/master/std/#std.elf.SHF_X86_64_LARGE)| | If an object file section does not have this flag set, then it may not hold more than 2GB and can be freely referred to in objects using smaller code models. Otherwise, only objects using larger code models can refer to them. For example, a medium code model object can refer to data in a section that sets this flag besides being able to refer to data in a section that does not set it; likewise, a small code model object can refer only to code in a section that does not set this flag.  
+[SHN_ABS](https://ziglang.org/documentation/master/std/#std.elf.SHN_ABS)| | Associated symbol is absolute  
+[SHN_COMMON](https://ziglang.org/documentation/master/std/#std.elf.SHN_COMMON)| | Associated symbol is common  
+[SHN_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.SHN_HIPROC)| | End of processor-specific  
+[SHN_HIRESERVE](https://ziglang.org/documentation/master/std/#std.elf.SHN_HIRESERVE)| | End of reserved indices  
+[SHN_LIVEPATCH](https://ziglang.org/documentation/master/std/#std.elf.SHN_LIVEPATCH)| |   
+[SHN_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.SHN_LOPROC)| | Start of processor-specific  
+[SHN_LORESERVE](https://ziglang.org/documentation/master/std/#std.elf.SHN_LORESERVE)| | Start of reserved indices  
+[SHN_UNDEF](https://ziglang.org/documentation/master/std/#std.elf.SHN_UNDEF)| | Undefined section  
+[SHT_DYNAMIC](https://ziglang.org/documentation/master/std/#std.elf.SHT_DYNAMIC)| | Dynamic linking information  
+[SHT_DYNSYM](https://ziglang.org/documentation/master/std/#std.elf.SHT_DYNSYM)| | Dynamic linker symbol table  
+[SHT_FINI_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.SHT_FINI_ARRAY)| | Array of destructors  
+[SHT_GNU_HASH](https://ziglang.org/documentation/master/std/#std.elf.SHT_GNU_HASH)| | GNU hash table  
+[SHT_GNU_VERDEF](https://ziglang.org/documentation/master/std/#std.elf.SHT_GNU_VERDEF)| | GNU version definition table  
+[SHT_GNU_VERNEED](https://ziglang.org/documentation/master/std/#std.elf.SHT_GNU_VERNEED)| | GNU needed versions table  
+[SHT_GNU_VERSYM](https://ziglang.org/documentation/master/std/#std.elf.SHT_GNU_VERSYM)| | GNU symbol version table  
+[SHT_GROUP](https://ziglang.org/documentation/master/std/#std.elf.SHT_GROUP)| | Section group  
+[SHT_HASH](https://ziglang.org/documentation/master/std/#std.elf.SHT_HASH)| | Symbol hash table  
+[SHT_HIOS](https://ziglang.org/documentation/master/std/#std.elf.SHT_HIOS)| | End of OS-specific  
+[SHT_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.SHT_HIPROC)| | End of processor-specific  
+[SHT_HIUSER](https://ziglang.org/documentation/master/std/#std.elf.SHT_HIUSER)| | End of application-specific  
+[SHT_INIT_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.SHT_INIT_ARRAY)| | Array of constructors  
+[SHT_LLVM_ADDRSIG](https://ziglang.org/documentation/master/std/#std.elf.SHT_LLVM_ADDRSIG)| | LLVM address-significance table  
+[SHT_LOOS](https://ziglang.org/documentation/master/std/#std.elf.SHT_LOOS)| | Start of OS-specific  
+[SHT_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.SHT_LOPROC)| | Start of processor-specific  
+[SHT_LOUSER](https://ziglang.org/documentation/master/std/#std.elf.SHT_LOUSER)| | Start of application-specific  
+[SHT_NOBITS](https://ziglang.org/documentation/master/std/#std.elf.SHT_NOBITS)| | Program space with no data (bss)  
+[SHT_NOTE](https://ziglang.org/documentation/master/std/#std.elf.SHT_NOTE)| | Notes  
+[SHT_NULL](https://ziglang.org/documentation/master/std/#std.elf.SHT_NULL)| | Section header table entry unused  
+[SHT_PREINIT_ARRAY](https://ziglang.org/documentation/master/std/#std.elf.SHT_PREINIT_ARRAY)| | Array of pre-constructors  
+[SHT_PROGBITS](https://ziglang.org/documentation/master/std/#std.elf.SHT_PROGBITS)| | Program data  
+[SHT_REL](https://ziglang.org/documentation/master/std/#std.elf.SHT_REL)| | Relocation entries, no addends  
+[SHT_RELA](https://ziglang.org/documentation/master/std/#std.elf.SHT_RELA)| | Relocation entries with addends  
+[SHT_SHLIB](https://ziglang.org/documentation/master/std/#std.elf.SHT_SHLIB)| | Reserved  
+[SHT_STRTAB](https://ziglang.org/documentation/master/std/#std.elf.SHT_STRTAB)| | String table  
+[SHT_SYMTAB](https://ziglang.org/documentation/master/std/#std.elf.SHT_SYMTAB)| | Symbol table  
+[SHT_SYMTAB_SHNDX](https://ziglang.org/documentation/master/std/#std.elf.SHT_SYMTAB_SHNDX)| | Extended section indices  
+[SHT_X86_64_UNWIND](https://ziglang.org/documentation/master/std/#std.elf.SHT_X86_64_UNWIND)| | Unwind information  
+[STB_GLOBAL](https://ziglang.org/documentation/master/std/#std.elf.STB_GLOBAL)| | Global symbol  
+[STB_GNU_UNIQUE](https://ziglang.org/documentation/master/std/#std.elf.STB_GNU_UNIQUE)| | Unique symbol  
+[STB_HIOS](https://ziglang.org/documentation/master/std/#std.elf.STB_HIOS)| | End of OS-specific  
+[STB_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.STB_HIPROC)| | End of processor-specific  
+[STB_LOCAL](https://ziglang.org/documentation/master/std/#std.elf.STB_LOCAL)| | Local symbol  
+[STB_LOOS](https://ziglang.org/documentation/master/std/#std.elf.STB_LOOS)| | Start of OS-specific  
+[STB_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.STB_LOPROC)| | Start of processor-specific  
+[STB_MIPS_SPLIT_COMMON](https://ziglang.org/documentation/master/std/#std.elf.STB_MIPS_SPLIT_COMMON)| |   
+[STB_NUM](https://ziglang.org/documentation/master/std/#std.elf.STB_NUM)| | Number of defined types  
+[STB_WEAK](https://ziglang.org/documentation/master/std/#std.elf.STB_WEAK)| | Weak symbol  
+[STRNAME](https://ziglang.org/documentation/master/std/#std.elf.STRNAME)| | Strtab identifier  
+[STT_ARM_16BIT](https://ziglang.org/documentation/master/std/#std.elf.STT_HIPROC)| | End of processor-specific  
+[STT_ARM_TFUNC](https://ziglang.org/documentation/master/std/#std.elf.STT_LOPROC)| | Start of processor-specific  
+[STT_COMMON](https://ziglang.org/documentation/master/std/#std.elf.STT_COMMON)| | Symbol is a common data object  
+[STT_FILE](https://ziglang.org/documentation/master/std/#std.elf.STT_FILE)| | Symbol's name is file name  
+[STT_FUNC](https://ziglang.org/documentation/master/std/#std.elf.STT_FUNC)| | Symbol is a code object  
+[STT_GNU_IFUNC](https://ziglang.org/documentation/master/std/#std.elf.STT_GNU_IFUNC)| | Symbol is indirect code object  
+[STT_HIOS](https://ziglang.org/documentation/master/std/#std.elf.STT_HIOS)| | End of OS-specific  
+[STT_HIPROC](https://ziglang.org/documentation/master/std/#std.elf.STT_HIPROC)| | End of processor-specific  
+[STT_HP_OPAQUE](https://ziglang.org/documentation/master/std/#std.elf.STT_HP_OPAQUE)| |   
+[STT_HP_STUB](https://ziglang.org/documentation/master/std/#std.elf.STT_HP_STUB)| |   
+[STT_LOOS](https://ziglang.org/documentation/master/std/#std.elf.STT_LOOS)| | Start of OS-specific  
+[STT_LOPROC](https://ziglang.org/documentation/master/std/#std.elf.STT_LOPROC)| | Start of processor-specific  
+[STT_NOTYPE](https://ziglang.org/documentation/master/std/#std.elf.STT_NOTYPE)| | Symbol type is unspecified  
+[STT_NUM](https://ziglang.org/documentation/master/std/#std.elf.STT_NUM)| | Number of defined types  
+[STT_OBJECT](https://ziglang.org/documentation/master/std/#std.elf.STT_OBJECT)| | Symbol is a data object  
+[STT_PARISC_MILLICODE](https://ziglang.org/documentation/master/std/#std.elf.STT_PARISC_MILLICODE)| |   
+[STT_SECTION](https://ziglang.org/documentation/master/std/#std.elf.STT_SECTION)| | Symbol associated with a section  
+[STT_SPARC_REGISTER](https://ziglang.org/documentation/master/std/#std.elf.STT_SPARC_REGISTER)| |   
+[STT_TLS](https://ziglang.org/documentation/master/std/#std.elf.STT_TLS)| | Symbol is thread-local data object  
+[SYM64NAME](https://ziglang.org/documentation/master/std/#std.elf.SYM64NAME)| | 64-bit symtab identifier  
+[SYMDEFNAME](https://ziglang.org/documentation/master/std/#std.elf.SYMDEFNAME)| |   
+[SYMDEFSORTEDNAME](https://ziglang.org/documentation/master/std/#std.elf.SYMDEFSORTEDNAME)| |   
+[SYMNAME](https://ziglang.org/documentation/master/std/#std.elf.SYMNAME)| | 32-bit symtab identifier  
+[VER_FLG_BASE](https://ziglang.org/documentation/master/std/#std.elf.VER_FLG_BASE)| | Version definition of the file itself  
+[VER_FLG_WEAK](https://ziglang.org/documentation/master/std/#std.elf.VER_FLG_WEAK)| | Weak version identifier  
+[XCORE_SHF_CP_SECTION](https://ziglang.org/documentation/master/std/#std.elf.XCORE_SHF_CP_SECTION)| | All sections with the "c" flag are grouped together by the linker to form the constant pool and the cp register is set to the start of the constant pool by the boot code.  
+[XCORE_SHF_DP_SECTION](https://ziglang.org/documentation/master/std/#std.elf.XCORE_SHF_DP_SECTION)| | All sections with the "d" flag are grouped together by the linker to form the data section and the dp register is set to the start of the section by the boot code.  
+## Functions
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

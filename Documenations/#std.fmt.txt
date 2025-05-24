@@ -1,0 +1,134 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [fmt](https://ziglang.org/documentation/master/std/#std.fmt)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/fmt.zig)
+String formatting and parsing.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Alignment](https://ziglang.org/documentation/master/std/#std.fmt.Alignment)
+  * [ArgSetType](https://ziglang.org/documentation/master/std/#std.fmt.ArgSetType)
+  * [ArgState](https://ziglang.org/documentation/master/std/#std.fmt.ArgState)
+  * [Case](https://ziglang.org/documentation/master/std/#std.fmt.Case)
+  * [FormatOptions](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions)
+  * [Formatter](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)
+  * [Parser](https://ziglang.org/documentation/master/std/#std.fmt.Parser)
+  * [Placeholder](https://ziglang.org/documentation/master/std/#std.fmt.Placeholder)
+  * [Specifier](https://ziglang.org/documentation/master/std/#std.fmt.Specifier)
+
+
+## Namespaces
+  * [format_float](https://ziglang.org/documentation/master/std/#std.fmt.format_float)
+
+
+## Global Variables
+## Values
+[default_max_depth](https://ziglang.org/documentation/master/std/#std.fmt.default_max_depth)| |   
+---|---|---  
+[hex_charset](https://ziglang.org/documentation/master/std/#std.fmt.hex_charset)| |   
+## Functions `pub fn allocPrint[](https://ziglang.org/documentation/master/std/#std.fmt.allocPrint)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime fmt: []const u8, args: anytype) AllocPrintError[](https://ziglang.org/documentation/master/std/#std.fmt.AllocPrintError)![]u8`
+`pub fn allocPrintZ[](https://ziglang.org/documentation/master/std/#std.fmt.allocPrintZ)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime fmt: []const u8, args: anytype) AllocPrintError[](https://ziglang.org/documentation/master/std/#std.fmt.AllocPrintError)![:0]u8`
+`pub fn bufPrint[](https://ziglang.org/documentation/master/std/#std.fmt.bufPrint)(buf: []u8, comptime fmt: []const u8, args: anytype) BufPrintError[](https://ziglang.org/documentation/master/std/#std.fmt.BufPrintError)![]u8`
+    
+Print a Formatter string into `buf`. Actually just a thin wrapper around `format[](https://ziglang.org/documentation/master/std/#std.fmt.format)` and `fixedBufferStream`. Returns a slice of the bytes printed to. `pub fn bufPrintIntToSlice[](https://ziglang.org/documentation/master/std/#std.fmt.bufPrintIntToSlice)(buf: []u8, value: anytype, base: u8, case: Case[](https://ziglang.org/documentation/master/std/#std.fmt.Case), options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions)) []u8`
+`pub fn bufPrintZ[](https://ziglang.org/documentation/master/std/#std.fmt.bufPrintZ)(buf: []u8, comptime fmt: []const u8, args: anytype) BufPrintError[](https://ziglang.org/documentation/master/std/#std.fmt.BufPrintError)![:0]u8`
+`pub fn bytesToHex[](https://ziglang.org/documentation/master/std/#std.fmt.bytesToHex)(input: anytype, case: Case[](https://ziglang.org/documentation/master/std/#std.fmt.Case)) [input.len * 2]u8`
+    
+Encodes a sequence of bytes as hexadecimal digits. Returns an array containing the encoded bytes. `pub fn charToDigit[](https://ziglang.org/documentation/master/std/#std.fmt.charToDigit)(c: u8, base: u8) (error{InvalidCharacter}!u8)`
+`pub inline fn comptimePrint[](https://ziglang.org/documentation/master/std/#std.fmt.comptimePrint)(comptime fmt: []const u8, args: anytype) *const [count[](https://ziglang.org/documentation/master/std/#std.fmt.count)(fmt, args):0]u8`
+`pub fn count[](https://ziglang.org/documentation/master/std/#std.fmt.count)(comptime fmt: []const u8, args: anytype) u64`
+    
+Count the characters needed for format. Useful for preallocating memory `pub fn defaultSpec[](https://ziglang.org/documentation/master/std/#std.fmt.defaultSpec)(comptime T: type) [:0]const u8`
+`pub fn digitToChar[](https://ziglang.org/documentation/master/std/#std.fmt.digitToChar)(digit: u8, case: Case[](https://ziglang.org/documentation/master/std/#std.fmt.Case)) u8`
+`pub fn digits2[](https://ziglang.org/documentation/master/std/#std.fmt.digits2)(value: u8) [2]u8`
+    
+Converts values in the range [0, 100) to a base 10 string. `pub fn fmtDuration[](https://ziglang.org/documentation/master/std/#std.fmt.fmtDuration)(ns: u64) Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatDuration[](https://ziglang.org/documentation/master/std/#std.fmt.formatDuration))`
+    
+Return a Formatter for number of nanoseconds according to its magnitude: [#y][#w][#d][#h][#m]#[.###][n|u|m]s `pub fn fmtDurationSigned[](https://ziglang.org/documentation/master/std/#std.fmt.fmtDurationSigned)(ns: i64) Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatDurationSigned[](https://ziglang.org/documentation/master/std/#std.fmt.formatDurationSigned))`
+    
+Return a Formatter for number of nanoseconds according to its signed magnitude: [#y][#w][#d][#h][#m]#[.###][n|u|m]s `pub fn fmtIntSizeBin[](https://ziglang.org/documentation/master/std/#std.fmt.fmtIntSizeBin)(value: u64) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSizeBin[](https://ziglang.org/documentation/master/std/#std.fmt.formatSizeBin))`
+    
+Return a Formatter for a u64 value representing a file size. This formatter represents the number as multiple of 1024 and uses the IEC measurement units (KiB, MiB, GiB, ...). Format option `precision` is ignored when `value` is less than 1KiB `pub fn fmtIntSizeDec[](https://ziglang.org/documentation/master/std/#std.fmt.fmtIntSizeDec)(value: u64) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSizeDec[](https://ziglang.org/documentation/master/std/#std.fmt.formatSizeDec))`
+    
+Return a Formatter for a u64 value representing a file size. This formatter represents the number as multiple of 1000 and uses the SI measurement units (kB, MB, GB, ...). Format option `precision` is ignored when `value` is less than 1kB `pub fn fmtSliceEscapeLower[](https://ziglang.org/documentation/master/std/#std.fmt.fmtSliceEscapeLower)(bytes: []const u8) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSliceEscapeLower[](https://ziglang.org/documentation/master/std/#std.fmt.formatSliceEscapeLower))`
+    
+Return a Formatter for a []const u8 where every non-printable ASCII character is escaped as \xNN, where NN is the character in lowercase hexadecimal notation. `pub fn fmtSliceEscapeUpper[](https://ziglang.org/documentation/master/std/#std.fmt.fmtSliceEscapeUpper)(bytes: []const u8) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSliceEscapeUpper[](https://ziglang.org/documentation/master/std/#std.fmt.formatSliceEscapeUpper))`
+    
+Return a Formatter for a []const u8 where every non-printable ASCII character is escaped as \xNN, where NN is the character in uppercase hexadecimal notation. `pub fn fmtSliceHexLower[](https://ziglang.org/documentation/master/std/#std.fmt.fmtSliceHexLower)(bytes: []const u8) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSliceHexLower[](https://ziglang.org/documentation/master/std/#std.fmt.formatSliceHexLower))`
+    
+Return a Formatter for a []const u8 where every byte is formatted as a pair of lowercase hexadecimal digits. `pub fn fmtSliceHexUpper[](https://ziglang.org/documentation/master/std/#std.fmt.fmtSliceHexUpper)(bytes: []const u8) std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).Formatter[](https://ziglang.org/documentation/master/std/#std.fmt.Formatter)(formatSliceHexUpper[](https://ziglang.org/documentation/master/std/#std.fmt.formatSliceHexUpper))`
+    
+Return a Formatter for a []const u8 where every byte is formatted as pair of uppercase hexadecimal digits. `pub fn format[](https://ziglang.org/documentation/master/std/#std.fmt.format)( writer: anytype, comptime fmt: []const u8, args: anytype, ) !void`
+    
+Renders fmt string with args, calling `writer` with slices of bytes. If `writer` returns an error, the error is returned from `format[](https://ziglang.org/documentation/master/std/#std.fmt.format)` and `writer` is not called again. `pub fn format[](https://ziglang.org/documentation/master/std/#std.fmt.format)(s: @This(), comptime _: []const u8, _: std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype) !void`
+`pub fn format[](https://ziglang.org/documentation/master/std/#std.fmt.format)( self: SelfType[](https://ziglang.org/documentation/master/std/#std.fmt), comptime fmt: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn format[](https://ziglang.org/documentation/master/std/#std.fmt.format)( self: SelfType[](https://ziglang.org/documentation/master/std/#std.fmt), comptime fmt: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn format[](https://ziglang.org/documentation/master/std/#std.fmt.format)(self: R[](https://ziglang.org/documentation/master/std/#std.fmt), comptime _: []const u8, _: std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype) !void`
+`pub fn formatAddress[](https://ziglang.org/documentation/master/std/#std.fmt.formatAddress)(value: anytype, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype) @TypeOf(writer).Error!void`
+`pub fn formatAsciiChar[](https://ziglang.org/documentation/master/std/#std.fmt.formatAsciiChar)( c: u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatBuf[](https://ziglang.org/documentation/master/std/#std.fmt.formatBuf)( buf: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatFloat[](https://ziglang.org/documentation/master/std/#std.fmt.format_float.formatFloat)(buf: []u8, v_: anytype, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.format_float.FormatOptions)) FormatError[](https://ziglang.org/documentation/master/std/#std.fmt.format_float.FormatError)![]const u8`
+    
+Format a floating-point value and write it to buffer. Returns a slice to the buffer containing the string representation. `pub fn formatFloatHexadecimal[](https://ziglang.org/documentation/master/std/#std.fmt.formatFloatHexadecimal)( value: anytype, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatInt[](https://ziglang.org/documentation/master/std/#std.fmt.formatInt)( value: anytype, base: u8, case: Case[](https://ziglang.org/documentation/master/std/#std.fmt.Case), options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatIntBuf[](https://ziglang.org/documentation/master/std/#std.fmt.formatIntBuf)(out_buf: []u8, value: anytype, base: u8, case: Case[](https://ziglang.org/documentation/master/std/#std.fmt.Case), options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions)) usize`
+`pub fn formatIntValue[](https://ziglang.org/documentation/master/std/#std.fmt.formatIntValue)( value: anytype, comptime fmt: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatText[](https://ziglang.org/documentation/master/std/#std.fmt.formatText)( bytes: []const u8, comptime fmt: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn formatType[](https://ziglang.org/documentation/master/std/#std.fmt.formatType)( value: anytype, comptime fmt: []const u8, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, max_depth: usize, ) @TypeOf(writer).Error!void`
+`pub fn formatUnicodeCodepoint[](https://ziglang.org/documentation/master/std/#std.fmt.formatUnicodeCodepoint)( c: u21, options: FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), writer: anytype, ) !void`
+`pub fn hex[](https://ziglang.org/documentation/master/std/#std.fmt.hex)(x: anytype) [@sizeOf(@TypeOf(x)) * 2]u8`
+    
+Converts an unsigned integer of any multiple of u8 to an array of lowercase hex bytes, little endian. `pub fn hexToBytes[](https://ziglang.org/documentation/master/std/#std.fmt.hexToBytes)(out: []u8, input: []const u8) ![]u8`
+    
+Decodes the sequence of bytes represented by the specified string of hexadecimal characters. Returns a slice of the output buffer containing the decoded bytes. `pub fn invalidFmtError[](https://ziglang.org/documentation/master/std/#std.fmt.invalidFmtError)(comptime fmt: []const u8, value: anytype) void`
+`pub fn parseFloat[](https://ziglang.org/documentation/master/std/#std.fmt.parse_float.parseFloat)(comptime T: type, s: []const u8) ParseFloatError[](https://ziglang.org/documentation/master/std/#std.fmt.parse_float.ParseFloatError)!T`
+`pub fn parseInt[](https://ziglang.org/documentation/master/std/#std.fmt.parseInt)(comptime T: type, buf: []const u8, base: u8) ParseIntError[](https://ziglang.org/documentation/master/std/#std.fmt.ParseIntError)!T`
+    
+Parses the string `buf` as signed or unsigned representation in the specified base of an integral value of type `T`. `pub fn parseIntSizeSuffix[](https://ziglang.org/documentation/master/std/#std.fmt.parseIntSizeSuffix)(buf: []const u8, digit_base: u8) ParseIntError[](https://ziglang.org/documentation/master/std/#std.fmt.ParseIntError)!usize`
+    
+Parses a number like '2G', '2Gi', or '2GiB'. `pub fn parseIntWithGenericCharacter[](https://ziglang.org/documentation/master/std/#std.fmt.parseIntWithGenericCharacter)( comptime Result: type, comptime Character: type, buf: []const Character, base: u8, ) ParseIntError[](https://ziglang.org/documentation/master/std/#std.fmt.ParseIntError)!Result`
+    
+Like `parseInt[](https://ziglang.org/documentation/master/std/#std.fmt.parseInt)`, but with a generic `Character` type. `pub fn parseUnsigned[](https://ziglang.org/documentation/master/std/#std.fmt.parseUnsigned)(comptime T: type, buf: []const u8, base: u8) ParseIntError[](https://ziglang.org/documentation/master/std/#std.fmt.ParseIntError)!T`
+    
+Parses the string `buf` as unsigned representation in the specified base of an integral value of type `T`.
+## Error Sets
+  * [AllocPrintError](https://ziglang.org/documentation/master/std/#std.fmt.AllocPrintError)
+  * [BufPrintError](https://ziglang.org/documentation/master/std/#std.fmt.BufPrintError)
+  * [FormatFloatError](https://ziglang.org/documentation/master/std/#std.fmt.format_float.FormatError)
+  * [ParseFloatError](https://ziglang.org/documentation/master/std/#std.fmt.parse_float.ParseFloatError)
+  * [ParseIntError](https://ziglang.org/documentation/master/std/#std.fmt.ParseIntError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

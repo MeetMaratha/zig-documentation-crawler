@@ -1,0 +1,90 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [static_string_map](https://ziglang.org/documentation/master/std/#std.static_string_map)
+  * [StaticStringMap](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMap)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/static_string_map.zig)
+Static string map optimized for small sets of disparate string keys. Works by separating the keys by length at initialization and only checking strings of equal length at runtime.
+## Parameters
+```
+V: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+kvs: *const KVs[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.KVs) = &empty_kvs[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.empty_kvs)
+```
+
+```
+len_indexes: [*]const u32 = &empty_len_indexes[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.empty_len_indexes)
+```
+
+```
+len_indexes_len: u32 = 0
+```
+
+```
+min_len: u32 = std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).maxInt[](https://ziglang.org/documentation/master/std/#std.math.maxInt)(u32)
+```
+
+```
+max_len: u32 = 0
+```
+
+## Types
+  * [KV](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.KV)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.deinit)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+    
+this method should only be used with init() and not with initComptime(). `pub fn get[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.get)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), str: []const u8) ?V`
+    
+Returns the value for the key if any, else null. `pub fn getIndex[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.getIndex)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), str: []const u8) ?usize`
+`pub fn getLongestPrefix[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.getLongestPrefix)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), str: []const u8) ?KV[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.KV)`
+    
+Returns the key-value pair where key is the longest prefix of `str` else null. `pub fn getLongestPrefixIndex[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.getLongestPrefixIndex)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), str: []const u8) ?usize`
+`pub fn has[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.has)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql), str: []const u8) bool`
+    
+Checks if the map has a value for the key. `pub fn init[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.init)(kvs_list: anytype, allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql)`
+    
+Returns a map backed by memory allocated with `allocator`. `pub inline fn initComptime[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.initComptime)(comptime kvs_list: anytype) Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql)`
+    
+Returns a map backed by static, comptime allocated memory. `pub fn keys[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.keys)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql)) []const []const u8`
+`pub fn values[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql.values)(self: Self[](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql)) []const V`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

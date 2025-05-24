@@ -1,0 +1,111 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [Random](https://ziglang.org/documentation/master/std/#std.Random)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/Random.zig)
+The engines provided here should be initialized from an external source. For a thread-local cryptographically secure pseudo random number generator, use `std.crypto.random[](https://ziglang.org/documentation/master/std/#std.crypto.tlcsprng.interface)`. Be sure to use a CSPRNG when required, otherwise using a normal PRNG will be faster and use substantially less stack space.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+ptr: *anyopaque
+```
+
+Any comparison of this field may result in illegal behavior, since it may be set to `undefined` in cases where the random implementation does not have any associated state.
+```
+fillFn: *const fn (ptr: *anyopaque, buf: []u8) void
+```
+
+## Types
+  * [Ascon](https://ziglang.org/documentation/master/std/#std.Random.Ascon)
+  * [ChaCha](https://ziglang.org/documentation/master/std/#std.Random.ChaCha)
+  * [DefaultCsprng](https://ziglang.org/documentation/master/std/#std.Random.ChaCha)
+  * [DefaultPrng](https://ziglang.org/documentation/master/std/#std.Random.Xoshiro256)
+  * [Isaac64](https://ziglang.org/documentation/master/std/#std.Random.Isaac64)
+  * [Pcg](https://ziglang.org/documentation/master/std/#std.Random.Pcg)
+  * [RomuTrio](https://ziglang.org/documentation/master/std/#std.Random.RomuTrio)
+  * [Sfc64](https://ziglang.org/documentation/master/std/#std.Random.Sfc64)
+  * [SplitMix64](https://ziglang.org/documentation/master/std/#std.Random.SplitMix64)
+  * [Xoroshiro128](https://ziglang.org/documentation/master/std/#std.Random.Xoroshiro128)
+  * [Xoshiro256](https://ziglang.org/documentation/master/std/#std.Random.Xoshiro256)
+
+
+## Namespaces
+  * [ziggurat](https://ziglang.org/documentation/master/std/#std.Random.ziggurat)
+
+
+## Global Variables
+## Values
+## Functions `pub fn boolean[](https://ziglang.org/documentation/master/std/#std.Random.boolean)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random)) bool`
+`pub fn bytes[](https://ziglang.org/documentation/master/std/#std.Random.bytes)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), buf: []u8) void`
+    
+Read random bytes into the specified buffer until full. `pub inline fn enumValue[](https://ziglang.org/documentation/master/std/#std.Random.enumValue)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime EnumType: type) EnumType`
+    
+Returns a random value from an enum, evenly distributed. `pub fn enumValueWithIndex[](https://ziglang.org/documentation/master/std/#std.Random.enumValueWithIndex)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime EnumType: type, comptime Index: type) EnumType`
+    
+Returns a random value from an enum, evenly distributed. `pub fn float[](https://ziglang.org/documentation/master/std/#std.Random.float)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type) T`
+    
+Return a floating point value evenly distributed in the range [0, 1). `pub fn floatExp[](https://ziglang.org/documentation/master/std/#std.Random.floatExp)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type) T`
+    
+Return an exponentially distributed float with a rate parameter of 1. `pub fn floatNorm[](https://ziglang.org/documentation/master/std/#std.Random.floatNorm)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type) T`
+    
+Return a floating point value normally distributed with mean = 0, stddev = 1. `pub fn init[](https://ziglang.org/documentation/master/std/#std.Random.init)(pointer: anytype, comptime fillFn: fn (ptr: @TypeOf(pointer), buf: []u8) void) Random[](https://ziglang.org/documentation/master/std/#std.Random)`
+`pub fn int[](https://ziglang.org/documentation/master/std/#std.Random.int)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type) T`
+    
+Returns a random int `i` such that `minInt(T) <= i <= maxInt(T)`. `i` is evenly distributed. `pub fn intRangeAtMost[](https://ziglang.org/documentation/master/std/#std.Random.intRangeAtMost)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_least: T, at_most: T) T`
+    
+Returns an evenly distributed random integer `at_least <= i <= at_most`. See `uintLessThan[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThan)`, which this function uses in most cases, for commentary on the runtime of this function. `pub fn intRangeAtMostBiased[](https://ziglang.org/documentation/master/std/#std.Random.intRangeAtMostBiased)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_least: T, at_most: T) T`
+    
+Constant-time implementation off `intRangeAtMostBiased[](https://ziglang.org/documentation/master/std/#std.Random.intRangeAtMostBiased)`. The results of this function may be biased. `pub fn intRangeLessThan[](https://ziglang.org/documentation/master/std/#std.Random.intRangeLessThan)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_least: T, less_than: T) T`
+    
+Returns an evenly distributed random integer `at_least <= i < less_than`. See `uintLessThan[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThan)`, which this function uses in most cases, for commentary on the runtime of this function. `pub fn intRangeLessThanBiased[](https://ziglang.org/documentation/master/std/#std.Random.intRangeLessThanBiased)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_least: T, less_than: T) T`
+    
+Constant-time implementation off `intRangeLessThan[](https://ziglang.org/documentation/master/std/#std.Random.intRangeLessThan)`. The results of this function may be biased. `pub fn limitRangeBiased[](https://ziglang.org/documentation/master/std/#std.Random.limitRangeBiased)(comptime T: type, random_int: T, less_than: T) T`
+    
+Convert a random integer 0 <= random_int <= maxValue(T), into an integer 0 <= result < less_than. This function introduces a minor bias. `pub inline fn shuffle[](https://ziglang.org/documentation/master/std/#std.Random.shuffle)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, buf: []T) void`
+    
+Shuffle a slice into a random order. `pub fn shuffleWithIndex[](https://ziglang.org/documentation/master/std/#std.Random.shuffleWithIndex)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, buf: []T, comptime Index: type) void`
+    
+Shuffle a slice into a random order, using an index of a specified type to maintain distribution across targets. Asserts the index type can represent `buf.len`. `pub fn uintAtMost[](https://ziglang.org/documentation/master/std/#std.Random.uintAtMost)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_most: T) T`
+    
+Returns an evenly distributed random unsigned integer `0 <= i <= at_most`. See `uintLessThan[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThan)`, which this function uses in most cases, for commentary on the runtime of this function. `pub fn uintAtMostBiased[](https://ziglang.org/documentation/master/std/#std.Random.uintAtMostBiased)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, at_most: T) T`
+    
+Constant-time implementation off `uintAtMost[](https://ziglang.org/documentation/master/std/#std.Random.uintAtMost)`. The results of this function may be biased. `pub fn uintLessThan[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThan)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, less_than: T) T`
+    
+Returns an evenly distributed random unsigned integer `0 <= i < less_than`. This function assumes that the underlying `fillFn` produces evenly distributed values. Within this assumption, the runtime of this function is exponentially distributed. If `fillFn` were backed by a true random generator, the runtime of this function would technically be unbounded. However, if `fillFn` is backed by any evenly distributed pseudo random number generator, this function is guaranteed to return. If you need deterministic runtime bounds, use `uintLessThanBiased[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThanBiased)`. `pub fn uintLessThanBiased[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThanBiased)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, less_than: T) T`
+    
+Constant-time implementation off `uintLessThan[](https://ziglang.org/documentation/master/std/#std.Random.uintLessThan)`. The results of this function may be biased. `pub fn weightedIndex[](https://ziglang.org/documentation/master/std/#std.Random.weightedIndex)(r: Random[](https://ziglang.org/documentation/master/std/#std.Random), comptime T: type, proportions: []const T) usize`
+    
+Randomly selects an index into `proportions`, where the likelihood of each index is weighted by that proportion. It is more likely for the index of the last proportion to be returned than the index of the first proportion in the slice, and vice versa.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

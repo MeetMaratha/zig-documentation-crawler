@@ -1,0 +1,112 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [priority_queue](https://ziglang.org/documentation/master/std/#std.priority_queue)
+  * [PriorityQueue](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/priority_queue.zig)
+Priority queue for storing generic data. Initialize with `init`. Provide `compareFn` that returns `Order.lt` when its second argument should get popped before its third argument, `Order.eq` if the arguments are of equal priority, or `Order.gt` if the third argument should be popped first. For example, to make `pop` return the smallest number, provide `fn lessThan(context: void, a: T, b: T) Order { _ = context; return std.math.order(a, b); }`
+## Parameters
+```
+T: type
+```
+
+```
+Context: type
+```
+
+```
+compareFn: fn (context: Context, a: T, b: T) Order[](https://ziglang.org/documentation/master/std/#std.math.Order)
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+items: []T
+```
+
+```
+cap: usize
+```
+
+```
+allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)
+```
+
+```
+context: Context
+```
+
+## Types
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.Iterator)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn add[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.add)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), elem: T) !void`
+    
+Insert a new element, maintaining priority. `pub fn addSlice[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.addSlice)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), items: []const T) !void`
+    
+Add each element in `items` to the queue. `pub fn capacity[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.capacity)(self: Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) usize`
+    
+Return the number of elements that can be added to the queue before more memory is allocated. `pub fn clearAndFree[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.clearAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) void`
+`pub fn clearRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.clearRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) void`
+`pub fn count[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) usize`
+    
+Return the number of elements remaining in the priority queue. `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.deinit)(self: Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) void`
+    
+Free memory used by the queue. `pub fn ensureTotalCapacity[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.ensureTotalCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), new_capacity: usize) !void`
+    
+Ensure that the queue can fit at least `new_capacity` items. `pub fn ensureTotalCapacityPrecise[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.ensureTotalCapacityPrecise)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), new_capacity: usize) !void`
+`pub fn ensureUnusedCapacity[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.ensureUnusedCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), additional_count: usize) !void`
+    
+Ensure that the queue can fit at least `additional_count` **more** item. `pub fn fromOwnedSlice[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.fromOwnedSlice)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), items: []T, context: Context) Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)`
+    
+PriorityQueue takes ownership of the passed in slice. The slice must have been allocated with `allocator`. Deinitialize with `deinit`. `pub fn init[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.init)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), context: Context) Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)`
+    
+Initialize and return a priority queue. `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.iterator)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) Iterator[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.Iterator)`
+    
+Return an iterator that walks the queue without consuming it. The iteration order may differ from the priority order. Invalidated if the heap is modified. `pub fn peek[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.peek)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) ?T`
+    
+Look at the highest priority element in the queue. Returns `null` if empty. `pub fn remove[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.remove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) T`
+    
+Remove and return the highest priority element from the queue. `pub fn removeIndex[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.removeIndex)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), index: usize) T`
+    
+Remove and return element at index. Indices are in the same order as iterator, which is not necessarily priority order. `pub fn removeOrNull[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.removeOrNull)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)) ?T`
+    
+Pop the highest priority element from the queue. Returns `null` if empty. `pub fn shrinkAndFree[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.shrinkAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), new_capacity: usize) void`
+    
+Reduce allocated capacity to `new_capacity`. `pub fn update[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue.update)(self: *Self[](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue), elem: T, new_elem: T) !void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

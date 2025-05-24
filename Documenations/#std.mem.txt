@@ -1,0 +1,273 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [mem](https://ziglang.org/documentation/master/std/#std.mem)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/mem.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Alignment](https://ziglang.org/documentation/master/std/#std.mem.Alignment)
+  * [Allocator](https://ziglang.org/documentation/master/std/#std.mem.Allocator)
+  * [DelimiterType](https://ziglang.org/documentation/master/std/#std.mem.DelimiterType)
+  * [SplitBackwardsIterator](https://ziglang.org/documentation/master/std/#std.mem.SplitBackwardsIterator)
+  * [SplitIterator](https://ziglang.org/documentation/master/std/#std.mem.SplitIterator)
+  * [TokenIterator](https://ziglang.org/documentation/master/std/#std.mem.TokenIterator)
+  * [ValidationAllocator](https://ziglang.org/documentation/master/std/#std.mem.ValidationAllocator)
+  * [WindowIterator](https://ziglang.org/documentation/master/std/#std.mem.WindowIterator)
+  * [indexOfMinMax](https://ziglang.org/documentation/master/std/#std.mem.indexOfMinMax)
+  * [minMax](https://ziglang.org/documentation/master/std/#std.mem.minMax)
+
+
+## Namespaces
+## Global Variables
+## Values
+[byte_size_in_bits](https://ziglang.org/documentation/master/std/#std.mem.byte_size_in_bits)| | The standard library currently thoroughly depends on byte size being 8 bits. (see the use of u8 throughout allocation code as the "byte" type.) Code which depends on this can reference this declaration. If we ever try to port the standard library to a non-8-bit-byte platform, this will allow us to search for things which need to be updated.  
+---|---|---  
+[readPackedIntForeign](https://ziglang.org/documentation/master/std/#std.mem.readPackedIntForeign)| |   
+[readPackedIntNative](https://ziglang.org/documentation/master/std/#std.mem.readPackedIntNative)| |   
+[split](https://ziglang.org/documentation/master/std/#std.mem.split)| |   
+[splitBackwards](https://ziglang.org/documentation/master/std/#std.mem.splitBackwards)| |   
+[tokenize](https://ziglang.org/documentation/master/std/#std.mem.tokenize)| |   
+[writePackedIntForeign](https://ziglang.org/documentation/master/std/#std.mem.writePackedIntForeign)| |   
+[writePackedIntNative](https://ziglang.org/documentation/master/std/#std.mem.writePackedIntNative)| |   
+## Functions `pub fn alignBackward[](https://ziglang.org/documentation/master/std/#std.mem.alignBackward)(comptime T: type, addr: T, alignment: T) T`
+    
+Round an address down to the previous (or current) aligned address. The alignment must be a power of 2 and greater than 0. `pub fn alignBackwardAnyAlign[](https://ziglang.org/documentation/master/std/#std.mem.alignBackwardAnyAlign)(comptime T: type, addr: T, alignment: T) T`
+    
+Round an address down to the previous (or current) aligned address. Unlike `alignBackward[](https://ziglang.org/documentation/master/std/#std.mem.alignBackward)`, `alignment` can be any positive number, not just a power of 2. `pub fn alignForward[](https://ziglang.org/documentation/master/std/#std.mem.alignForward)(comptime T: type, addr: T, alignment: T) T`
+    
+Round an address up to the next (or current) aligned address. The alignment must be a power of 2 and greater than 0. Asserts that rounding up the address does not cause integer overflow. `pub fn alignForwardAnyAlign[](https://ziglang.org/documentation/master/std/#std.mem.alignForwardAnyAlign)(comptime T: type, addr: T, alignment: T) T`
+    
+Round an address down to the next (or current) aligned address. Unlike `alignForward[](https://ziglang.org/documentation/master/std/#std.mem.alignForward)`, `alignment` can be any positive number, not just a power of 2. `pub fn alignForwardLog2[](https://ziglang.org/documentation/master/std/#std.mem.alignForwardLog2)(addr: usize, log2_alignment: u8) usize`
+`pub fn alignInBytes[](https://ziglang.org/documentation/master/std/#std.mem.alignInBytes)(bytes: []u8, comptime new_alignment: usize) ?[]align(new_alignment) u8`
+    
+Returns the largest slice in the given bytes that conforms to the new alignment, or `null` if the given bytes contain no conforming address. `pub fn alignInSlice[](https://ziglang.org/documentation/master/std/#std.mem.alignInSlice)(slice: anytype, comptime new_alignment: usize) ?AlignedSlice[](https://ziglang.org/documentation/master/std/#std.mem.AlignedSlice)(@TypeOf(slice), new_alignment)`
+    
+Returns the largest sub-slice within the given slice that conforms to the new alignment, or `null` if the given slice contains no conforming address. `pub fn alignPointer[](https://ziglang.org/documentation/master/std/#std.mem.alignPointer)(ptr: anytype, align_to: usize) ?@TypeOf(ptr)`
+    
+Aligns a given pointer value to a specified alignment factor. Returns an aligned pointer or null if one of the following conditions is met:
+  * The aligned pointer would not fit the address space,
+  * The delta required to align the pointer is not a multiple of the pointee's type.
+
+`pub fn alignPointerOffset[](https://ziglang.org/documentation/master/std/#std.mem.alignPointerOffset)(ptr: anytype, align_to: usize) ?usize`
+    
+Returns the number of elements that, if added to the given pointer, align it to a multiple of the given quantity, or `null` if one of the following conditions is met:
+  * The aligned pointer would not fit the address space,
+  * The delta required to align the pointer is not a multiple of the pointee's type.
+
+`pub fn allEqual[](https://ziglang.org/documentation/master/std/#std.mem.allEqual)(comptime T: type, slice: []const T, scalar: T) bool`
+    
+Returns true if all elements in a slice are equal to the scalar value provided `pub fn asBytes[](https://ziglang.org/documentation/master/std/#std.mem.asBytes)(ptr: anytype) AsBytesReturnType[](https://ziglang.org/documentation/master/std/#std.mem.AsBytesReturnType)(@TypeOf(ptr))`
+    
+Given a pointer to a single item, returns a slice of the underlying bytes, preserving pointer attributes. `pub fn bigToNative[](https://ziglang.org/documentation/master/std/#std.mem.bigToNative)(comptime T: type, x: T) T`
+    
+Converts a big-endian integer to host endianness. `pub fn byteSwapAllFields[](https://ziglang.org/documentation/master/std/#std.mem.byteSwapAllFields)(comptime S: type, ptr: *S) void`
+    
+Swap the byte order of all the members of the fields of a struct (Changing their endianness) `pub fn bytesAsSlice[](https://ziglang.org/documentation/master/std/#std.mem.bytesAsSlice)(comptime T: type, bytes: anytype) BytesAsSliceReturnType[](https://ziglang.org/documentation/master/std/#std.mem.BytesAsSliceReturnType)(T, @TypeOf(bytes))`
+    
+Given a slice of bytes, returns a slice of the specified type backed by those bytes, preserving pointer attributes. If `T` is zero-bytes sized, the returned slice has a len of zero. `pub fn bytesAsValue[](https://ziglang.org/documentation/master/std/#std.mem.bytesAsValue)(comptime T: type, bytes: anytype) BytesAsValueReturnType[](https://ziglang.org/documentation/master/std/#std.mem.BytesAsValueReturnType)(T, @TypeOf(bytes))`
+    
+Given a pointer to an array of bytes, returns a pointer to a value of the specified type backed by those bytes, preserving pointer attributes. `pub fn bytesToValue[](https://ziglang.org/documentation/master/std/#std.mem.bytesToValue)(comptime T: type, bytes: anytype) T`
+    
+Given a pointer to an array of bytes, returns a value of the specified type backed by a copy of those bytes. `pub fn collapseRepeats[](https://ziglang.org/documentation/master/std/#std.mem.collapseRepeats)(comptime T: type, slice: []T, elem: T) []T`
+    
+Collapse consecutive duplicate elements into one entry. `pub fn collapseRepeatsLen[](https://ziglang.org/documentation/master/std/#std.mem.collapseRepeatsLen)(comptime T: type, slice: []T, elem: T) usize`
+    
+Collapse consecutive duplicate elements into one entry. `pub fn concat[](https://ziglang.org/documentation/master/std/#std.mem.concat)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime T: type, slices: []const []const T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![]T`
+    
+Copies each T from slices into a new slice that exactly holds all the elements. `pub fn concatMaybeSentinel[](https://ziglang.org/documentation/master/std/#std.mem.concatMaybeSentinel)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime T: type, slices: []const []const T, comptime s: ?T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![]T`
+    
+Copies each T from slices into a new slice that exactly holds all the elements as well as the sentinel. `pub fn concatWithSentinel[](https://ziglang.org/documentation/master/std/#std.mem.concatWithSentinel)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), comptime T: type, slices: []const []const T, comptime s: T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![:s]T`
+    
+Copies each T from slices into a new slice that exactly holds all the elements. `pub fn containsAtLeast[](https://ziglang.org/documentation/master/std/#std.mem.containsAtLeast)(comptime T: type, haystack: []const T, expected_count: usize, needle: []const T) bool`
+    
+Returns true if the haystack contains expected_count or more needles needle.len must be > 0 does not count overlapping needles See also: `containsAtLeastScalar[](https://ziglang.org/documentation/master/std/#std.mem.containsAtLeastScalar)` `pub fn containsAtLeastScalar[](https://ziglang.org/documentation/master/std/#std.mem.containsAtLeastScalar)(comptime T: type, haystack: []const T, expected_count: usize, needle: T) bool`
+    
+Returns true if the haystack contains expected_count or more needles See also: `containsAtLeast[](https://ziglang.org/documentation/master/std/#std.mem.containsAtLeast)` `pub fn copyBackwards[](https://ziglang.org/documentation/master/std/#std.mem.copyBackwards)(comptime T: type, dest: []T, source: []const T) void`
+    
+Copy all of source into dest at position 0. dest.len must be >= source.len. If the slices overlap, dest.ptr must be >= src.ptr. This function is deprecated; use @memmove instead. `pub fn copyForwards[](https://ziglang.org/documentation/master/std/#std.mem.copyForwards)(comptime T: type, dest: []T, source: []const T) void`
+    
+Copy all of source into dest at position 0. dest.len must be >= source.len. If the slices overlap, dest.ptr must be <= src.ptr. This function is deprecated; use @memmove instead. `pub fn count[](https://ziglang.org/documentation/master/std/#std.mem.count)(comptime T: type, haystack: []const T, needle: []const T) usize`
+    
+Returns the number of needles inside the haystack needle.len must be > 0 does not count overlapping needles `pub fn doNotOptimizeAway[](https://ziglang.org/documentation/master/std/#std.mem.doNotOptimizeAway)(val: anytype) void`
+    
+Force an evaluation of the expression; this tries to prevent the compiler from optimizing the computation away even if the result eventually gets discarded. `pub fn endsWith[](https://ziglang.org/documentation/master/std/#std.mem.endsWith)(comptime T: type, haystack: []const T, needle: []const T) bool`
+`pub fn eql[](https://ziglang.org/documentation/master/std/#std.mem.eql)(comptime T: type, a: []const T, b: []const T) bool`
+    
+Returns true if and only if the slices have the same length and all elements compare true using equality operator. `pub fn indexOf[](https://ziglang.org/documentation/master/std/#std.mem.indexOf)(comptime T: type, haystack: []const T, needle: []const T) ?usize`
+`pub fn indexOfAny[](https://ziglang.org/documentation/master/std/#std.mem.indexOfAny)(comptime T: type, slice: []const T, values: []const T) ?usize`
+`pub fn indexOfAnyPos[](https://ziglang.org/documentation/master/std/#std.mem.indexOfAnyPos)(comptime T: type, slice: []const T, start_index: usize, values: []const T) ?usize`
+`pub fn indexOfDiff[](https://ziglang.org/documentation/master/std/#std.mem.indexOfDiff)(comptime T: type, a: []const T, b: []const T) ?usize`
+    
+Compares two slices and returns the index of the first inequality. Returns null if the slices are equal. `pub fn indexOfMax[](https://ziglang.org/documentation/master/std/#std.mem.indexOfMax)(comptime T: type, slice: []const T) usize`
+    
+Returns the index of the largest number in a slice. O(n). `slice` must not be empty. `pub fn indexOfMin[](https://ziglang.org/documentation/master/std/#std.mem.indexOfMin)(comptime T: type, slice: []const T) usize`
+    
+Returns the index of the smallest number in a slice. O(n). `slice` must not be empty. `pub fn indexOfNone[](https://ziglang.org/documentation/master/std/#std.mem.indexOfNone)(comptime T: type, slice: []const T, values: []const T) ?usize`
+    
+Find the first item in `slice` which is not contained in `values`. `pub fn indexOfNonePos[](https://ziglang.org/documentation/master/std/#std.mem.indexOfNonePos)(comptime T: type, slice: []const T, start_index: usize, values: []const T) ?usize`
+    
+Find the first item in `slice[start_index..]` which is not contained in `values`. The returned index will be relative to the start of `slice`, and never less than `start_index`. `pub fn indexOfPos[](https://ziglang.org/documentation/master/std/#std.mem.indexOfPos)(comptime T: type, haystack: []const T, start_index: usize, needle: []const T) ?usize`
+    
+Uses Boyer-Moore-Horspool algorithm on large inputs; `indexOfPosLinear[](https://ziglang.org/documentation/master/std/#std.mem.indexOfPosLinear)` on small inputs. `pub fn indexOfPosLinear[](https://ziglang.org/documentation/master/std/#std.mem.indexOfPosLinear)(comptime T: type, haystack: []const T, start_index: usize, needle: []const T) ?usize`
+    
+Consider using `indexOfPos[](https://ziglang.org/documentation/master/std/#std.mem.indexOfPos)` instead of this, which will automatically use a more sophisticated algorithm on larger inputs. `pub fn indexOfScalar[](https://ziglang.org/documentation/master/std/#std.mem.indexOfScalar)(comptime T: type, slice: []const T, value: T) ?usize`
+    
+Linear search for the index of a scalar value inside a slice. `pub fn indexOfScalarPos[](https://ziglang.org/documentation/master/std/#std.mem.indexOfScalarPos)(comptime T: type, slice: []const T, start_index: usize, value: T) ?usize`
+`pub fn indexOfSentinel[](https://ziglang.org/documentation/master/std/#std.mem.indexOfSentinel)(comptime T: type, comptime sentinel: T, p: [*:sentinel]const T) usize`
+`pub fn isAligned[](https://ziglang.org/documentation/master/std/#std.mem.isAligned)(addr: usize, alignment: usize) bool`
+    
+Given an address and an alignment, return true if the address is a multiple of the alignment The alignment must be a power of 2 and greater than 0. `pub fn isAlignedAnyAlign[](https://ziglang.org/documentation/master/std/#std.mem.isAlignedAnyAlign)(i: usize, alignment: usize) bool`
+`pub fn isAlignedGeneric[](https://ziglang.org/documentation/master/std/#std.mem.isAlignedGeneric)(comptime T: type, addr: T, alignment: T) bool`
+`pub fn isAlignedLog2[](https://ziglang.org/documentation/master/std/#std.mem.isAlignedLog2)(addr: usize, log2_alignment: u8) bool`
+`pub fn isValidAlign[](https://ziglang.org/documentation/master/std/#std.mem.isValidAlign)(alignment: usize) bool`
+    
+Returns whether `alignment` is a valid alignment, meaning it is a positive power of 2. `pub fn isValidAlignGeneric[](https://ziglang.org/documentation/master/std/#std.mem.isValidAlignGeneric)(comptime T: type, alignment: T) bool`
+    
+Returns whether `alignment` is a valid alignment, meaning it is a positive power of 2. `pub fn join[](https://ziglang.org/documentation/master/std/#std.mem.join)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), separator: []const u8, slices: []const []const u8) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![]u8`
+    
+Naively combines a series of slices with a separator. Allocates memory for the result, which must be freed by the caller. `pub fn joinZ[](https://ziglang.org/documentation/master/std/#std.mem.joinZ)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), separator: []const u8, slices: []const []const u8) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![:0]u8`
+    
+Naively combines a series of slices with a separator and null terminator. Allocates memory for the result, which must be freed by the caller. `pub fn lastIndexOf[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOf)(comptime T: type, haystack: []const T, needle: []const T) ?usize`
+    
+Find the index in a slice of a sub-slice, searching from the end backwards. To start looking at a different index, slice the haystack first. Uses the Reverse Boyer-Moore-Horspool algorithm on large inputs; `lastIndexOfLinear[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOfLinear)` on small inputs. `pub fn lastIndexOfAny[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOfAny)(comptime T: type, slice: []const T, values: []const T) ?usize`
+`pub fn lastIndexOfLinear[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOfLinear)(comptime T: type, haystack: []const T, needle: []const T) ?usize`
+    
+Find the index in a slice of a sub-slice, searching from the end backwards. To start looking at a different index, slice the haystack first. Consider using `lastIndexOf[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOf)` instead of this, which will automatically use a more sophisticated algorithm on larger inputs. `pub fn lastIndexOfNone[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOfNone)(comptime T: type, slice: []const T, values: []const T) ?usize`
+    
+Find the last item in `slice` which is not contained in `values`. `pub fn lastIndexOfScalar[](https://ziglang.org/documentation/master/std/#std.mem.lastIndexOfScalar)(comptime T: type, slice: []const T, value: T) ?usize`
+    
+Linear search for the last index of a scalar value inside a slice. `pub fn len[](https://ziglang.org/documentation/master/std/#std.mem.len)(value: anytype) usize`
+    
+Takes a sentinel-terminated pointer and iterates over the memory to find the sentinel and determine the length. `[*c]` pointers are assumed to be non-null and 0-terminated. `pub fn lessThan[](https://ziglang.org/documentation/master/std/#std.mem.lessThan)(comptime T: type, lhs: []const T, rhs: []const T) bool`
+    
+Returns true if lhs < rhs, false otherwise `pub fn littleToNative[](https://ziglang.org/documentation/master/std/#std.mem.littleToNative)(comptime T: type, x: T) T`
+    
+Converts a little-endian integer to host endianness. `pub fn max[](https://ziglang.org/documentation/master/std/#std.mem.max)(comptime T: type, slice: []const T) T`
+    
+Returns the largest number in a slice. O(n). `slice` must not be empty. `pub fn min[](https://ziglang.org/documentation/master/std/#std.mem.min)(comptime T: type, slice: []const T) T`
+    
+Returns the smallest number in a slice. O(n). `slice` must not be empty. `pub fn nativeTo[](https://ziglang.org/documentation/master/std/#std.mem.nativeTo)(comptime T: type, x: T, desired_endianness: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) T`
+    
+Converts an integer which has host endianness to the desired endianness. `pub fn nativeToBig[](https://ziglang.org/documentation/master/std/#std.mem.nativeToBig)(comptime T: type, x: T) T`
+    
+Converts an integer which has host endianness to big endian. `pub fn nativeToLittle[](https://ziglang.org/documentation/master/std/#std.mem.nativeToLittle)(comptime T: type, x: T) T`
+    
+Converts an integer which has host endianness to little endian. `pub fn order[](https://ziglang.org/documentation/master/std/#std.mem.order)(comptime T: type, lhs: []const T, rhs: []const T) math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order)`
+    
+Compares two slices of numbers lexicographically. O(n). `pub fn orderZ[](https://ziglang.org/documentation/master/std/#std.mem.orderZ)(comptime T: type, lhs: [*:0]const T, rhs: [*:0]const T) math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order)`
+    
+Compares two many-item pointers with NUL-termination lexicographically. `pub inline fn readInt[](https://ziglang.org/documentation/master/std/#std.mem.readInt)(comptime T: type, buffer: *const [@divExact(@typeInfo(T).int.bits, 8)]u8, endian: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) T`
+    
+Reads an integer from memory with bit count specified by T. The bit count of T must be evenly divisible by 8. This function cannot fail and cannot cause undefined behavior. `pub fn readPackedInt[](https://ziglang.org/documentation/master/std/#std.mem.readPackedInt)(comptime T: type, bytes: []const u8, bit_offset: usize, endian: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) T`
+    
+Loads an integer from packed memory. Asserts that buffer contains at least bit_offset + @bitSizeOf(T) bits. `pub fn readVarInt[](https://ziglang.org/documentation/master/std/#std.mem.readVarInt)(comptime ReturnType: type, bytes: []const u8, endian: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) ReturnType`
+    
+Reads an integer from memory with size equal to bytes.len. T specifies the return type, which must be large enough to store the result. `pub fn readVarPackedInt[](https://ziglang.org/documentation/master/std/#std.mem.readVarPackedInt)( comptime T: type, bytes: []const u8, bit_offset: usize, bit_count: usize, endian: std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian), signedness: std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).Signedness[](https://ziglang.org/documentation/master/std/#std.builtin.Signedness), ) T`
+    
+Loads an integer from packed memory with provided bit_count, bit_offset, and signedness. Asserts that T is large enough to store the read value. `pub fn replace[](https://ziglang.org/documentation/master/std/#std.mem.replace)(comptime T: type, input: []const T, needle: []const T, replacement: []const T, output: []T) usize`
+    
+Replace needle with replacement as many times as possible, writing to an output buffer which is assumed to be of appropriate size. Use replacementSize to calculate an appropriate buffer size. The needle must not be empty. Returns the number of replacements made. `pub fn replaceOwned[](https://ziglang.org/documentation/master/std/#std.mem.replaceOwned)(comptime T: type, allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), input: []const T, needle: []const T, replacement: []const T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![]T`
+    
+Perform a replacement on an allocated buffer of pre-determined size. Caller must free returned memory. `pub fn replaceScalar[](https://ziglang.org/documentation/master/std/#std.mem.replaceScalar)(comptime T: type, slice: []T, match: T, replacement: T) void`
+    
+Replace all occurrences of `match` with `replacement`. `pub fn replacementSize[](https://ziglang.org/documentation/master/std/#std.mem.replacementSize)(comptime T: type, input: []const T, needle: []const T, replacement: []const T) usize`
+    
+Calculate the size needed in an output buffer to perform a replacement. The needle must not be empty. `pub fn reverse[](https://ziglang.org/documentation/master/std/#std.mem.reverse)(comptime T: type, items: []T) void`
+    
+In-place order reversal of a slice `pub fn reverseIterator[](https://ziglang.org/documentation/master/std/#std.mem.reverseIterator)(slice: anytype) ReverseIterator[](https://ziglang.org/documentation/master/std/#std.mem.ReverseIterator)(@TypeOf(slice))`
+    
+Iterates over a slice in reverse. `pub fn rotate[](https://ziglang.org/documentation/master/std/#std.mem.rotate)(comptime T: type, items: []T, amount: usize) void`
+    
+In-place rotation of the values in an array ([0 1 2 3] becomes [1 2 3 0] if we rotate by 1) Assumes 0 <= amount <= items.len `pub fn sliceAsBytes[](https://ziglang.org/documentation/master/std/#std.mem.sliceAsBytes)(slice: anytype) SliceAsBytesReturnType[](https://ziglang.org/documentation/master/std/#std.mem.SliceAsBytesReturnType)(@TypeOf(slice))`
+    
+Given a slice, returns a slice of the underlying bytes, preserving pointer attributes. `pub fn sliceTo[](https://ziglang.org/documentation/master/std/#std.mem.sliceTo)(ptr: anytype, comptime end: std[](https://ziglang.org/documentation/master/std/#std).meta[](https://ziglang.org/documentation/master/std/#std.meta).Elem[](https://ziglang.org/documentation/master/std/#std.meta.Elem)(@TypeOf(ptr))) SliceTo[](https://ziglang.org/documentation/master/std/#std.mem.SliceTo)(@TypeOf(ptr), end)`
+    
+Takes a pointer to an array, a sentinel-terminated pointer, or a slice and iterates searching for the first occurrence of `end`, returning the scanned slice. If `end` is not found, the full length of the array/slice/sentinel terminated pointer is returned. If the pointer type is sentinel terminated and `end` matches that terminator, the resulting slice is also sentinel terminated. Pointer properties such as mutability and alignment are preserved. C pointers are assumed to be non-null. `pub fn sort[](https://ziglang.org/documentation/master/std/#std.mem.sort)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) void`
+`pub fn sortContext[](https://ziglang.org/documentation/master/std/#std.mem.sortContext)(a: usize, b: usize, context: anytype) void`
+    
+TODO: currently this just calls `insertionSortContext`. The block sort implementation in this file needs to be adapted to use the sort context. `pub fn sortUnstable[](https://ziglang.org/documentation/master/std/#std.mem.sortUnstable)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) void`
+`pub fn sortUnstableContext[](https://ziglang.org/documentation/master/std/#std.mem.sortUnstableContext)(a: usize, b: usize, context: anytype) void`
+`pub fn span[](https://ziglang.org/documentation/master/std/#std.mem.span)(ptr: anytype) Span[](https://ziglang.org/documentation/master/std/#std.mem.Span)(@TypeOf(ptr))`
+    
+Takes a sentinel-terminated pointer and returns a slice, iterating over the memory to find the sentinel and determine the length. Pointer attributes such as const are preserved. `[*c]` pointers are assumed to be non-null and 0-terminated. `pub fn splitAny[](https://ziglang.org/documentation/master/std/#std.mem.splitAny)(comptime T: type, buffer: []const T, delimiters: []const T) SplitIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitIterator)(T, .any)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are separated by any item in `delimiters`. `pub fn splitBackwardsAny[](https://ziglang.org/documentation/master/std/#std.mem.splitBackwardsAny)(comptime T: type, buffer: []const T, delimiters: []const T) SplitBackwardsIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitBackwardsIterator)(T, .any)`
+    
+Returns an iterator that iterates backwards over the slices of `buffer` that are separated by any item in `delimiters`. `pub fn splitBackwardsScalar[](https://ziglang.org/documentation/master/std/#std.mem.splitBackwardsScalar)(comptime T: type, buffer: []const T, delimiter: T) SplitBackwardsIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitBackwardsIterator)(T, .scalar)`
+    
+Returns an iterator that iterates backwards over the slices of `buffer` that are separated by `delimiter`. `pub fn splitBackwardsSequence[](https://ziglang.org/documentation/master/std/#std.mem.splitBackwardsSequence)(comptime T: type, buffer: []const T, delimiter: []const T) SplitBackwardsIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitBackwardsIterator)(T, .sequence)`
+    
+Returns an iterator that iterates backwards over the slices of `buffer` that are separated by the sequence in `delimiter`. `pub fn splitScalar[](https://ziglang.org/documentation/master/std/#std.mem.splitScalar)(comptime T: type, buffer: []const T, delimiter: T) SplitIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitIterator)(T, .scalar)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are separated by `delimiter`. `pub fn splitSequence[](https://ziglang.org/documentation/master/std/#std.mem.splitSequence)(comptime T: type, buffer: []const T, delimiter: []const T) SplitIterator[](https://ziglang.org/documentation/master/std/#std.mem.SplitIterator)(T, .sequence)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are separated by the byte sequence in `delimiter`. `pub fn startsWith[](https://ziglang.org/documentation/master/std/#std.mem.startsWith)(comptime T: type, haystack: []const T, needle: []const T) bool`
+`pub fn swap[](https://ziglang.org/documentation/master/std/#std.mem.swap)(comptime T: type, a: *T, b: *T) void`
+`pub fn toBytes[](https://ziglang.org/documentation/master/std/#std.mem.toBytes)(value: anytype) [@sizeOf(@TypeOf(value))]u8`
+    
+Given any value, returns a copy of its bytes in an array. `pub fn toNative[](https://ziglang.org/documentation/master/std/#std.mem.toNative)(comptime T: type, x: T, endianness_of_x: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) T`
+    
+Converts an integer from specified endianness to host endianness. `pub fn tokenizeAny[](https://ziglang.org/documentation/master/std/#std.mem.tokenizeAny)(comptime T: type, buffer: []const T, delimiters: []const T) TokenIterator[](https://ziglang.org/documentation/master/std/#std.mem.TokenIterator)(T, .any)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are not any of the items in `delimiters`. `pub fn tokenizeScalar[](https://ziglang.org/documentation/master/std/#std.mem.tokenizeScalar)(comptime T: type, buffer: []const T, delimiter: T) TokenIterator[](https://ziglang.org/documentation/master/std/#std.mem.TokenIterator)(T, .scalar)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are not `delimiter`. `pub fn tokenizeSequence[](https://ziglang.org/documentation/master/std/#std.mem.tokenizeSequence)(comptime T: type, buffer: []const T, delimiter: []const T) TokenIterator[](https://ziglang.org/documentation/master/std/#std.mem.TokenIterator)(T, .sequence)`
+    
+Returns an iterator that iterates over the slices of `buffer` that are not the sequence in `delimiter`. `pub fn trim[](https://ziglang.org/documentation/master/std/#std.mem.trim)(comptime T: type, slice: []const T, values_to_strip: []const T) []const T`
+    
+Remove a set of values from the beginning and end of a slice. `pub fn trimEnd[](https://ziglang.org/documentation/master/std/#std.mem.trimEnd)(comptime T: type, slice: []const T, values_to_strip: []const T) []const T`
+    
+Remove a set of values from the end of a slice. `pub fn trimEnd[](https://ziglang.org/documentation/master/std/#std.mem.trimEnd)(comptime T: type, slice: []const T, values_to_strip: []const T) []const T`
+    
+Remove a set of values from the end of a slice. `pub fn trimStart[](https://ziglang.org/documentation/master/std/#std.mem.trimStart)(comptime T: type, slice: []const T, values_to_strip: []const T) []const T`
+    
+Remove a set of values from the beginning of a slice. `pub fn trimStart[](https://ziglang.org/documentation/master/std/#std.mem.trimStart)(comptime T: type, slice: []const T, values_to_strip: []const T) []const T`
+    
+Remove a set of values from the beginning of a slice. `pub fn validationWrap[](https://ziglang.org/documentation/master/std/#std.mem.validationWrap)(allocator: anytype) ValidationAllocator[](https://ziglang.org/documentation/master/std/#std.mem.ValidationAllocator)(@TypeOf(allocator))`
+`pub fn window[](https://ziglang.org/documentation/master/std/#std.mem.window)(comptime T: type, buffer: []const T, size: usize, advance: usize) WindowIterator[](https://ziglang.org/documentation/master/std/#std.mem.WindowIterator)(T)`
+    
+Returns an iterator with a sliding window of slices for `buffer`. The sliding window has length `size` and on every iteration moves forward by `advance`. `pub inline fn writeInt[](https://ziglang.org/documentation/master/std/#std.mem.writeInt)(comptime T: type, buffer: *[@divExact(@typeInfo(T).int.bits, 8)]u8, value: T, endian: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) void`
+    
+Writes an integer to memory, storing it in twos-complement. This function always succeeds, has defined behavior for all inputs, but the integer bit width must be divisible by 8. `pub fn writePackedInt[](https://ziglang.org/documentation/master/std/#std.mem.writePackedInt)(comptime T: type, bytes: []u8, bit_offset: usize, value: T, endian: Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) void`
+    
+Stores an integer to packed memory. Asserts that buffer contains at least bit_offset + @bitSizeOf(T) bits. `pub fn writeVarPackedInt[](https://ziglang.org/documentation/master/std/#std.mem.writeVarPackedInt)(bytes: []u8, bit_offset: usize, bit_count: usize, value: anytype, endian: std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).Endian[](https://ziglang.org/documentation/master/std/#std.builtin.Endian)) void`
+    
+Stores an integer to packed memory with provided bit_offset, bit_count, and signedness. If negative, the written value is sign-extended. `pub fn zeroInit[](https://ziglang.org/documentation/master/std/#std.mem.zeroInit)(comptime T: type, init: anytype) T`
+    
+Initializes all fields of the struct with their default value, or zero values if no default value is present. If the field is present in the provided initial values, it will have that value instead. Structs are initialized recursively. `pub fn zeroes[](https://ziglang.org/documentation/master/std/#std.mem.zeroes)(comptime T: type) T`
+    
+Generally, Zig users are encouraged to explicitly initialize all fields of a struct explicitly rather than using this function. However, it is recognized that there are sometimes use cases for initializing all fields to a "zero" value. For example, when interfacing with a C API where this practice is more common and relied upon. If you are performing code review and see this function used, examine closely - it may be a code smell. Zero initializes the type. This can be used to zero-initialize any type for which it makes sense. Structs will be initialized recursively.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

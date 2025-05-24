@@ -1,0 +1,120 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [log](https://ziglang.org/documentation/master/std/#std.log)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/log.zig)
+std.log is a standardized interface for logging which allows for the logging of programs and libraries using this interface to be formatted and filtered by the implementer of the `std.options.logFn` function.
+Each log message has an associated scope enum, which can be used to give context to the logging. The logging functions in std.log implicitly use a scope of .default.
+A logging namespace using a custom scope can be created using the std.log.scoped function, passing the scope as an argument; the logging functions in the resulting struct use the provided scope parameter. For example, a library called 'libfoo' might use `const log = std.log.scoped(.libfoo);` to use .libfoo as the scope of its log messages.
+An example `logFn` might look something like this:
+```
+const std = @import("std");
+pub const std_options = .{
+  // Set the log level to info
+  .log_level = .info,
+  // Define logFn to override the std implementation
+  .logFn = myLogFn,
+};
+pub fn myLogFn(
+  comptime level: std.log.Level,
+  comptime scope: @Type(.enum_literal),
+  comptime format: []const u8,
+  args: anytype,
+) void {
+  // Ignore all non-error logging from sources other than
+  // .my_project, .nice_library and the default
+  const scope_prefix = "(" ++ switch (scope) {
+    .my_project, .nice_library, std.log.default_log_scope => @tagName(scope),
+    else => if (@intFromEnum(level) <= @intFromEnum(std.log.Level.err))
+      @tagName(scope)
+    else
+      return,
+  } ++ "): ";
+  const prefix = "[" ++ comptime level.asText() ++ "] " ++ scope_prefix;
+  // Print the message to stderr, silently ignoring any errors
+  std.debug.lockStdErr();
+  defer std.debug.unlockStdErr();
+  const stderr = std.io.getStdErr().writer();
+  nosuspend stderr.print(prefix ++ format ++ "\n", args) catch return;
+}
+pub fn main() void {
+  // Using the default scope:
+  std.log.debug("A borderline useless debug log message", .{}); // Won't be printed as log_level is .info
+  std.log.info("Flux capacitor is starting to overheat", .{});
+  // Using scoped logging:
+  const my_project_log = std.log.scoped(.my_project);
+  const nice_library_log = std.log.scoped(.nice_library);
+  const verbose_lib_log = std.log.scoped(.verbose_lib);
+  my_project_log.debug("Starting up", .{}); // Won't be printed as log_level is .info
+  nice_library_log.warn("Something went very wrong, sorry", .{});
+  verbose_lib_log.warn("Added 1 + 1: {}", .{1 + 1}); // Won't be printed as it gets filtered out by our log function
+}
+
+```
+
+Which produces the following output:
+```
+[info] (default): Flux capacitor is starting to overheat
+[warning] (nice_library): Something went very wrong, sorry
+
+```
+
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Level](https://ziglang.org/documentation/master/std/#std.log.Level)
+  * [ScopeLevel](https://ziglang.org/documentation/master/std/#std.log.ScopeLevel)
+  * [default](https://ziglang.org/documentation/master/std/#std.log.default)
+  * [scoped](https://ziglang.org/documentation/master/std/#std.log.scoped)
+
+
+## Namespaces
+## Global Variables
+## Values
+[debug](https://ziglang.org/documentation/master/std/#std.log.debug)| | Log a debug message using the default scope. This log level is intended to be used for messages which are only useful for debugging.  
+---|---|---  
+[default_level](https://ziglang.org/documentation/master/std/#std.log.default_level)| `Level[](https://ziglang.org/documentation/master/std/#std.log.Level)`| The default log level is based on build mode.  
+[default_log_scope](https://ziglang.org/documentation/master/std/#std.log.default_log_scope)| |   
+[err](https://ziglang.org/documentation/master/std/#std.log.err)| | Log an error message using the default scope. This log level is intended to be used when something has gone wrong. This might be recoverable or might be followed by the program exiting.  
+[info](https://ziglang.org/documentation/master/std/#std.log.info)| | Log an info message using the default scope. This log level is intended to be used for general messages about the state of the program.  
+[warn](https://ziglang.org/documentation/master/std/#std.log.warn)| | Log a warning message using the default scope. This log level is intended to be used if it is uncertain whether something has gone wrong or not, but the circumstances would be worth investigating.  
+## Functions `pub fn defaultLog[](https://ziglang.org/documentation/master/std/#std.log.defaultLog)( comptime message_level: Level[](https://ziglang.org/documentation/master/std/#std.log.Level), comptime scope: @Type(.enum_literal), comptime format: []const u8, args: anytype, ) void`
+    
+The default implementation for the log function, custom log functions may forward log messages to this function. `pub fn defaultLogEnabled[](https://ziglang.org/documentation/master/std/#std.log.defaultLogEnabled)(comptime message_level: Level[](https://ziglang.org/documentation/master/std/#std.log.Level)) bool`
+    
+Determine if a specific log message level using the default log scope is enabled for logging. `pub fn logEnabled[](https://ziglang.org/documentation/master/std/#std.log.logEnabled)(comptime message_level: Level[](https://ziglang.org/documentation/master/std/#std.log.Level), comptime scope: @Type(.enum_literal)) bool`
+    
+Determine if a specific log message level and scope combination are enabled for logging.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,63 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [http](https://ziglang.org/documentation/master/std/#std.http)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/http.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ChunkParser](https://ziglang.org/documentation/master/std/#std.http.ChunkParser)
+  * [Client](https://ziglang.org/documentation/master/std/#std.http.Client)
+  * [Connection](https://ziglang.org/documentation/master/std/#std.http.Connection)
+  * [ContentEncoding](https://ziglang.org/documentation/master/std/#std.http.ContentEncoding)
+  * [HeadParser](https://ziglang.org/documentation/master/std/#std.http.HeadParser)
+  * [Header](https://ziglang.org/documentation/master/std/#std.http.Header)
+  * [HeaderIterator](https://ziglang.org/documentation/master/std/#std.http.HeaderIterator)
+  * [Method](https://ziglang.org/documentation/master/std/#std.http.Method)
+  * [Server](https://ziglang.org/documentation/master/std/#std.http.Server)
+  * [Status](https://ziglang.org/documentation/master/std/#std.http.Status)
+  * [TransferEncoding](https://ziglang.org/documentation/master/std/#std.http.TransferEncoding)
+  * [Version](https://ziglang.org/documentation/master/std/#std.http.Version)
+  * [WebSocket](https://ziglang.org/documentation/master/std/#std.http.WebSocket)
+
+
+## Namespaces
+  * [protocol](https://ziglang.org/documentation/master/std/#std.http.protocol)
+
+
+## Global Variables
+## Values
+## Functions
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

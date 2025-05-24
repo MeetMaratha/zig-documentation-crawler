@@ -1,0 +1,68 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [array_hash_map](https://ziglang.org/documentation/master/std/#std.array_hash_map)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/array_hash_map.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapWithAllocator)
+  * [ArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)
+  * [ArrayHashMapWithAllocator](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapWithAllocator)
+  * [AutoArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.AutoArrayHashMap)
+  * [AutoArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.AutoArrayHashMapUnmanaged)
+  * [AutoContext](https://ziglang.org/documentation/master/std/#std.array_hash_map.AutoContext)
+  * [StringArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringArrayHashMap)
+  * [StringArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringArrayHashMapUnmanaged)
+
+
+## Namespaces
+  * [StringContext](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringContext)
+
+
+## Global Variables
+## Values
+## Functions `pub fn autoEqlIsCheap[](https://ziglang.org/documentation/master/std/#std.array_hash_map.autoEqlIsCheap)(comptime K: type) bool`
+`pub fn eqlString[](https://ziglang.org/documentation/master/std/#std.array_hash_map.eqlString)(a: []const u8, b: []const u8) bool`
+`pub fn f[](https://ziglang.org/documentation/master/std/#std.array_hash_map.f)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !void`
+`pub fn getAutoEqlFn[](https://ziglang.org/documentation/master/std/#std.array_hash_map.getAutoEqlFn)(comptime K: type, comptime Context: type) (fn (Context, K, K, usize) bool)`
+`pub fn getAutoHashFn[](https://ziglang.org/documentation/master/std/#std.array_hash_map.getAutoHashFn)(comptime K: type, comptime Context: type) (fn (Context, K) u32)`
+`pub fn getAutoHashStratFn[](https://ziglang.org/documentation/master/std/#std.array_hash_map.getAutoHashStratFn)(comptime K: type, comptime Context: type, comptime strategy: std[](https://ziglang.org/documentation/master/std/#std).hash[](https://ziglang.org/documentation/master/std/#std.hash).Strategy[](https://ziglang.org/documentation/master/std/#std.hash.Strategy)) (fn (Context, K) u32)`
+`pub fn getHashPtrAddrFn[](https://ziglang.org/documentation/master/std/#std.array_hash_map.getHashPtrAddrFn)(comptime K: type, comptime Context: type) (fn (Context, K) u32)`
+`pub fn getTrivialEqlFn[](https://ziglang.org/documentation/master/std/#std.array_hash_map.getTrivialEqlFn)(comptime K: type, comptime Context: type) (fn (Context, K, K) bool)`
+`pub fn hashString[](https://ziglang.org/documentation/master/std/#std.array_hash_map.hashString)(s: []const u8) u32`
+`pub fn lessThan[](https://ziglang.org/documentation/master/std/#std.array_hash_map.lessThan)(ctx: @This(), a_index: usize, b_index: usize) bool`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

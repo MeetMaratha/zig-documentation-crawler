@@ -1,0 +1,222 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [array_hash_map](https://ziglang.org/documentation/master/std/#std.array_hash_map)
+  * [StringArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringArrayHashMapUnmanaged)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/array_hash_map.zig)
+An `ArrayHashMapUnmanaged[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)` with strings as keys.
+## Parameters
+```
+V: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+entries: DataList[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.DataList) = .{}
+```
+
+It is permitted to access this field directly. After any modification to the keys, consider calling `reIndex`.
+```
+index_header: ?*IndexHeader[](https://ziglang.org/documentation/master/std/#std.array_hash_map.IndexHeader) = null
+```
+
+When entries length is less than `linear_scan_max`, this remains `null`. Once entries length grows big enough, this field is allocated. There is an IndexHeader followed by an array of Index(I) structs, where I is defined by how many total indexes there are.
+```
+pointer_stability: std[](https://ziglang.org/documentation/master/std/#std).debug[](https://ziglang.org/documentation/master/std/#std.debug).SafetyLock[](https://ziglang.org/documentation/master/std/#std.debug.SafetyLock) = .{}
+```
+
+Used to detect memory safety violations.
+## Types
+  * [Data](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Data)
+  * [DataList](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.DataList)
+  * [Entry](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Entry)
+  * [GetOrPutResult](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)
+  * [Hash](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Hash)
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Iterator)
+  * [KV](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)
+  * [Managed](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Managed)
+
+
+## Namespaces
+## Global Variables
+## Values
+[empty](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.empty)| `Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)`| A map containing no keys or values.  
+---|---|---  
+## Functions `pub fn capacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.capacity)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) usize`
+    
+Returns the number of total elements which may be present before it is no longer guaranteed that no allocations will be performed. `pub fn clearAndFree[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.clearAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+    
+Clears the map and releases the backing allocation `pub fn clearRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.clearRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) void`
+    
+Clears the map but retains the backing allocation for future use. `pub fn clone[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.clone)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)`
+    
+Create a copy of the hash map which can be modified separately. The copy uses the same context as this instance, but is allocated with the provided allocator. `pub fn cloneContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.cloneContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)`
+`pub fn contains[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.contains)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) bool`
+    
+Check whether a key is stored in the map `pub fn containsAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.containsAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) bool`
+`pub fn containsContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.containsContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) bool`
+`pub fn count[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) usize`
+    
+Returns the number of KV pairs stored in this map. `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.deinit)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+    
+Frees the backing allocation and leaves the map in an undefined state. Note that this does not free keys or values. You must take care of that before calling this function, if it is needed. `pub fn ensureTotalCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.ensureTotalCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_capacity: usize) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Increases capacity, guaranteeing that insertions up until the `expected_count` will not cause an allocation, and therefore cannot fail. `pub fn ensureTotalCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.ensureTotalCapacityContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_capacity: usize, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn ensureUnusedCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.ensureUnusedCapacity)( self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), additional_capacity: usize, ) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Increases capacity, guaranteeing that insertions up until `additional_count` **more** items will not cause an allocation, and therefore cannot fail. `pub fn ensureUnusedCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.ensureUnusedCapacityContext)( self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), additional_capacity: usize, ctx: Context, ) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn fetchOrderedRemove[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchOrderedRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+    
+If there is an `Entry` with a matching key, it is deleted from the hash map, and then returned from this function. The entry is removed from the underlying array by shifting all elements forward thereby maintaining the current ordering. `pub fn fetchOrderedRemoveAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchOrderedRemoveAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchOrderedRemoveContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchOrderedRemoveContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchOrderedRemoveContextAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchOrderedRemoveContextAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, key_ctx: anytype, ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchPut[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchPut)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+    
+Inserts a new `Entry` into the hash map, returning the previous one, if any. `pub fn fetchPutAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchPutAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+    
+Inserts a new `Entry` into the hash map, returning the previous one, if any. If insertion happens, asserts there is enough capacity without allocating. `pub fn fetchPutAssumeCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchPutAssumeCapacityContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V, ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchPutContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchPutContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchSwapRemove[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchSwapRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+    
+If there is an `Entry` with a matching key, it is deleted from the hash map, and then returned from this function. The entry is removed from the underlying array by swapping it with the last element. `pub fn fetchSwapRemoveAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchSwapRemoveAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchSwapRemoveContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchSwapRemoveContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn fetchSwapRemoveContextAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.fetchSwapRemoveContextAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, key_ctx: anytype, ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn get[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.get)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?V`
+    
+Find the value associated with a key `pub fn getAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?V`
+`pub fn getContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?V`
+`pub fn getEntry[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getEntry)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?Entry[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Entry)`
+    
+Finds pointers to the key and value storage associated with a key. `pub fn getEntryAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getEntryAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?Entry[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Entry)`
+`pub fn getEntryContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getEntryContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?Entry[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Entry)`
+`pub fn getIndex[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getIndex)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?usize`
+    
+Finds the index in the `entries` array where a key is stored `pub fn getIndexAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getIndexAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?usize`
+`pub fn getIndexContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getIndexContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?usize`
+`pub fn getKey[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKey)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?K`
+    
+Find the actual key associated with an adapted key `pub fn getKeyAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKeyAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?K`
+`pub fn getKeyContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKeyContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?K`
+`pub fn getKeyPtr[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKeyPtr)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?*K`
+    
+Find a pointer to the actual key associated with an adapted key `pub fn getKeyPtrAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKeyPtrAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?*K`
+`pub fn getKeyPtrContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getKeyPtrContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?*K`
+`pub fn getOrPut[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPut)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+    
+If key exists this function cannot fail. If there is an existing item with `key`, then the result `Entry` pointer points to it, and found_existing is true. Otherwise, puts a new item with undefined value, and the `Entry` pointer points to it. Caller should then initialize the value (but not the key). `pub fn getOrPutAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: anytype, key_ctx: anytype) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getOrPutAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+    
+If there is an existing item with `key`, then the result `Entry` pointer points to it, and found_existing is true. Otherwise, puts a new item with undefined value, and the `Entry` pointer points to it. Caller should then initialize the value (but not the key). If a new entry needs to be stored, this function asserts there is enough capacity to store it. `pub fn getOrPutAssumeCapacityAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutAssumeCapacityAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+    
+If there is an existing item with `key`, then the result `Entry` pointers point to it, and found_existing is true. Otherwise, puts a new item with undefined key and value, and the `Entry` pointers point to it. Caller must then initialize both the key and the value. If a new entry needs to be stored, this function asserts there is enough capacity to store it. `pub fn getOrPutAssumeCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutAssumeCapacityContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getOrPutContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getOrPutContextAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutContextAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: anytype, key_ctx: anytype, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getOrPutValue[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutValue)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getOrPutValueContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getOrPutValueContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.GetOrPutResult)`
+`pub fn getPtr[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getPtr)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) ?*V`
+    
+Find a pointer to the value associated with a key `pub fn getPtrAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getPtrAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) ?*V`
+`pub fn getPtrContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.getPtrContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) ?*V`
+`pub fn init[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.init)(gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key_list: []const K, value_list: []const V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)`
+`pub fn iterator[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.iterator)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) Iterator[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Iterator)`
+    
+Returns an iterator over the pairs in this map. Modifying the map may invalidate this iterator. `pub fn keys[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.keys)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) []K`
+    
+Returns the backing array of keys in this map. Modifying the map may invalidate this array. Modifying this array in a way that changes key hashes or key equality puts the map into an unusable state until `reIndex` is called. `pub fn lockPointers[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.lockPointers)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) void`
+    
+Puts the hash map into a state where any method call that would cause an existing key or value pointer to become invalidated will instead trigger an assertion. `pub fn move[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.move)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)`
+    
+Set the map to an empty state, making deinitialization a no-op, and returning a copy of the original. `pub fn orderedRemove[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) bool`
+    
+If there is an `Entry` with a matching key, it is deleted from the hash map. The entry is removed from the underlying array by shifting all elements forward, thereby maintaining the current ordering. Returns true if an entry was removed, false otherwise. `pub fn orderedRemoveAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemoveAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) bool`
+`pub fn orderedRemoveAt[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemoveAt)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), index: usize) void`
+    
+Deletes the item at the specified index in `entries` from the hash map. The entry is removed from the underlying array by shifting all elements forward, thereby maintaining the current ordering. `pub fn orderedRemoveAtContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemoveAtContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), index: usize, ctx: Context) void`
+`pub fn orderedRemoveContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemoveContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) bool`
+`pub fn orderedRemoveContextAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.orderedRemoveContextAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, key_ctx: anytype, ctx: Context) bool`
+`pub fn pop[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.pop)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+    
+Removes the last inserted `Entry` in the hash map and returns it. Otherwise returns null. `pub fn popContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.popContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), ctx: Context) ?KV[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.KV)`
+`pub fn promote[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.promote)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Managed[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Managed)`
+    
+Convert from an unmanaged map to a managed map. After calling this, the promoted map should no longer be used. `pub fn promoteContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.promoteContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ctx: Context) Managed[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.Managed)`
+`pub fn put[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.put)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Clobbers any existing data. To detect if a put would clobber existing data, see `getOrPut`. `pub fn putAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V) void`
+    
+Asserts there is enough capacity to store the new key-value pair. Clobbers any existing data. To detect if a put would clobber existing data, see `getOrPutAssumeCapacity`. `pub fn putAssumeCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putAssumeCapacityContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V, ctx: Context) void`
+`pub fn putAssumeCapacityNoClobber[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putAssumeCapacityNoClobber)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V) void`
+    
+Asserts there is enough capacity to store the new key-value pair. Asserts that it does not clobber any existing data. To detect if a put would clobber existing data, see `getOrPutAssumeCapacity`. `pub fn putAssumeCapacityNoClobberContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putAssumeCapacityNoClobberContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, value: V, ctx: Context) void`
+`pub fn putContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn putNoClobber[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putNoClobber)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Inserts a key-value pair into the hash map, asserting that no previous entry with the same key is already present `pub fn putNoClobberContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.putNoClobberContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: K, value: V, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn reIndex[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.reIndex)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Recomputes stored hashes and rebuilds the key indexes. If the underlying keys have been modified directly, call this method to recompute the denormalized metadata necessary for the operation of the methods of this map that lookup entries by key. `pub fn reIndexContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.reIndexContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn reinit[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.reinit)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key_list: []const K, value_list: []const V) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+An empty `value_list` may be passed, in which case the values array becomes `undefined`. `pub fn setKey[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.setKey)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), index: usize, new_key: K) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Modify an entry's key without reordering any entries. `pub fn setKeyContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.setKeyContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), index: usize, new_key: K, ctx: Context) Oom[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn shrinkAndFree[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.shrinkAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_len: usize) void`
+    
+Shrinks the underlying `Entry` array to `new_len` elements and discards any associated index entries. Reduces allocated capacity. `pub fn shrinkAndFreeContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.shrinkAndFreeContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), gpa: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_len: usize, ctx: Context) void`
+    
+Shrinks the underlying `Entry` array to `new_len` elements and discards any associated index entries. Reduces allocated capacity. `pub fn shrinkRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.shrinkRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), new_len: usize) void`
+    
+Shrinks the underlying `Entry` array to `new_len` elements and discards any associated index entries. Keeps capacity the same. `pub fn shrinkRetainingCapacityContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.shrinkRetainingCapacityContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), new_len: usize, ctx: Context) void`
+    
+Shrinks the underlying `Entry` array to `new_len` elements and discards any associated index entries. Keeps capacity the same. `pub inline fn sort[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.sort)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), sort_ctx: anytype) void`
+    
+Sorts the entries and then rebuilds the index. `sort_ctx` must have this method: `fn lessThan(ctx: @TypeOf(ctx), a_index: usize, b_index: usize) bool` Uses a stable sorting algorithm. `pub inline fn sortContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.sortContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), sort_ctx: anytype, ctx: Context) void`
+`pub inline fn sortUnstable[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.sortUnstable)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), sort_ctx: anytype) void`
+    
+Sorts the entries and then rebuilds the index. `sort_ctx` must have this method: `fn lessThan(ctx: @TypeOf(ctx), a_index: usize, b_index: usize) bool` Uses an unstable sorting algorithm. `pub inline fn sortUnstableContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.sortUnstableContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), sort_ctx: anytype, ctx: Context) void`
+`pub fn swapRemove[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K) bool`
+    
+If there is an `Entry` with a matching key, it is deleted from the hash map. The entry is removed from the underlying array by swapping it with the last element. Returns true if an entry was removed, false otherwise. `pub fn swapRemoveAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemoveAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, ctx: anytype) bool`
+`pub fn swapRemoveAt[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemoveAt)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), index: usize) void`
+    
+Deletes the item at the specified index in `entries` from the hash map. The entry is removed from the underlying array by swapping it with the last element. `pub fn swapRemoveAtContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemoveAtContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), index: usize, ctx: Context) void`
+`pub fn swapRemoveContext[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemoveContext)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: K, ctx: Context) bool`
+`pub fn swapRemoveContextAdapted[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.swapRemoveContextAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged), key: anytype, key_ctx: anytype, ctx: Context) bool`
+`pub fn unlockPointers[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.unlockPointers)(self: *Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) void`
+    
+Undoes a call to `lockPointers`. `pub fn values[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged.values)(self: Self[](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)) []V`
+    
+Returns the backing array of values in this map. Modifying the map may invalidate this array. It is permitted to modify the values in this array.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

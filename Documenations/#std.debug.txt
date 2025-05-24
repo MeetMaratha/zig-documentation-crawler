@@ -1,0 +1,121 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [debug](https://ziglang.org/documentation/master/std/#std.debug)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/debug.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ConfigurableTrace](https://ziglang.org/documentation/master/std/#std.debug.ConfigurableTrace)
+  * [Coverage](https://ziglang.org/documentation/master/std/#std.debug.Coverage)
+  * [Dwarf](https://ziglang.org/documentation/master/std/#std.debug.Dwarf)
+  * [FixedBufferReader](https://ziglang.org/documentation/master/std/#std.debug.FixedBufferReader)
+  * [FullPanic](https://ziglang.org/documentation/master/std/#std.debug.FullPanic)
+  * [Info](https://ziglang.org/documentation/master/std/#std.debug.Info)
+  * [MemoryAccessor](https://ziglang.org/documentation/master/std/#std.debug.MemoryAccessor)
+  * [Pdb](https://ziglang.org/documentation/master/std/#std.debug.Pdb)
+  * [SafetyLock](https://ziglang.org/documentation/master/std/#std.debug.SafetyLock)
+  * [SelfInfo](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo)
+  * [SourceLocation](https://ziglang.org/documentation/master/std/#std.debug.SourceLocation)
+  * [StackIterator](https://ziglang.org/documentation/master/std/#std.debug.StackIterator)
+  * [Symbol](https://ziglang.org/documentation/master/std/#std.debug.Symbol)
+  * [Trace](https://ziglang.org/documentation/master/std/#std.debug.Trace)
+  * [UnwindError](https://ziglang.org/documentation/master/std/#std.debug.UnwindError)
+
+
+## Namespaces
+  * [no_panic](https://ziglang.org/documentation/master/std/#std.debug.no_panic)
+  * [simple_panic](https://ziglang.org/documentation/master/std/#std.debug.simple_panic)
+
+
+## Global Variables
+## Values
+[ThreadContext](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext)| | Platform-specific thread state. This contains register state, and on some platforms information about the stack. This is not safe to trivially copy, because some platforms use internal pointers within this structure. To make a copy, use `copyContext[](https://ziglang.org/documentation/master/std/#std.debug.copyContext)`.  
+---|---|---  
+[default_enable_segfault_handler](https://ziglang.org/documentation/master/std/#std.debug.default_enable_segfault_handler)| |   
+[have_getcontext](https://ziglang.org/documentation/master/std/#std.debug.have_getcontext)| |   
+[have_segfault_handling_support](https://ziglang.org/documentation/master/std/#std.debug.have_segfault_handling_support)| | Whether or not the current target can print useful debug information when a segfault occurs.  
+[have_ucontext](https://ziglang.org/documentation/master/std/#std.debug.have_ucontext)| |   
+[runtime_safety](https://ziglang.org/documentation/master/std/#std.debug.runtime_safety)| | Deprecated because it returns the optimization mode of the standard library, when the caller probably wants to use the optimization mode of their own module.  
+[sys_can_stack_trace](https://ziglang.org/documentation/master/std/#std.debug.sys_can_stack_trace)| |   
+## Functions `pub fn assert[](https://ziglang.org/documentation/master/std/#std.debug.assert)(ok: bool) void`
+    
+Invokes detectable illegal behavior when `ok` is `false`. `pub fn assertReadable[](https://ziglang.org/documentation/master/std/#std.debug.assertReadable)(slice: []const volatile u8) void`
+    
+Invokes detectable illegal behavior when the provided slice is not mapped or lacks read permissions. `pub fn attachSegfaultHandler[](https://ziglang.org/documentation/master/std/#std.debug.attachSegfaultHandler)() void`
+    
+Attaches a global SIGSEGV handler which calls `@panic("segmentation fault");` `pub fn captureStackTrace[](https://ziglang.org/documentation/master/std/#std.debug.captureStackTrace)(first_address: ?usize, stack_trace: *std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).StackTrace[](https://ziglang.org/documentation/master/std/#std.builtin.StackTrace)) void`
+    
+Returns a slice with the same pointer as addresses, with a potentially smaller len. On Windows, when first_address is not null, we ask for at least 32 stack frames, and then try to find the first address. If addresses.len is more than 32, we capture that many stack frames exactly, and then look for the first address, chopping off the irrelevant frames and shifting so that the returned addresses pointer equals the passed in addresses pointer. `pub fn copyContext[](https://ziglang.org/documentation/master/std/#std.debug.copyContext)(source: *const ThreadContext[](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext), dest: *ThreadContext[](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext)) void`
+    
+Copies one context to another, updating any internal pointers `pub fn defaultPanic[](https://ziglang.org/documentation/master/std/#std.debug.defaultPanic)( msg: []const u8, first_trace_addr: ?usize, ) noreturn`
+    
+Dumps a stack trace to standard error, then aborts. `pub fn dumpCurrentStackTrace[](https://ziglang.org/documentation/master/std/#std.debug.dumpCurrentStackTrace)(start_addr: ?usize) void`
+    
+Tries to print the current stack trace to stderr, unbuffered, and ignores any error returned. TODO multithreaded awareness `pub fn dumpHex[](https://ziglang.org/documentation/master/std/#std.debug.dumpHex)(bytes: []const u8) void`
+    
+Tries to print a hexadecimal view of the bytes, unbuffered, and ignores any error returned. Obtains the stderr mutex while dumping. `pub fn dumpHexFallible[](https://ziglang.org/documentation/master/std/#std.debug.dumpHexFallible)(bytes: []const u8) !void`
+    
+Prints a hexadecimal view of the bytes, unbuffered, returning any error that occurs. `pub fn dumpStackPointerAddr[](https://ziglang.org/documentation/master/std/#std.debug.dumpStackPointerAddr)(prefix: []const u8) void`
+`pub fn dumpStackTrace[](https://ziglang.org/documentation/master/std/#std.debug.dumpStackTrace)(stack_trace: std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).StackTrace[](https://ziglang.org/documentation/master/std/#std.builtin.StackTrace)) void`
+    
+Tries to print a stack trace to stderr, unbuffered, and ignores any error returned. TODO multithreaded awareness `pub fn dumpStackTraceFromBase[](https://ziglang.org/documentation/master/std/#std.debug.dumpStackTraceFromBase)(context: *ThreadContext[](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext)) void`
+    
+Tries to print the stack trace starting from the supplied base pointer to stderr, unbuffered, and ignores any error returned. TODO multithreaded awareness `pub inline fn getContext[](https://ziglang.org/documentation/master/std/#std.debug.getContext)(context: *ThreadContext[](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext)) bool`
+    
+Capture the current context. The register values in the context will reflect the state after the platform `getcontext` function returns. `pub fn getSelfDebugInfo[](https://ziglang.org/documentation/master/std/#std.debug.getSelfDebugInfo)() !*SelfInfo[](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo)`
+`pub fn getStderrMutex[](https://ziglang.org/documentation/master/std/#std.debug.getStderrMutex)() *std[](https://ziglang.org/documentation/master/std/#std).Thread[](https://ziglang.org/documentation/master/std/#std.Thread).Mutex[](https://ziglang.org/documentation/master/std/#std.Thread.Mutex)`
+`pub inline fn inValgrind[](https://ziglang.org/documentation/master/std/#std.debug.inValgrind)() bool`
+    
+Detect whether the program is being executed in the Valgrind virtual machine. `pub fn lockStdErr[](https://ziglang.org/documentation/master/std/#std.debug.lockStdErr)() void`
+    
+Allows the caller to freely write to stderr until `unlockStdErr[](https://ziglang.org/documentation/master/std/#std.debug.unlockStdErr)` is called. `pub fn maybeEnableSegfaultHandler[](https://ziglang.org/documentation/master/std/#std.debug.maybeEnableSegfaultHandler)() void`
+`pub fn panic[](https://ziglang.org/documentation/master/std/#std.debug.panic)(comptime format: []const u8, args: anytype) noreturn`
+    
+Equivalent to `@panic` but with a formatted message. `pub fn panicExtra[](https://ziglang.org/documentation/master/std/#std.debug.panicExtra)( ret_addr: ?usize, comptime format: []const u8, args: anytype, ) noreturn`
+    
+Equivalent to `@panic` but with a formatted message, and with an explicitly provided return address. `pub fn print[](https://ziglang.org/documentation/master/std/#std.debug.print)(comptime fmt: []const u8, args: anytype) void`
+    
+Print to stderr, unbuffered, and silently returning on failure. Intended for use in "printf debugging." Use `std.log[](https://ziglang.org/documentation/master/std/#std.log)` functions for proper logging. `pub fn printSourceAtAddress[](https://ziglang.org/documentation/master/std/#std.debug.printSourceAtAddress)(debug_info: *SelfInfo[](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo), out_stream: anytype, address: usize, tty_config: io[](https://ziglang.org/documentation/master/std/#std.io).tty[](https://ziglang.org/documentation/master/std/#std.io.tty).Config[](https://ziglang.org/documentation/master/std/#std.io.tty.Config)) !void`
+`pub fn relocateContext[](https://ziglang.org/documentation/master/std/#std.debug.relocateContext)(context: *ThreadContext[](https://ziglang.org/documentation/master/std/#std.debug.ThreadContext)) void`
+    
+Updates any internal pointers in the context to reflect its current location `pub fn unlockStdErr[](https://ziglang.org/documentation/master/std/#std.debug.unlockStdErr)() void`
+`pub fn updateSegfaultHandler[](https://ziglang.org/documentation/master/std/#std.debug.updateSegfaultHandler)(act: ?*const posix[](https://ziglang.org/documentation/master/std/#std.posix).Sigaction[](https://ziglang.org/documentation/master/std/#std.posix.Sigaction)) void`
+`pub noinline fn walkStackWindows[](https://ziglang.org/documentation/master/std/#std.debug.walkStackWindows)(addresses: []usize, existing_context: ?*const windows[](https://ziglang.org/documentation/master/std/#std.os.windows).CONTEXT[](https://ziglang.org/documentation/master/std/#std.os.windows.CONTEXT)) usize`
+`pub fn writeCurrentStackTrace[](https://ziglang.org/documentation/master/std/#std.debug.writeCurrentStackTrace)( out_stream: anytype, debug_info: *SelfInfo[](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo), tty_config: io[](https://ziglang.org/documentation/master/std/#std.io).tty[](https://ziglang.org/documentation/master/std/#std.io.tty).Config[](https://ziglang.org/documentation/master/std/#std.io.tty.Config), start_addr: ?usize, ) !void`
+`pub fn writeStackTrace[](https://ziglang.org/documentation/master/std/#std.debug.writeStackTrace)( stack_trace: std[](https://ziglang.org/documentation/master/std/#std).builtin[](https://ziglang.org/documentation/master/std/#std.builtin).StackTrace[](https://ziglang.org/documentation/master/std/#std.builtin.StackTrace), out_stream: anytype, debug_info: *SelfInfo[](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo), tty_config: io[](https://ziglang.org/documentation/master/std/#std.io).tty[](https://ziglang.org/documentation/master/std/#std.io.tty).Config[](https://ziglang.org/documentation/master/std/#std.io.tty.Config), ) !void`
+`pub fn writeStackTraceWindows[](https://ziglang.org/documentation/master/std/#std.debug.writeStackTraceWindows)( out_stream: anytype, debug_info: *SelfInfo[](https://ziglang.org/documentation/master/std/#std.debug.SelfInfo), tty_config: io[](https://ziglang.org/documentation/master/std/#std.io).tty[](https://ziglang.org/documentation/master/std/#std.io.tty).Config[](https://ziglang.org/documentation/master/std/#std.io.tty.Config), context: *const windows[](https://ziglang.org/documentation/master/std/#std.os.windows).CONTEXT[](https://ziglang.org/documentation/master/std/#std.os.windows.CONTEXT), start_addr: ?usize, ) !void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

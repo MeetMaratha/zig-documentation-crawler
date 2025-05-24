@@ -1,0 +1,88 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [builtin](https://ziglang.org/documentation/master/std/#std.builtin)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/builtin.zig)
+Types and values provided by the Zig language.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [AddressSpace](https://ziglang.org/documentation/master/std/#std.builtin.AddressSpace)
+  * [AtomicOrder](https://ziglang.org/documentation/master/std/#std.builtin.AtomicOrder)
+  * [AtomicRmwOp](https://ziglang.org/documentation/master/std/#std.builtin.AtomicRmwOp)
+  * [BranchHint](https://ziglang.org/documentation/master/std/#std.builtin.BranchHint)
+  * [CallModifier](https://ziglang.org/documentation/master/std/#std.builtin.CallModifier)
+  * [CallingConvention](https://ziglang.org/documentation/master/std/#std.builtin.CallingConvention)
+  * [CodeModel](https://ziglang.org/documentation/master/std/#std.builtin.CodeModel)
+  * [CompilerBackend](https://ziglang.org/documentation/master/std/#std.builtin.CompilerBackend)
+  * [Endian](https://ziglang.org/documentation/master/std/#std.builtin.Endian)
+  * [ExportOptions](https://ziglang.org/documentation/master/std/#std.builtin.ExportOptions)
+  * [ExternOptions](https://ziglang.org/documentation/master/std/#std.builtin.ExternOptions)
+  * [FloatMode](https://ziglang.org/documentation/master/std/#std.builtin.FloatMode)
+  * [GlobalLinkage](https://ziglang.org/documentation/master/std/#std.builtin.GlobalLinkage)
+  * [LinkMode](https://ziglang.org/documentation/master/std/#std.builtin.LinkMode)
+  * [Mode](https://ziglang.org/documentation/master/std/#std.builtin.OptimizeMode)
+  * [OptimizeMode](https://ziglang.org/documentation/master/std/#std.builtin.OptimizeMode)
+  * [OutputMode](https://ziglang.org/documentation/master/std/#std.builtin.OutputMode)
+  * [PrefetchOptions](https://ziglang.org/documentation/master/std/#std.builtin.PrefetchOptions)
+  * [ReduceOp](https://ziglang.org/documentation/master/std/#std.builtin.ReduceOp)
+  * [Signedness](https://ziglang.org/documentation/master/std/#std.builtin.Signedness)
+  * [SourceLocation](https://ziglang.org/documentation/master/std/#std.builtin.SourceLocation)
+  * [StackTrace](https://ziglang.org/documentation/master/std/#std.builtin.StackTrace)
+  * [SymbolVisibility](https://ziglang.org/documentation/master/std/#std.builtin.SymbolVisibility)
+  * [TestFn](https://ziglang.org/documentation/master/std/#std.builtin.TestFn)
+  * [Type](https://ziglang.org/documentation/master/std/#std.builtin.Type)
+  * [TypeId](https://ziglang.org/documentation/master/std/#std.builtin.TypeId)
+  * [UnwindTables](https://ziglang.org/documentation/master/std/#std.builtin.UnwindTables)
+  * [VaList](https://ziglang.org/documentation/master/std/#std.builtin.VaList)
+  * [VaListAarch64](https://ziglang.org/documentation/master/std/#std.builtin.VaListAarch64)
+  * [VaListHexagon](https://ziglang.org/documentation/master/std/#std.builtin.VaListHexagon)
+  * [VaListPowerPc](https://ziglang.org/documentation/master/std/#std.builtin.VaListPowerPc)
+  * [VaListS390x](https://ziglang.org/documentation/master/std/#std.builtin.VaListS390x)
+  * [VaListX86_64](https://ziglang.org/documentation/master/std/#std.builtin.VaListX86_64)
+  * [VaListXtensa](https://ziglang.org/documentation/master/std/#std.builtin.VaListXtensa)
+  * [WasiExecModel](https://ziglang.org/documentation/master/std/#std.builtin.WasiExecModel)
+
+
+## Namespaces
+## Global Variables
+## Values
+[PanicFn](https://ziglang.org/documentation/master/std/#std.builtin.PanicFn)| | Deprecated, use the `Panic` namespace instead. To be deleted after 0.14.0 is released.  
+---|---|---  
+[panic](https://ziglang.org/documentation/master/std/#std.builtin.panic)| `type`| This namespace is used by the Zig compiler to emit various kinds of safety panics. These can be overridden by making a public `panic[](https://ziglang.org/documentation/master/std/#std.builtin.panic)` namespace in the root source file.  
+[subsystem](https://ziglang.org/documentation/master/std/#std.builtin.subsystem)| `?std[](https://ziglang.org/documentation/master/std/#std).Target[](https://ziglang.org/documentation/master/std/#std.Target).SubSystem[](https://ziglang.org/documentation/master/std/#std.Target.SubSystem)`| `explicit_subsystem` is missing when the subsystem is automatically detected, so Zig standard library has the subsystem detection logic here. This should generally be used rather than `explicit_subsystem`. On non-Windows targets, this is `null`.  
+## Functions `pub noinline fn returnError[](https://ziglang.org/documentation/master/std/#std.builtin.returnError)() void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

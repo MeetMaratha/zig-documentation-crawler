@@ -1,0 +1,124 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [enums](https://ziglang.org/documentation/master/std/#std.enums)
+  * [EnumMap](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/enums.zig)
+A map keyed by an enum, backed by a bitfield and a dense array. If the enum is exhaustive but not dense, a mapping will be constructed from enum values to dense indices. This type does no dynamic allocation and can be copied by value.
+## Parameters
+```
+E: type
+```
+
+```
+V: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+bits: BitSet[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.BitSet) = BitSet[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.BitSet).initEmpty[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.BitSet.initEmpty)()
+```
+
+Bits determining whether items are in the map
+```
+values: [Indexer[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Indexer).count[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Indexer.count)]Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value) = undefined
+```
+
+Values of items in the map. If the associated bit is zero, the value is undefined.
+## Types
+  * [Entry](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Entry)
+  * [Indexer](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Indexer)
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Iterator)
+
+
+## Namespaces
+## Global Variables
+## Values
+[Key](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)| | The key type used to index this map  
+---|---|---  
+[Value](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)| | The value type stored in this map  
+[len](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.len)| | The number of possible keys in the map  
+## Functions `pub fn contains[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.contains)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) bool`
+    
+Checks if the map contains an item. `pub fn count[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)) usize`
+    
+The number of items in the map. `pub fn fetchPut[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.fetchPut)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key), value: Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)) ?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Sets the value associated with the key in the map, and returns the old value. If the key was not in the map, returns null. `pub fn fetchRemove[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.fetchRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) ?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Removes a key from the map, and returns the old value. If the key was not in the map, returns null. `pub fn get[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.get)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) ?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the value associated with a key. If the key is not in the map, returns null. `pub fn getAssertContains[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.getAssertContains)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the value associated with a key, which must exist in the map. `pub fn getPtr[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.getPtr)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) ?*Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the address of the value associated with a key. If the key is not in the map, returns null. `pub fn getPtrAssertContains[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.getPtrAssertContains)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) *Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the address of the value associated with a key. The key must be present in the map. `pub fn getPtrConst[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.getPtrConst)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) ?*const Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the address of the const value associated with a key. If the key is not in the map, returns null. `pub fn getPtrConstAssertContains[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.getPtrConstAssertContains)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) *const Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Gets the address of the const value associated with a key. The key must be present in the map. `pub fn init[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.init)(init_values: EnumFieldStruct[](https://ziglang.org/documentation/master/std/#std.enums.EnumFieldStruct)(E, ?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value), @as(?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value), null))) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)`
+    
+Initializes the map using a sparse struct of optionals `pub fn initFull[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.initFull)(value: Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)`
+    
+Initializes a full mapping with all keys set to value. Consider using EnumArray instead if the map will remain full. `pub fn initFullWith[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.initFullWith)(init_values: EnumFieldStruct[](https://ziglang.org/documentation/master/std/#std.enums.EnumFieldStruct)(E, Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value), null)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)`
+    
+Initializes a full mapping with supplied values. Consider using EnumArray instead if the map will remain full. `pub fn initFullWithDefault[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.initFullWithDefault)(comptime default: ?Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value), init_values: EnumFieldStruct[](https://ziglang.org/documentation/master/std/#std.enums.EnumFieldStruct)(E, Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value), default)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)`
+    
+Initializes a full mapping with a provided default. Consider using EnumArray instead if the map will remain full. `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.iterator)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)) Iterator[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Iterator)`
+    
+Returns an iterator over the map, which visits items in index order. Modifications to the underlying map may or may not be observed by the iterator, but will not invalidate it. `pub fn put[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.put)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key), value: Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)) void`
+    
+Adds the key to the map with the supplied value. If the key is already in the map, overwrites the value. `pub fn putUninitialized[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.putUninitialized)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) *Value[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Value)`
+    
+Adds the key to the map with an undefined value. If the key is already in the map, the value becomes undefined. A pointer to the value is returned, which should be used to initialize the value. `pub fn remove[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.remove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap.Key)) void`
+    
+Removes a key from the map. If the key was not in the map, does nothing.
+## Error Sets
+## Example Usage
+```
+test EnumMap {
+  const Ball = enum { red, green, blue };
+  const some = EnumMap[](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)(Ball, u8).init(.{
+    .green = 0xff,
+    .blue = 0x80,
+  });
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(2, some.count());
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(null, some.get(.red));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(0xff, some.get(.green));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(0x80, some.get(.blue));
+}
+```
+
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

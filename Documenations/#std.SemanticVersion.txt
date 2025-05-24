@@ -1,0 +1,73 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [SemanticVersion](https://ziglang.org/documentation/master/std/#std.SemanticVersion)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/SemanticVersion.zig)
+A software version formatted according to the Semantic Versioning 2.0.0 specification.
+See: <https://semver.org>
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+major: usize
+```
+
+```
+minor: usize
+```
+
+```
+patch: usize
+```
+
+```
+pre: ?[]const u8 = null
+```
+
+```
+build: ?[]const u8 = null
+```
+
+## Types
+  * [Range](https://ziglang.org/documentation/master/std/#std.SemanticVersion.Range)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn format[](https://ziglang.org/documentation/master/std/#std.SemanticVersion.format)( self: Version[](https://ziglang.org/documentation/master/std/#std.SemanticVersion), comptime fmt: []const u8, options: std[](https://ziglang.org/documentation/master/std/#std).fmt[](https://ziglang.org/documentation/master/std/#std.fmt).FormatOptions[](https://ziglang.org/documentation/master/std/#std.fmt.FormatOptions), out_stream: anytype, ) !void`
+`pub fn order[](https://ziglang.org/documentation/master/std/#std.SemanticVersion.order)(lhs: Version[](https://ziglang.org/documentation/master/std/#std.SemanticVersion), rhs: Version[](https://ziglang.org/documentation/master/std/#std.SemanticVersion)) std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order)`
+`pub fn parse[](https://ziglang.org/documentation/master/std/#std.SemanticVersion.parse)(text: []const u8) !Version[](https://ziglang.org/documentation/master/std/#std.SemanticVersion)`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

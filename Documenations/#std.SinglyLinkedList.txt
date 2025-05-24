@@ -1,0 +1,66 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [SinglyLinkedList](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/SinglyLinkedList.zig)
+A singly-linked list is headed by a single forward pointer. The elements are singly-linked for minimum space and pointer manipulation overhead at the expense of O(n) removal for arbitrary elements. New elements can be added to the list after an existing element or at the head of the list.
+A singly-linked list may only be traversed in the forward direction.
+Singly-linked lists are useful under these conditions:
+  * Ability to preallocate elements / requirement of infallibility for insertion.
+  * Ability to allocate elements intrusively along with other data.
+  * Homogenous elements.
+
+
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+first: ?*Node[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.Node) = null
+```
+
+## Types
+  * [Node](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.Node)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn len[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.len)(list: SinglyLinkedList[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList)) usize`
+    
+Iterate over all nodes, returning the count. `pub fn popFirst[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.popFirst)(list: *SinglyLinkedList[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList)) ?*Node[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.Node)`
+    
+Remove and return the first node in the list. `pub fn prepend[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.prepend)(list: *SinglyLinkedList[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList), new_node: *Node[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.Node)) void`
+`pub fn remove[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.remove)(list: *SinglyLinkedList[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList), node: *Node[](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList.Node)) void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

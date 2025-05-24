@@ -1,0 +1,89 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [sort](https://ziglang.org/documentation/master/std/#std.sort)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/sort.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Mode](https://ziglang.org/documentation/master/std/#std.sort.Mode)
+  * [equalRange](https://ziglang.org/documentation/master/std/#std.sort.equalRange)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn argMax[](https://ziglang.org/documentation/master/std/#std.sort.argMax)( comptime T: type, items: []const T, context: anytype, comptime lessThan: fn (context: @TypeOf(context), lhs: T, rhs: T) bool, ) ?usize`
+`pub fn argMin[](https://ziglang.org/documentation/master/std/#std.sort.argMin)( comptime T: type, items: []const T, context: anytype, comptime lessThan: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) ?usize`
+`pub fn asc[](https://ziglang.org/documentation/master/std/#std.sort.asc)(comptime T: type) fn (void, T, T) bool`
+    
+Use to generate a comparator function for a given type. e.g. `sort(u8, slice, {}, asc(u8))`. `pub fn binarySearch[](https://ziglang.org/documentation/master/std/#std.sort.binarySearch)( comptime T: type, items: []const T, context: anytype, comptime compareFn: fn (@TypeOf(context), T) std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order), ) ?usize`
+    
+Returns the index of an element in `items` returning `.eq` when given to `compareFn`.
+  * If there are multiple such elements, returns the index of any one of them.
+  * If there are no such elements, returns `null`.
+
+`pub fn block[](https://ziglang.org/documentation/master/std/#std.sort.block.block)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) void`
+    
+Stable in-place sort. O(n) best case, O(n*log(n)) worst case and average case. O(1) memory (no allocator required). Sorts in ascending order with respect to the given `lessThan` function. `pub fn desc[](https://ziglang.org/documentation/master/std/#std.sort.desc)(comptime T: type) fn (void, T, T) bool`
+    
+Use to generate a comparator function for a given type. e.g. `sort(u8, slice, {}, desc(u8))`. `pub fn heap[](https://ziglang.org/documentation/master/std/#std.sort.heap)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) void`
+    
+Unstable in-place sort. O(n*log(n)) best case, worst case and average case. O(1) memory (no allocator required). Sorts in ascending order with respect to the given `lessThan` function. `pub fn heapContext[](https://ziglang.org/documentation/master/std/#std.sort.heapContext)(a: usize, b: usize, context: anytype) void`
+    
+Unstable in-place sort. O(n*log(n)) best case, worst case and average case. O(1) memory (no allocator required). `context` must have methods `swap` and `lessThan`, which each take 2 `usize` parameters indicating the index of an item. Sorts in ascending order with respect to `lessThan`. `pub fn insertion[](https://ziglang.org/documentation/master/std/#std.sort.insertion)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (@TypeOf(context), lhs: T, rhs: T) bool, ) void`
+    
+Stable in-place sort. O(n) best case, O(pow(n, 2)) worst case. O(1) memory (no allocator required). Sorts in ascending order with respect to the given `lessThan` function. `pub fn insertionContext[](https://ziglang.org/documentation/master/std/#std.sort.insertionContext)(a: usize, b: usize, context: anytype) void`
+    
+Stable in-place sort. O(n) best case, O(pow(n, 2)) worst case. O(1) memory (no allocator required). `context` must have methods `swap` and `lessThan`, which each take 2 `usize` parameters indicating the index of an item. Sorts in ascending order with respect to `lessThan`. `pub fn isSorted[](https://ziglang.org/documentation/master/std/#std.sort.isSorted)( comptime T: type, items: []const T, context: anytype, comptime lessThan: fn (context: @TypeOf(context), lhs: T, rhs: T) bool, ) bool`
+`pub fn lessThan[](https://ziglang.org/documentation/master/std/#std.sort.lessThan)(ctx: @This(), a: usize, b: usize) bool`
+`pub fn lowerBound[](https://ziglang.org/documentation/master/std/#std.sort.lowerBound)( comptime T: type, items: []const T, context: anytype, comptime compareFn: fn (@TypeOf(context), T) std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order), ) usize`
+    
+Returns the index of the first element in `items` that is greater than or equal to `context`, as determined by `compareFn`. If no such element exists, returns `items.len`. `pub fn max[](https://ziglang.org/documentation/master/std/#std.sort.max)( comptime T: type, items: []const T, context: anytype, comptime lessThan: fn (context: @TypeOf(context), lhs: T, rhs: T) bool, ) ?T`
+`pub fn min[](https://ziglang.org/documentation/master/std/#std.sort.min)( comptime T: type, items: []const T, context: anytype, comptime lessThan: fn (context: @TypeOf(context), lhs: T, rhs: T) bool, ) ?T`
+`pub fn partitionPoint[](https://ziglang.org/documentation/master/std/#std.sort.partitionPoint)( comptime T: type, items: []const T, context: anytype, comptime predicate: fn (@TypeOf(context), T) bool, ) usize`
+    
+Returns the index of the partition point of `items` in relation to the given predicate.
+  * If all elements of `items` satisfy the predicate the returned value is `items.len`.
+
+`pub fn pdq[](https://ziglang.org/documentation/master/std/#std.sort.pdq.pdq)( comptime T: type, items: []T, context: anytype, comptime lessThanFn: fn (context: @TypeOf(context), lhs: T, rhs: T) bool, ) void`
+    
+Unstable in-place sort. n best case, n*log(n) worst case and average case. log(n) memory (no allocator required). `pub fn pdqContext[](https://ziglang.org/documentation/master/std/#std.sort.pdq.pdqContext)(a: usize, b: usize, context: anytype) void`
+    
+Unstable in-place sort. O(n) best case, O(n*log(n)) worst case and average case. O(log(n)) memory (no allocator required). `context` must have methods `swap` and `lessThan`, which each take 2 `usize` parameters indicating the index of an item. Sorts in ascending order with respect to `lessThan`. `pub fn swap[](https://ziglang.org/documentation/master/std/#std.sort.swap)(ctx: @This(), a: usize, b: usize) void`
+`pub fn upperBound[](https://ziglang.org/documentation/master/std/#std.sort.upperBound)( comptime T: type, items: []const T, context: anytype, comptime compareFn: fn (@TypeOf(context), T) std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order), ) usize`
+    
+Returns the index of the first element in `items` that is greater than `context`, as determined by `compareFn`. If no such element exists, returns `items.len`.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

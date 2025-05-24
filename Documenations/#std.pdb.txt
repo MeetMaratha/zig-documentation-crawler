@@ -1,0 +1,72 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [pdb](https://ziglang.org/documentation/master/std/#std.pdb)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/pdb.zig)
+Program Data Base debugging information format.
+This namespace contains unopinionated types and data definitions only. For an implementation of parsing and caching PDB information, see `std.debug.Pdb[](https://ziglang.org/documentation/master/std/#std.debug.Pdb)`.
+Most of this is based on information gathered from LLVM source code, documentation and/or contributors.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ColumnNumberEntry](https://ziglang.org/documentation/master/std/#std.pdb.ColumnNumberEntry)
+  * [DbiStreamHeader](https://ziglang.org/documentation/master/std/#std.pdb.DbiStreamHeader)
+  * [DebugSubsectionHeader](https://ziglang.org/documentation/master/std/#std.pdb.DebugSubsectionHeader)
+  * [DebugSubsectionKind](https://ziglang.org/documentation/master/std/#std.pdb.DebugSubsectionKind)
+  * [FileChecksumEntryHeader](https://ziglang.org/documentation/master/std/#std.pdb.FileChecksumEntryHeader)
+  * [LineBlockFragmentHeader](https://ziglang.org/documentation/master/std/#std.pdb.LineBlockFragmentHeader)
+  * [LineFlags](https://ziglang.org/documentation/master/std/#std.pdb.LineFlags)
+  * [LineFragmentHeader](https://ziglang.org/documentation/master/std/#std.pdb.LineFragmentHeader)
+  * [LineNumberEntry](https://ziglang.org/documentation/master/std/#std.pdb.LineNumberEntry)
+  * [ModInfo](https://ziglang.org/documentation/master/std/#std.pdb.ModInfo)
+  * [ProcSym](https://ziglang.org/documentation/master/std/#std.pdb.ProcSym)
+  * [ProcSymFlags](https://ziglang.org/documentation/master/std/#std.pdb.ProcSymFlags)
+  * [RecordPrefix](https://ziglang.org/documentation/master/std/#std.pdb.RecordPrefix)
+  * [SectionContrSubstreamVersion](https://ziglang.org/documentation/master/std/#std.pdb.SectionContrSubstreamVersion)
+  * [SectionContribEntry](https://ziglang.org/documentation/master/std/#std.pdb.SectionContribEntry)
+  * [SectionMapEntry](https://ziglang.org/documentation/master/std/#std.pdb.SectionMapEntry)
+  * [SectionMapHeader](https://ziglang.org/documentation/master/std/#std.pdb.SectionMapHeader)
+  * [StreamType](https://ziglang.org/documentation/master/std/#std.pdb.StreamType)
+  * [StringTableHeader](https://ziglang.org/documentation/master/std/#std.pdb.StringTableHeader)
+  * [SuperBlock](https://ziglang.org/documentation/master/std/#std.pdb.SuperBlock)
+  * [SymbolKind](https://ziglang.org/documentation/master/std/#std.pdb.SymbolKind)
+  * [TypeIndex](https://ziglang.org/documentation/master/std/#std.pdb.TypeIndex)
+
+
+## Namespaces
+## Global Variables
+## Values
+## Functions
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,110 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [enums](https://ziglang.org/documentation/master/std/#std.enums)
+  * [EnumSet](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/enums.zig)
+A set of enum elements, backed by a bitfield. If the enum is exhaustive but not dense, a mapping will be constructed from enum values to dense indices. This type does no dynamic allocation and can be copied by value.
+## Parameters
+```
+E: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+bits: BitSet[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.BitSet) = BitSet[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.BitSet).initEmpty[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.BitSet.initEmpty)()
+```
+
+## Types
+  * [Indexer](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Indexer)
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Iterator)
+
+
+## Namespaces
+## Global Variables
+## Values
+[Key](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)| | The element type for this set.  
+---|---|---  
+[len](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.len)| | The maximum number of items in this set.  
+## Functions `pub fn complement[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.complement)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set with all the keys not in this set. `pub fn contains[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.contains)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) bool`
+    
+Checks if a key is in the set. `pub fn count[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) usize`
+    
+Returns the number of keys in the set. `pub fn differenceWith[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.differenceWith)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set with keys that are in this set except for keys in the other set. `pub fn eql[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.eql)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) bool`
+    
+Returns true iff both sets have the same keys. `pub fn init[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.init)(init_values: EnumFieldStruct[](https://ziglang.org/documentation/master/std/#std.enums.EnumFieldStruct)(E, bool, false)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Initializes the set using a struct of bools `pub fn initEmpty[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.initEmpty)() Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set containing no keys. `pub fn initFull[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.initFull)() Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set containing all possible keys. `pub fn initMany[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.initMany)(keys: []const Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set containing multiple keys. `pub fn initOne[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.initOne)(key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set containing a single key. `pub fn insert[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.insert)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) void`
+    
+Puts a key in the set. `pub fn intersectWith[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.intersectWith)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set with keys that are in both this set and the other set. `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.iterator)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Iterator[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Iterator)`
+    
+Returns an iterator over this set, which iterates in index order. Modifications to the set during iteration may or may not be observed by the iterator, but will not invalidate it. `pub fn remove[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.remove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) void`
+    
+Removes a key from the set. `pub fn setIntersection[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.setIntersection)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) void`
+    
+Removes all keys which are not in the passed set. `pub fn setPresent[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.setPresent)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key), present: bool) void`
+    
+Changes the presence of a key in the set to match the passed bool. `pub fn setUnion[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.setUnion)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) void`
+    
+Adds all keys in the passed set to this set. `pub fn subsetOf[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.subsetOf)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) bool`
+    
+Returns true iff all the keys in this set are in the other set. The other set may have keys not found in this set. `pub fn supersetOf[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.supersetOf)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) bool`
+    
+Returns true iff this set contains all the keys in the other set. This set may have keys not found in the other set. `pub fn toggle[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.toggle)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), key: Key[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.Key)) void`
+    
+Toggles the presence of a key in the set. If the key is in the set, removes it. Otherwise adds it. `pub fn toggleAll[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.toggleAll)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) void`
+    
+Toggles all possible keys in the set. `pub fn toggleSet[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.toggleSet)(self: *Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) void`
+    
+Toggles the presence of all keys in the passed set. `pub fn unionWith[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.unionWith)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set with keys that are in either this set or the other set. `pub fn xorWith[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet.xorWith)(self: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet), other: Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)) Self[](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)`
+    
+Returns a set with keys that are in either this set or the other set, but not both.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,72 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [zip](https://ziglang.org/documentation/master/std/#std.zip)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/zip.zig)
+The .ZIP File Format Specification is found here: <https://pkwaredownloads.blob.core.windows.net/pem/APPNOTE.txt>
+Note that this file uses the abbreviation "cd" for "central directory"
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [CentralDirectoryFileHeader](https://ziglang.org/documentation/master/std/#std.zip.CentralDirectoryFileHeader)
+  * [CompressionMethod](https://ziglang.org/documentation/master/std/#std.zip.CompressionMethod)
+  * [Diagnostics](https://ziglang.org/documentation/master/std/#std.zip.Diagnostics)
+  * [EndLocator64](https://ziglang.org/documentation/master/std/#std.zip.EndLocator64)
+  * [EndRecord](https://ziglang.org/documentation/master/std/#std.zip.EndRecord)
+  * [EndRecord64](https://ziglang.org/documentation/master/std/#std.zip.EndRecord64)
+  * [ExtraHeader](https://ziglang.org/documentation/master/std/#std.zip.ExtraHeader)
+  * [ExtractOptions](https://ziglang.org/documentation/master/std/#std.zip.ExtractOptions)
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.zip.Iterator)
+  * [LocalFileHeader](https://ziglang.org/documentation/master/std/#std.zip.LocalFileHeader)
+
+
+## Namespaces
+## Global Variables
+## Values
+[central_file_header_sig](https://ziglang.org/documentation/master/std/#std.zip.central_file_header_sig)| |   
+---|---|---  
+[end_locator64_sig](https://ziglang.org/documentation/master/std/#std.zip.end_locator64_sig)| |   
+[end_record64_sig](https://ziglang.org/documentation/master/std/#std.zip.end_record64_sig)| |   
+[end_record_sig](https://ziglang.org/documentation/master/std/#std.zip.end_record_sig)| |   
+[local_file_header_sig](https://ziglang.org/documentation/master/std/#std.zip.local_file_header_sig)| |   
+[testutil](https://ziglang.org/documentation/master/std/#std.zip.testutil)| |   
+## Functions `pub fn decompress[](https://ziglang.org/documentation/master/std/#std.zip.decompress)( method: CompressionMethod[](https://ziglang.org/documentation/master/std/#std.zip.CompressionMethod), uncompressed_size: u64, reader: anytype, writer: anytype, ) !u32`
+    
+Decompresses the given data from `reader` into `writer`. Stops early if more than `uncompressed_size` bytes are processed and verifies that exactly that number of bytes are decompressed. Returns the CRC-32 of the uncompressed data. `writer` can be anything with a `writeAll(self: *Self, chunk: []const u8) anyerror!void` method. `pub fn extract[](https://ziglang.org/documentation/master/std/#std.zip.extract)(dest: std[](https://ziglang.org/documentation/master/std/#std).fs[](https://ziglang.org/documentation/master/std/#std.fs).Dir[](https://ziglang.org/documentation/master/std/#std.fs.Dir), seekable_stream: anytype, options: ExtractOptions[](https://ziglang.org/documentation/master/std/#std.zip.ExtractOptions)) !void`
+    
+Extract the zipped files inside `seekable_stream` to the given `dest` directory. Note that `seekable_stream` must be an instance of `std.io.SeekableStream[](https://ziglang.org/documentation/master/std/#std.io.seekable_stream.SeekableStream)` and its context must also have a `.reader()` method that returns an instance of `std.io.Reader[](https://ziglang.org/documentation/master/std/#std.io.GenericReader)`. `pub fn findEndRecord[](https://ziglang.org/documentation/master/std/#std.zip.findEndRecord)(seekable_stream: anytype, stream_len: u64) !EndRecord[](https://ziglang.org/documentation/master/std/#std.zip.EndRecord)`
+    
+Find and return the end record for the given seekable zip stream. Note that `seekable_stream` must be an instance of `std.io.SeekableStream[](https://ziglang.org/documentation/master/std/#std.io.seekable_stream.SeekableStream)` and its context must also have a `.reader()` method that returns an instance of `std.io.Reader[](https://ziglang.org/documentation/master/std/#std.io.GenericReader)`.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

@@ -1,0 +1,148 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/std.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapWithAllocator)
+  * [ArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.ArrayHashMapUnmanaged)
+  * [ArrayList](https://ziglang.org/documentation/master/std/#std.array_list.ArrayList)
+  * [ArrayListAligned](https://ziglang.org/documentation/master/std/#std.array_list.ArrayListAligned)
+  * [ArrayListAlignedUnmanaged](https://ziglang.org/documentation/master/std/#std.array_list.ArrayListAlignedUnmanaged)
+  * [ArrayListUnmanaged](https://ziglang.org/documentation/master/std/#std.array_list.ArrayListUnmanaged)
+  * [AutoArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.AutoArrayHashMap)
+  * [AutoArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.AutoArrayHashMapUnmanaged)
+  * [AutoHashMap](https://ziglang.org/documentation/master/std/#std.hash_map.AutoHashMap)
+  * [AutoHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.AutoHashMapUnmanaged)
+  * [BitStack](https://ziglang.org/documentation/master/std/#std.BitStack)
+  * [BoundedArray](https://ziglang.org/documentation/master/std/#std.bounded_array.BoundedArray)
+  * [BoundedArrayAligned](https://ziglang.org/documentation/master/std/#std.bounded_array.BoundedArrayAligned)
+  * [BufMap](https://ziglang.org/documentation/master/std/#std.buf_map.BufMap)
+  * [BufSet](https://ziglang.org/documentation/master/std/#std.buf_set.BufSet)
+  * [Build](https://ziglang.org/documentation/master/std/#std.Build)
+  * [DoublyLinkedList](https://ziglang.org/documentation/master/std/#std.DoublyLinkedList)
+  * [DynLib](https://ziglang.org/documentation/master/std/#std.dynamic_library.DynLib)
+  * [DynamicBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSet)
+  * [DynamicBitSetUnmanaged](https://ziglang.org/documentation/master/std/#std.bit_set.DynamicBitSetUnmanaged)
+  * [EnumArray](https://ziglang.org/documentation/master/std/#std.enums.EnumArray)
+  * [EnumMap](https://ziglang.org/documentation/master/std/#std.enums.EnumMap)
+  * [EnumSet](https://ziglang.org/documentation/master/std/#std.enums.EnumSet)
+  * [HashMap](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)
+  * [HashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.HashMapUnmanaged)
+  * [MultiArrayList](https://ziglang.org/documentation/master/std/#std.multi_array_list.MultiArrayList)
+  * [Options](https://ziglang.org/documentation/master/std/#std.Options)
+  * [PriorityDequeue](https://ziglang.org/documentation/master/std/#std.priority_dequeue.PriorityDequeue)
+  * [PriorityQueue](https://ziglang.org/documentation/master/std/#std.priority_queue.PriorityQueue)
+  * [Progress](https://ziglang.org/documentation/master/std/#std.Progress)
+  * [Random](https://ziglang.org/documentation/master/std/#std.Random)
+  * [RingBuffer](https://ziglang.org/documentation/master/std/#std.RingBuffer)
+  * [SegmentedList](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList)
+  * [SemanticVersion](https://ziglang.org/documentation/master/std/#std.SemanticVersion)
+  * [SinglyLinkedList](https://ziglang.org/documentation/master/std/#std.SinglyLinkedList)
+  * [StaticBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)
+  * [StaticStringMap](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMap)
+  * [StaticStringMapWithEql](https://ziglang.org/documentation/master/std/#std.static_string_map.StaticStringMapWithEql)
+  * [StringArrayHashMap](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringArrayHashMap)
+  * [StringArrayHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.array_hash_map.StringArrayHashMapUnmanaged)
+  * [StringHashMap](https://ziglang.org/documentation/master/std/#std.hash_map.StringHashMap)
+  * [StringHashMapUnmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.StringHashMapUnmanaged)
+  * [Target](https://ziglang.org/documentation/master/std/#std.Target)
+  * [Thread](https://ziglang.org/documentation/master/std/#std.Thread)
+  * [Treap](https://ziglang.org/documentation/master/std/#std.treap.Treap)
+  * [Tz](https://ziglang.org/documentation/master/std/#std.tz.Tz)
+  * [Uri](https://ziglang.org/documentation/master/std/#std.Uri)
+
+
+## Namespaces
+  * [array_hash_map](https://ziglang.org/documentation/master/std/#std.array_hash_map)
+  * [ascii](https://ziglang.org/documentation/master/std/#std.ascii)
+  * [atomic](https://ziglang.org/documentation/master/std/#std.atomic)
+  * [base64](https://ziglang.org/documentation/master/std/#std.base64)
+  * [bit_set](https://ziglang.org/documentation/master/std/#std.bit_set)
+  * [builtin](https://ziglang.org/documentation/master/std/#std.builtin)
+  * [c](https://ziglang.org/documentation/master/std/#std.c)
+  * [coff](https://ziglang.org/documentation/master/std/#std.coff)
+  * [compress](https://ziglang.org/documentation/master/std/#std.compress)
+  * [crypto](https://ziglang.org/documentation/master/std/#std.crypto)
+  * [debug](https://ziglang.org/documentation/master/std/#std.debug)
+  * [dwarf](https://ziglang.org/documentation/master/std/#std.dwarf)
+  * [elf](https://ziglang.org/documentation/master/std/#std.elf)
+  * [enums](https://ziglang.org/documentation/master/std/#std.enums)
+  * [fifo](https://ziglang.org/documentation/master/std/#std.fifo)
+  * [fmt](https://ziglang.org/documentation/master/std/#std.fmt)
+  * [fs](https://ziglang.org/documentation/master/std/#std.fs)
+  * [gpu](https://ziglang.org/documentation/master/std/#std.gpu)
+  * [hash](https://ziglang.org/documentation/master/std/#std.hash)
+  * [hash_map](https://ziglang.org/documentation/master/std/#std.hash_map)
+  * [heap](https://ziglang.org/documentation/master/std/#std.heap)
+  * [http](https://ziglang.org/documentation/master/std/#std.http)
+  * [io](https://ziglang.org/documentation/master/std/#std.io)
+  * [json](https://ziglang.org/documentation/master/std/#std.json)
+  * [leb](https://ziglang.org/documentation/master/std/#std.leb128)
+  * [log](https://ziglang.org/documentation/master/std/#std.log)
+  * [macho](https://ziglang.org/documentation/master/std/#std.macho)
+  * [math](https://ziglang.org/documentation/master/std/#std.math)
+  * [mem](https://ziglang.org/documentation/master/std/#std.mem)
+  * [meta](https://ziglang.org/documentation/master/std/#std.meta)
+  * [net](https://ziglang.org/documentation/master/std/#std.net)
+  * [os](https://ziglang.org/documentation/master/std/#std.os)
+  * [pdb](https://ziglang.org/documentation/master/std/#std.pdb)
+  * [pie](https://ziglang.org/documentation/master/std/#std.pie)
+  * [posix](https://ziglang.org/documentation/master/std/#std.posix)
+  * [process](https://ziglang.org/documentation/master/std/#std.process)
+  * [simd](https://ziglang.org/documentation/master/std/#std.simd)
+  * [sort](https://ziglang.org/documentation/master/std/#std.sort)
+  * [start](https://ziglang.org/documentation/master/std/#std.start)
+  * [static_string_map](https://ziglang.org/documentation/master/std/#std.static_string_map)
+  * [tar](https://ziglang.org/documentation/master/std/#std.tar)
+  * [testing](https://ziglang.org/documentation/master/std/#std.testing)
+  * [time](https://ziglang.org/documentation/master/std/#std.time)
+  * [tz](https://ziglang.org/documentation/master/std/#std.tz)
+  * [unicode](https://ziglang.org/documentation/master/std/#std.unicode)
+  * [valgrind](https://ziglang.org/documentation/master/std/#std.valgrind)
+  * [wasm](https://ziglang.org/documentation/master/std/#std.wasm)
+  * [zig](https://ziglang.org/documentation/master/std/#std.zig)
+  * [zip](https://ziglang.org/documentation/master/std/#std.zip)
+  * [zon](https://ziglang.org/documentation/master/std/#std.zon)
+
+
+## Global Variables
+## Values
+[options](https://ziglang.org/documentation/master/std/#std.options)| `Options[](https://ziglang.org/documentation/master/std/#std.Options)`| Stdlib-wide options that can be overridden by the root file.  
+---|---|---  
+## Functions `pub fn once[](https://ziglang.org/documentation/master/std/#std.once.once)(comptime f: fn () void) Once[](https://ziglang.org/documentation/master/std/#std.once.Once)(f)`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

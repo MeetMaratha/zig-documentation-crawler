@@ -1,0 +1,164 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [hash_map](https://ziglang.org/documentation/master/std/#std.hash_map)
+  * [AutoHashMap](https://ziglang.org/documentation/master/std/#std.hash_map.AutoHashMap)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/hash_map.zig)
+## Parameters
+```
+K: type
+```
+
+```
+V: type
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+unmanaged: Unmanaged[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Unmanaged)
+```
+
+```
+allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)
+```
+
+```
+ctx: Context
+```
+
+## Types
+  * [Unmanaged](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Unmanaged)
+
+
+## Namespaces
+## Global Variables
+## Values
+[Entry](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Entry)| | An entry, containing pointers to a key and value stored in the map  
+---|---|---  
+[GetOrPutResult](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.GetOrPutResult)| | The type returned from getOrPut and variants  
+[Hash](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Hash)| | The integer type that is the result of hashing  
+[Iterator](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Iterator)| | The iterator type returned by iterator()  
+[KV](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KV)| | A copy of a key and value which are no longer in the map  
+[KeyIterator](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KeyIterator)| |   
+[Size](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Size)| | The integer type used to store the size of the map  
+[ValueIterator](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.ValueIterator)| |   
+## Functions `pub fn capacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.capacity)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) Size[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Size)`
+    
+Returns the number of total elements which may be present before it is no longer guaranteed that no allocations will be performed. `pub fn clearAndFree[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.clearAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Empty the map and release the backing allocation. This does _not_ free keys or values! Be sure to release them if they need deinitialization before calling this function. `pub fn clearRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.clearRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Empty the map, but keep the backing allocation for future use. This does _not_ free keys or values! Be sure to release them if they need deinitialization before calling this function. `pub fn clone[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.clone)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)`
+    
+Creates a copy of this map, using the same allocator `pub fn cloneWithAllocator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.cloneWithAllocator)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), new_allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)`
+    
+Creates a copy of this map, using a specified allocator `pub fn cloneWithAllocatorAndContext[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.cloneWithAllocatorAndContext)( self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), new_allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_ctx: anytype, ) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!HashMap[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)(K, V, @TypeOf(new_ctx), max_load_percentage)`
+    
+Creates a copy of this map, using a specified allocator and context. `pub fn cloneWithContext[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.cloneWithContext)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), new_ctx: anytype) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!HashMap[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)(K, V, @TypeOf(new_ctx), max_load_percentage)`
+    
+Creates a copy of this map, using a specified context `pub fn contains[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.contains)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) bool`
+    
+Check if the map contains a key `pub fn containsAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.containsAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) bool`
+`pub fn count[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) Size[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Size)`
+    
+Return the number of items in the map. `pub fn deinit[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.deinit)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Release the backing array and invalidate this map. This does _not_ deinit keys, values, or the context! If your keys or values need to be released, ensure that that is done before calling this function. `pub fn ensureTotalCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.ensureTotalCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), expected_count: Size[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Size)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Increases capacity, guaranteeing that insertions up until the `expected_count` will not cause an allocation, and therefore cannot fail. `pub fn ensureUnusedCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.ensureUnusedCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), additional_count: Size[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Size)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Increases capacity, guaranteeing that insertions up until `additional_count` **more** items will not cause an allocation, and therefore cannot fail. `pub fn fetchPut[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.fetchPut)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!?KV[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KV)`
+    
+Inserts a new `Entry` into the hash map, returning the previous one, if any. `pub fn fetchPutAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.fetchPutAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) ?KV[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KV)`
+    
+Inserts a new `Entry` into the hash map, returning the previous one, if any. If insertion happens, asserts there is enough capacity without allocating. `pub fn fetchRemove[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.fetchRemove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?KV[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KV)`
+    
+Removes a value from the map and returns the removed kv pair. `pub fn fetchRemoveAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.fetchRemoveAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?KV[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KV)`
+`pub fn get[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.get)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?V`
+    
+Finds the value associated with a key in the map `pub fn getAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?V`
+`pub fn getEntry[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getEntry)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?Entry[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Entry)`
+    
+Finds the key and value associated with a key in the map `pub fn getEntryAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getEntryAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?Entry[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Entry)`
+`pub fn getKey[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getKey)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?K`
+    
+Finds the actual key associated with an adapted key in the map `pub fn getKeyAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getKeyAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?K`
+`pub fn getKeyPtr[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getKeyPtr)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?*K`
+`pub fn getKeyPtrAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getKeyPtrAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?*K`
+`pub fn getOrPut[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getOrPut)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.GetOrPutResult)`
+    
+If key exists this function cannot fail. If there is an existing item with `key`, then the result's `Entry` pointers point to it, and found_existing is true. Otherwise, puts a new item with undefined value, and the `Entry` pointers point to it. Caller should then initialize the value (but not the key). `pub fn getOrPutAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getOrPutAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.GetOrPutResult)`
+    
+If key exists this function cannot fail. If there is an existing item with `key`, then the result's `Entry` pointers point to it, and found_existing is true. Otherwise, puts a new item with undefined key and value, and the `Entry` pointers point to it. Caller must then initialize the key and value. `pub fn getOrPutAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getOrPutAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.GetOrPutResult)`
+    
+If there is an existing item with `key`, then the result's `Entry` pointers point to it, and found_existing is true. Otherwise, puts a new item with undefined value, and the `Entry` pointers point to it. Caller should then initialize the value (but not the key). If a new entry needs to be stored, this function asserts there is enough capacity to store it. `pub fn getOrPutAssumeCapacityAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getOrPutAssumeCapacityAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) GetOrPutResult[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.GetOrPutResult)`
+    
+If there is an existing item with `key`, then the result's `Entry` pointers point to it, and found_existing is true. Otherwise, puts a new item with undefined value, and the `Entry` pointers point to it. Caller must then initialize the key and value. If a new entry needs to be stored, this function asserts there is enough capacity to store it. `pub fn getOrPutValue[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getOrPutValue)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!Entry[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Entry)`
+`pub fn getPtr[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getPtr)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) ?*V`
+`pub fn getPtrAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.getPtrAdapted)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) ?*V`
+`pub fn init[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.init)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)`
+    
+Create a managed hash map with an empty context. If the context is not zero-sized, you must use initContext(allocator, ctx) instead. `pub fn initContext[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.initContext)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ctx: Context) Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)`
+    
+Create a managed hash map with a context `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.iterator)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) Iterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.Iterator)`
+    
+Create an iterator over the entries in the map. The iterator is invalidated if the map is modified. `pub fn keyIterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.keyIterator)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) KeyIterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.KeyIterator)`
+    
+Create an iterator over the keys in the map. The iterator is invalidated if the map is modified. `pub fn lockPointers[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.lockPointers)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Puts the hash map into a state where any method call that would cause an existing key or value pointer to become invalidated will instead trigger an assertion. `pub fn move[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.move)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)`
+    
+Set the map to an empty state, making deinitialization a no-op, and returning a copy of the original. `pub fn put[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.put)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Clobbers any existing data. To detect if a put would clobber existing data, see `getOrPut`. `pub fn putAssumeCapacity[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.putAssumeCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) void`
+    
+Asserts there is enough capacity to store the new key-value pair. Clobbers any existing data. To detect if a put would clobber existing data, see `getOrPutAssumeCapacity`. `pub fn putAssumeCapacityNoClobber[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.putAssumeCapacityNoClobber)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) void`
+    
+Asserts there is enough capacity to store the new key-value pair. Asserts that it does not clobber any existing data. To detect if a put would clobber existing data, see `getOrPutAssumeCapacity`. `pub fn putNoClobber[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.putNoClobber)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K, value: V) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Inserts a key-value pair into the hash map, asserting that no previous entry with the same key is already present `pub fn rehash[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.rehash)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Rehash the map, in-place. `pub fn remove[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.remove)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: K) bool`
+    
+If there is an `Entry` with a matching key, it is deleted from the hash map, and this function returns true. Otherwise this function returns false. `pub fn removeAdapted[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.removeAdapted)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key: anytype, ctx: anytype) bool`
+    
+TODO: answer the question in these doc comments, does this increase the unused capacity by one? `pub fn removeByPtr[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.removeByPtr)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap), key_ptr: *K) void`
+    
+Delete the entry with key pointed to by key_ptr from the hash map. key_ptr is assumed to be a valid pointer to a key that is present in the hash map. `pub fn unlockPointers[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.unlockPointers)(self: *Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) void`
+    
+Undoes a call to `lockPointers`. `pub fn valueIterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.valueIterator)(self: Self[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap)) ValueIterator[](https://ziglang.org/documentation/master/std/#std.hash_map.HashMap.ValueIterator)`
+    
+Create an iterator over the values in the map. The iterator is invalidated if the map is modified.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

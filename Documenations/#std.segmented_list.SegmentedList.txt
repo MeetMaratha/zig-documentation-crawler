@@ -1,0 +1,100 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [segmented_list](https://ziglang.org/documentation/master/std/#std.segmented_list)
+  * [SegmentedList](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/segmented_list.zig)
+This is a stack data structure where pointers to indexes have the same lifetime as the data structure itself, unlike ArrayList where append() invalidates all existing element pointers. The tradeoff is that elements are not guaranteed to be contiguous. For that, use ArrayList. Note however that most elements are contiguous, making this data structure cache-friendly.
+Because it never has to copy elements from an old location to a new location, it does not require its elements to be copyable, and it avoids wasting memory when backed by an ArenaAllocator. Note that the append() and pop() convenience methods perform a copy, but you can instead use addOne(), at(), setCapacity(), and shrinkCapacity() to avoid copying items.
+This data structure has O(1) append and O(1) pop.
+It supports preallocated elements, making it especially well suited when the expected maximum size is small. `prealloc_item_count` must be 0, or a power of 2.
+## Parameters
+```
+T: type
+```
+
+```
+prealloc_item_count: usize
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+prealloc_segment: [prealloc_item_count]T = undefined
+```
+
+```
+dynamic_segments: [][*]T = &[_][*]T{}
+```
+
+```
+len: usize = 0
+```
+
+## Types
+  * [ConstIterator](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.ConstIterator)
+  * [Iterator](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.Iterator)
+
+
+## Namespaces
+## Global Variables
+## Values
+[prealloc_count](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.prealloc_count)| |   
+---|---|---  
+## Functions `pub fn addOne[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.addOne)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!*T`
+`pub fn append[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.append)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), item: T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn appendSlice[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.appendSlice)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), items: []const T) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+`pub fn at[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.at)(self: anytype, i: usize) AtType[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.AtType)(@TypeOf(self))`
+`pub fn clearAndFree[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.clearAndFree)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+    
+Invalidates all element pointers. `pub fn clearRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.clearRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList)) void`
+    
+Invalidates all element pointers. `pub fn constIterator[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.constIterator)(self: *const Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), start_index: usize) ConstIterator[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.ConstIterator)`
+`pub fn count[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.count)(self: Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList)) usize`
+`pub fn deinit[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.deinit)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) void`
+`pub fn growCapacity[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.growCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_capacity: usize) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Only grows capacity, or retains current capacity. `pub fn iterator[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.iterator)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), start_index: usize) Iterator[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.Iterator)`
+`pub fn pop[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.pop)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList)) ?T`
+`pub fn setCapacity[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.setCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_capacity: usize) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)!void`
+    
+Grows or shrinks capacity to match usage. TODO update this and related methods to match the conventions set by ArrayList `pub fn shrink[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.shrink)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), new_len: usize) void`
+`pub fn shrinkCapacity[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.shrinkCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), new_capacity: usize) void`
+    
+Only shrinks capacity or retains current capacity. It may fail to reduce the capacity in which case the capacity will remain unchanged. `pub fn shrinkRetainingCapacity[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.shrinkRetainingCapacity)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), new_len: usize) void`
+    
+Reduce length to `new_len`. Invalidates pointers for the elements at index new_len and beyond. `pub fn uncheckedAt[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.uncheckedAt)(self: anytype, index: usize) AtType[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.AtType)(@TypeOf(self))`
+`pub fn writeToSlice[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList.writeToSlice)(self: *Self[](https://ziglang.org/documentation/master/std/#std.segmented_list.SegmentedList), dest: []T, start: usize) void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

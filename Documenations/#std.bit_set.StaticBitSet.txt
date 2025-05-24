@@ -1,0 +1,71 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [bit_set](https://ziglang.org/documentation/master/std/#std.bit_set)
+  * [StaticBitSet](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/bit_set.zig)
+Returns the optimal static bit set type for the specified number of elements: either `IntegerBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)` or `ArrayBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.ArrayBitSet)`, both of which fulfill the same interface. The returned type will perform no allocations, can be copied by value, and does not require deinitialization.
+## Parameters
+```
+size: usize
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+## Namespaces
+## Global Variables
+## Values
+## Functions
+## Error Sets
+## Example Usage
+```
+test StaticBitSet {
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(IntegerBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)(0), StaticBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)(0));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(IntegerBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)(5), StaticBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)(5));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(IntegerBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)(@bitSizeOf(usize)), StaticBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)(@bitSizeOf(usize)));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(ArrayBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.ArrayBitSet)(usize, @bitSizeOf(usize) + 1), StaticBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)(@bitSizeOf(usize) + 1));
+  try testing[](https://ziglang.org/documentation/master/std/#std.testing).expectEqual[](https://ziglang.org/documentation/master/std/#std.testing.expectEqual)(ArrayBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.ArrayBitSet)(usize, 500), StaticBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.StaticBitSet)(500));
+}
+```
+
+## Source Code
+```
+pub fn StaticBitSet(comptime size: usize) type {
+  if (size <= @bitSizeOf(usize)) {
+    return IntegerBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.IntegerBitSet)(size);
+  } else {
+    return ArrayBitSet[](https://ziglang.org/documentation/master/std/#std.bit_set.ArrayBitSet)(usize, size);
+  }
+}
+```
+
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

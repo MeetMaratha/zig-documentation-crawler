@@ -1,0 +1,61 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [once](https://ziglang.org/documentation/master/std/#std.once)
+  * [Once](https://ziglang.org/documentation/master/std/#std.once.Once)
+
+
+Loading...
+# Type Function[[src]](https://ziglang.org/documentation/master/std/#src/std/once.zig)
+An object that executes the function `f` just once. It is undefined behavior if `f` re-enters the same Once instance.
+## Parameters
+```
+f: fn () void
+```
+
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+done: bool = false
+```
+
+```
+mutex: std[](https://ziglang.org/documentation/master/std/#std).Thread[](https://ziglang.org/documentation/master/std/#std.Thread).Mutex[](https://ziglang.org/documentation/master/std/#std.Thread.Mutex) = std[](https://ziglang.org/documentation/master/std/#std).Thread[](https://ziglang.org/documentation/master/std/#std.Thread).Mutex[](https://ziglang.org/documentation/master/std/#std.Thread.Mutex){}
+```
+
+## Types
+## Namespaces
+## Global Variables
+## Values
+## Functions `pub fn call[](https://ziglang.org/documentation/master/std/#std.once.Once.call)(self: *@This()) void`
+    
+Call the function `f`. If `call` is invoked multiple times `f` will be executed only the first time. The invocations are thread-safe.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

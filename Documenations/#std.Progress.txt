@@ -1,0 +1,128 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [Progress](https://ziglang.org/documentation/master/std/#std.Progress)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/Progress.zig)
+This API is non-allocating, non-fallible, thread-safe, and lock-free.
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+```
+terminal: std[](https://ziglang.org/documentation/master/std/#std).fs[](https://ziglang.org/documentation/master/std/#std.fs).File[](https://ziglang.org/documentation/master/std/#std.fs.File)
+```
+
+`null` if the current node (and its children) should not print on update()
+```
+terminal_mode: TerminalMode[](https://ziglang.org/documentation/master/std/#std.Progress.TerminalMode)
+```
+
+```
+update_thread: ?std[](https://ziglang.org/documentation/master/std/#std).Thread[](https://ziglang.org/documentation/master/std/#std.Thread)
+```
+
+```
+redraw_event: std[](https://ziglang.org/documentation/master/std/#std).Thread[](https://ziglang.org/documentation/master/std/#std.Thread).ResetEvent[](https://ziglang.org/documentation/master/std/#std.Thread.ResetEvent)
+```
+
+Atomically set by SIGWINCH as well as the root done() function.
+```
+done: bool
+```
+
+Indicates a request to shut down and reset global state. Accessed atomically.
+```
+need_clear: bool
+```
+
+```
+refresh_rate_ns: u64
+```
+
+```
+initial_delay_ns: u64
+```
+
+```
+rows: u16
+```
+
+```
+cols: u16
+```
+
+```
+draw_buffer: []u8
+```
+
+Accessed only by the update thread.
+```
+node_parents: []Node[](https://ziglang.org/documentation/master/std/#std.Progress.Node).Parent[](https://ziglang.org/documentation/master/std/#std.Progress.Node.Parent)
+```
+
+This is in a separate array from `node_storage` but with the same length so that it can be iterated over efficiently without trashing too much of the CPU cache.
+```
+node_storage: []Node[](https://ziglang.org/documentation/master/std/#std.Progress.Node).Storage[](https://ziglang.org/documentation/master/std/#std.Progress.Node.Storage)
+```
+
+```
+node_freelist_next: []Node[](https://ziglang.org/documentation/master/std/#std.Progress.Node).OptionalIndex[](https://ziglang.org/documentation/master/std/#std.Progress.Node.OptionalIndex)
+```
+
+```
+node_freelist: Freelist[](https://ziglang.org/documentation/master/std/#std.Progress.Freelist)
+```
+
+```
+node_end_index: u32
+```
+
+This is the number of elements in node arrays which have been used so far. Nodes before this index are either active, or on the freelist. The remaining nodes are implicitly free. This value may at times temporarily exceed the node count.
+## Types
+  * [Node](https://ziglang.org/documentation/master/std/#std.Progress.Node)
+  * [Options](https://ziglang.org/documentation/master/std/#std.Progress.Options)
+  * [TerminalMode](https://ziglang.org/documentation/master/std/#std.Progress.TerminalMode)
+
+
+## Namespaces
+## Global Variables
+## Values
+[have_ipc](https://ziglang.org/documentation/master/std/#std.Progress.have_ipc)| |   
+---|---|---  
+## Functions `pub fn lockStdErr[](https://ziglang.org/documentation/master/std/#std.Progress.lockStdErr)() void`
+    
+Allows the caller to freely write to stderr until `unlockStdErr[](https://ziglang.org/documentation/master/std/#std.Progress.unlockStdErr)` is called. `pub fn start[](https://ziglang.org/documentation/master/std/#std.Progress.start)(options: Options[](https://ziglang.org/documentation/master/std/#std.Progress.Options)) Node[](https://ziglang.org/documentation/master/std/#std.Progress.Node)`
+    
+Initializes a global Progress instance. `pub fn unlockStdErr[](https://ziglang.org/documentation/master/std/#std.Progress.unlockStdErr)() void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

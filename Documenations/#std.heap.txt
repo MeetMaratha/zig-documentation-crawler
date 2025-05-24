@@ -1,0 +1,87 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [heap](https://ziglang.org/documentation/master/std/#std.heap)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/heap.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ArenaAllocator](https://ziglang.org/documentation/master/std/#std.heap.arena_allocator.ArenaAllocator)
+  * [Check](https://ziglang.org/documentation/master/std/#std.heap.Check)
+  * [DebugAllocator](https://ziglang.org/documentation/master/std/#std.heap.debug_allocator.DebugAllocator)
+  * [DebugAllocatorConfig](https://ziglang.org/documentation/master/std/#std.heap.debug_allocator.Config)
+  * [FixedBufferAllocator](https://ziglang.org/documentation/master/std/#std.heap.FixedBufferAllocator)
+  * [GeneralPurposeAllocator](https://ziglang.org/documentation/master/std/#std.heap.debug_allocator.DebugAllocator)
+  * [GeneralPurposeAllocatorConfig](https://ziglang.org/documentation/master/std/#std.heap.debug_allocator.Config)
+  * [MemoryPool](https://ziglang.org/documentation/master/std/#std.heap.memory_pool.MemoryPool)
+  * [MemoryPoolAligned](https://ziglang.org/documentation/master/std/#std.heap.memory_pool.MemoryPoolAligned)
+  * [MemoryPoolExtra](https://ziglang.org/documentation/master/std/#std.heap.memory_pool.MemoryPoolExtra)
+  * [MemoryPoolOptions](https://ziglang.org/documentation/master/std/#std.heap.memory_pool.Options)
+  * [SbrkAllocator](https://ziglang.org/documentation/master/std/#std.heap.sbrk_allocator.SbrkAllocator)
+  * [SmpAllocator](https://ziglang.org/documentation/master/std/#std.heap.SmpAllocator)
+  * [StackFallbackAllocator](https://ziglang.org/documentation/master/std/#std.heap.StackFallbackAllocator)
+  * [ThreadSafeAllocator](https://ziglang.org/documentation/master/std/#std.heap.ThreadSafeAllocator)
+
+
+## Namespaces
+  * [PageAllocator](https://ziglang.org/documentation/master/std/#std.heap.PageAllocator)
+  * [WasmAllocator](https://ziglang.org/documentation/master/std/#std.heap.WasmAllocator)
+
+
+## Global Variables
+[next_mmap_addr_hint](https://ziglang.org/documentation/master/std/#std.heap.next_mmap_addr_hint)| `?[*]align(page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)) u8`| TODO Utilize this on Windows.  
+---|---|---  
+## Values
+[c_allocator](https://ziglang.org/documentation/master/std/#std.heap.c_allocator)| `Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)`| Supports the full Allocator interface, including alignment, and exploiting `malloc_usable_size` if available. For an allocator that directly calls `malloc`/`free`, see `raw_c_allocator[](https://ziglang.org/documentation/master/std/#std.heap.raw_c_allocator)`.  
+---|---|---  
+[page_allocator](https://ziglang.org/documentation/master/std/#std.heap.page_allocator)| `Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)`| On operating systems that support memory mapping, this allocator makes a syscall directly for every allocation and free.  
+[page_size_max](https://ziglang.org/documentation/master/std/#std.heap.page_size_max)| `usize`| comptime-known maximum page size of the target.  
+[page_size_min](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)| `usize`| comptime-known minimum page size of the target.  
+[raw_c_allocator](https://ziglang.org/documentation/master/std/#std.heap.raw_c_allocator)| `Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)`| Asserts allocations are within `@alignOf(std.c.max_align_t)` and directly calls `malloc`/`free`. Does not attempt to utilize `malloc_usable_size`. This allocator is safe to use as the backing allocator with `ArenaAllocator[](https://ziglang.org/documentation/master/std/#std.heap.arena_allocator.ArenaAllocator)` for example and is more optimal in such a case than `c_allocator[](https://ziglang.org/documentation/master/std/#std.heap.c_allocator)`.  
+[smp_allocator](https://ziglang.org/documentation/master/std/#std.heap.smp_allocator)| `Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)`|   
+[wasm_allocator](https://ziglang.org/documentation/master/std/#std.heap.wasm_allocator)| `Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)`| This allocator is fast, small, and specific to WebAssembly. In the future, this will be the implementation automatically selected by `GeneralPurposeAllocator[](https://ziglang.org/documentation/master/std/#std.heap.DebugAllocator)` when compiling in `ReleaseSmall` mode for wasm32 and wasm64 architectures. Until then, it is available here to play with.  
+## Functions `pub fn defaultQueryPageSize[](https://ziglang.org/documentation/master/std/#std.heap.defaultQueryPageSize)() usize`
+    
+The default implementation of `std.options.queryPageSize`. Asserts that the page size is within `page_size_min[](https://ziglang.org/documentation/master/std/#std.heap.page_size_min)` and `page_size_max[](https://ziglang.org/documentation/master/std/#std.heap.page_size_max)` `pub inline fn pageSize[](https://ziglang.org/documentation/master/std/#std.heap.pageSize)() usize`
+    
+If the page size is comptime-known, return value is comptime. Otherwise, calls `std.options.queryPageSize` which by default queries the host operating system at runtime. `pub fn stackFallback[](https://ziglang.org/documentation/master/std/#std.heap.stackFallback)(comptime size: usize, fallback_allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) StackFallbackAllocator[](https://ziglang.org/documentation/master/std/#std.heap.StackFallbackAllocator)(size)`
+    
+Returns a `StackFallbackAllocator[](https://ziglang.org/documentation/master/std/#std.heap.StackFallbackAllocator)` allocating using either a `FixedBufferAllocator[](https://ziglang.org/documentation/master/std/#std.heap.FixedBufferAllocator)` on an array of size `size` and falling back to `fallback_allocator` if that fails. `pub fn testAllocator[](https://ziglang.org/documentation/master/std/#std.heap.testAllocator)(base_allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !void`
+    
+This one should not try alignments that exceed what C malloc can handle. `pub fn testAllocatorAligned[](https://ziglang.org/documentation/master/std/#std.heap.testAllocatorAligned)(base_allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !void`
+`pub fn testAllocatorAlignedShrink[](https://ziglang.org/documentation/master/std/#std.heap.testAllocatorAlignedShrink)(base_allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !void`
+`pub fn testAllocatorLargeAlignment[](https://ziglang.org/documentation/master/std/#std.heap.testAllocatorLargeAlignment)(base_allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) !void`
+
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

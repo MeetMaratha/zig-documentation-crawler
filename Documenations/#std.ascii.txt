@@ -1,0 +1,102 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [ascii](https://ziglang.org/documentation/master/std/#std.ascii)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/ascii.zig)
+The 7-bit [ASCII](https://en.wikipedia.org/wiki/ASCII) character encoding standard.
+This is not to be confused with the 8-bit [extended ASCII](https://en.wikipedia.org/wiki/Extended_ASCII) character encoding.
+Even though this module concerns itself with 7-bit ASCII, functions use `u8` as the type instead of `u7` for convenience and compatibility. Characters outside of the 7-bit range are gracefully handled (e.g. by returning `false`).
+See also: <https://en.wikipedia.org/wiki/ASCII#Character_set>
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+## Namespaces
+  * [control_code](https://ziglang.org/documentation/master/std/#std.ascii.control_code)
+
+
+## Global Variables
+## Values
+[whitespace](https://ziglang.org/documentation/master/std/#std.ascii.whitespace)| | Whitespace for general use. This may be used with e.g. `std.mem.trim[](https://ziglang.org/documentation/master/std/#std.mem.trim)` to trim whitespace.  
+---|---|---  
+## Functions `pub fn allocLowerString[](https://ziglang.org/documentation/master/std/#std.ascii.allocLowerString)(allocator: std[](https://ziglang.org/documentation/master/std/#std).mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ascii_string: []const u8) ![]u8`
+    
+Allocates a lower case copy of `ascii_string`. Caller owns returned string and must free with `allocator`. `pub fn allocUpperString[](https://ziglang.org/documentation/master/std/#std.ascii.allocUpperString)(allocator: std[](https://ziglang.org/documentation/master/std/#std).mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), ascii_string: []const u8) ![]u8`
+    
+Allocates an upper case copy of `ascii_string`. Caller owns returned string and must free with `allocator`. `pub fn endsWithIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.endsWithIgnoreCase)(haystack: []const u8, needle: []const u8) bool`
+`pub fn eqlIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.eqlIgnoreCase)(a: []const u8, b: []const u8) bool`
+    
+Compares strings `a` and `b` case-insensitively and returns whether they are equal. `pub fn indexOfIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.indexOfIgnoreCase)(haystack: []const u8, needle: []const u8) ?usize`
+    
+Finds `needle` in `haystack`, ignoring case, starting at index 0. `pub fn indexOfIgnoreCasePos[](https://ziglang.org/documentation/master/std/#std.ascii.indexOfIgnoreCasePos)(haystack: []const u8, start_index: usize, needle: []const u8) ?usize`
+    
+Finds `needle` in `haystack`, ignoring case, starting at `start_index`. Uses Boyer-Moore-Horspool algorithm on large inputs; `indexOfIgnoreCasePosLinear[](https://ziglang.org/documentation/master/std/#std.ascii.indexOfIgnoreCasePosLinear)` on small inputs. `pub fn indexOfIgnoreCasePosLinear[](https://ziglang.org/documentation/master/std/#std.ascii.indexOfIgnoreCasePosLinear)(haystack: []const u8, start_index: usize, needle: []const u8) ?usize`
+    
+Consider using `indexOfIgnoreCasePos[](https://ziglang.org/documentation/master/std/#std.ascii.indexOfIgnoreCasePos)` instead of this, which will automatically use a more sophisticated algorithm on larger inputs. `pub fn isAlphabetic[](https://ziglang.org/documentation/master/std/#std.ascii.isAlphabetic)(c: u8) bool`
+    
+Returns whether the character is alphabetic: A-Z or a-z. `pub fn isAlphanumeric[](https://ziglang.org/documentation/master/std/#std.ascii.isAlphanumeric)(c: u8) bool`
+    
+Returns whether the character is alphanumeric: A-Z, a-z, or 0-9. `pub fn isAscii[](https://ziglang.org/documentation/master/std/#std.ascii.isAscii)(c: u8) bool`
+    
+Returns whether the character is a 7-bit ASCII character. `pub fn isAscii[](https://ziglang.org/documentation/master/std/#std.ascii.isAscii)(c: u8) bool`
+    
+Returns whether the character is a 7-bit ASCII character. `pub fn isControl[](https://ziglang.org/documentation/master/std/#std.ascii.isControl)(c: u8) bool`
+    
+Returns whether the character is a control character. `pub fn isDigit[](https://ziglang.org/documentation/master/std/#std.ascii.isDigit)(c: u8) bool`
+    
+Returns whether the character is a digit. `pub fn isHex[](https://ziglang.org/documentation/master/std/#std.ascii.isHex)(c: u8) bool`
+    
+Returns whether the character is a hexadecimal digit: A-F, a-f, or 0-9. `pub fn isLower[](https://ziglang.org/documentation/master/std/#std.ascii.isLower)(c: u8) bool`
+    
+Returns whether the character is a lowercase letter. `pub fn isPrint[](https://ziglang.org/documentation/master/std/#std.ascii.isPrint)(c: u8) bool`
+    
+Returns whether the character is printable and has some graphical representation, including the space character. `pub fn isUpper[](https://ziglang.org/documentation/master/std/#std.ascii.isUpper)(c: u8) bool`
+    
+Returns whether the character is an uppercase letter. `pub fn isWhitespace[](https://ziglang.org/documentation/master/std/#std.ascii.isWhitespace)(c: u8) bool`
+    
+Returns whether this character is included in `whitespace[](https://ziglang.org/documentation/master/std/#std.ascii.whitespace)`. `pub fn lessThanIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.lessThanIgnoreCase)(lhs: []const u8, rhs: []const u8) bool`
+    
+Returns whether the lexicographical order of `lhs` is lower than `rhs`. `pub fn lowerString[](https://ziglang.org/documentation/master/std/#std.ascii.lowerString)(output: []u8, ascii_string: []const u8) []u8`
+    
+Writes a lower case copy of `ascii_string` to `output`. Asserts `output.len >= ascii_string.len`. `pub fn orderIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.orderIgnoreCase)(lhs: []const u8, rhs: []const u8) std[](https://ziglang.org/documentation/master/std/#std).math[](https://ziglang.org/documentation/master/std/#std.math).Order[](https://ziglang.org/documentation/master/std/#std.math.Order)`
+    
+Returns the lexicographical order of two slices. O(n). `pub fn startsWithIgnoreCase[](https://ziglang.org/documentation/master/std/#std.ascii.startsWithIgnoreCase)(haystack: []const u8, needle: []const u8) bool`
+`pub fn toLower[](https://ziglang.org/documentation/master/std/#std.ascii.toLower)(c: u8) u8`
+    
+Lowercases the character and returns it as-is if already lowercase or not a letter. `pub fn toUpper[](https://ziglang.org/documentation/master/std/#std.ascii.toUpper)(c: u8) u8`
+    
+Uppercases the character and returns it as-is if already uppercase or not a letter. `pub fn upperString[](https://ziglang.org/documentation/master/std/#std.ascii.upperString)(output: []u8, ascii_string: []const u8) []u8`
+    
+Writes an upper case copy of `ascii_string` to `output`. Asserts `output.len >= ascii_string.len`.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

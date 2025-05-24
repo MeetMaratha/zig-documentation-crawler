@@ -1,0 +1,53 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [atomic](https://ziglang.org/documentation/master/std/#std.atomic)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/atomic.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [Value](https://ziglang.org/documentation/master/std/#std.atomic.Value)
+
+
+## Namespaces
+## Global Variables
+## Values
+[cache_line](https://ziglang.org/documentation/master/std/#std.atomic.cache_line)| `comptime_int`| The estimated size of the CPU's cache line when atomically updating memory. Add this much padding or align to this boundary to avoid atomically-updated memory from forcing cache invalidations on near, but non-atomic, memory.  
+---|---|---  
+## Functions `pub fn cacheLineForCpu[](https://ziglang.org/documentation/master/std/#std.atomic.cacheLineForCpu)(cpu: std[](https://ziglang.org/documentation/master/std/#std).Target[](https://ziglang.org/documentation/master/std/#std.Target).Cpu[](https://ziglang.org/documentation/master/std/#std.Target.Cpu)) u16`
+`pub inline fn spinLoopHint[](https://ziglang.org/documentation/master/std/#std.atomic.spinLoopHint)() void`
+    
+Signals to the processor that the caller is inside a busy-wait spin-loop.
+## Error Sets
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors

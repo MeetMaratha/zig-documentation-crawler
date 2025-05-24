@@ -1,0 +1,129 @@
+[ ](https://ziglang.org/documentation/master/std/)
+  * [std](https://ziglang.org/documentation/master/std/#std)
+  * [process](https://ziglang.org/documentation/master/std/#std.process)
+
+
+Loading...
+# struct[[src]](https://ziglang.org/documentation/master/std/#src/std/process.zig)
+## Parameters
+## Errors
+anyerror means the error set is known only at runtime.
+## Search Results
+## No Results Found
+Press escape to exit search and then '?' to see more options.
+## Fields
+## Types
+  * [ArgIterator](https://ziglang.org/documentation/master/std/#std.process.ArgIterator)
+  * [ArgIteratorGeneral](https://ziglang.org/documentation/master/std/#std.process.ArgIteratorGeneral)
+  * [ArgIteratorGeneralOptions](https://ziglang.org/documentation/master/std/#std.process.ArgIteratorGeneralOptions)
+  * [ArgIteratorPosix](https://ziglang.org/documentation/master/std/#std.process.ArgIteratorPosix)
+  * [ArgIteratorWasi](https://ziglang.org/documentation/master/std/#std.process.ArgIteratorWasi)
+  * [ArgIteratorWindows](https://ziglang.org/documentation/master/std/#std.process.ArgIteratorWindows)
+  * [Child](https://ziglang.org/documentation/master/std/#std.process.Child)
+  * [CreateEnvironOptions](https://ziglang.org/documentation/master/std/#std.process.CreateEnvironOptions)
+  * [EnvMap](https://ziglang.org/documentation/master/std/#std.process.EnvMap)
+  * [UserInfo](https://ziglang.org/documentation/master/std/#std.process.UserInfo)
+
+
+## Namespaces
+## Global Variables
+## Values
+[can_execv](https://ziglang.org/documentation/master/std/#std.process.can_execv)| | Tells whether calling the `execv[](https://ziglang.org/documentation/master/std/#std.process.execv)` or `execve[](https://ziglang.org/documentation/master/std/#std.process.execve)` functions will be a compile error.  
+---|---|---  
+[can_spawn](https://ziglang.org/documentation/master/std/#std.process.can_spawn)| | Tells whether spawning child processes is supported (e.g. via Child)  
+## Functions `pub fn abort[](https://ziglang.org/documentation/master/std/#std.posix.abort)() noreturn`
+    
+Causes abnormal process termination. If linking against libc, this calls the abort() libc function. Otherwise it raises SIGABRT followed by SIGKILL and finally lo Invokes the current signal handler for SIGABRT, if any. `pub fn args[](https://ziglang.org/documentation/master/std/#std.process.args)() ArgIterator[](https://ziglang.org/documentation/master/std/#std.process.ArgIterator)`
+    
+Holds the command-line arguments, with the program name as the first entry. Use argsWithAllocator() for cross-platform code. `pub fn argsAlloc[](https://ziglang.org/documentation/master/std/#std.process.argsAlloc)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![][:0]u8`
+    
+Caller must call argsFree on result. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn argsFree[](https://ziglang.org/documentation/master/std/#std.process.argsFree)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), args_alloc: []const [:0]u8) void`
+`pub fn argsWithAllocator[](https://ziglang.org/documentation/master/std/#std.process.argsWithAllocator)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ArgIterator[](https://ziglang.org/documentation/master/std/#std.process.ArgIterator).InitError[](https://ziglang.org/documentation/master/std/#std.process.ArgIterator.InitError)!ArgIterator[](https://ziglang.org/documentation/master/std/#std.process.ArgIterator)`
+    
+You must deinitialize iterator's internal buffers by calling `deinit` when done. `pub fn chdir[](https://ziglang.org/documentation/master/std/#std.posix.chdir)(dir_path: []const u8) ChangeCurDirError[](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)!void`
+    
+Changes the current working directory of the calling process. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn chdirZ[](https://ziglang.org/documentation/master/std/#std.posix.chdirZ)(dir_path: [*:0]const u8) ChangeCurDirError[](https://ziglang.org/documentation/master/std/#std.posix.ChangeCurDirError)!void`
+    
+Same as `chdir[](https://ziglang.org/documentation/master/std/#std.posix.chdir)` except the parameter is null-terminated. On Windows, `dir_path` should be encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On WASI, `dir_path` should be encoded as valid UTF-8. On other platforms, `dir_path` is an opaque sequence of bytes with no particular encoding. `pub fn cleanExit[](https://ziglang.org/documentation/master/std/#std.process.cleanExit)() void`
+    
+Indicate that we are now terminating with a successful exit code. In debug builds, this is a no-op, so that the calling code's cleanup mechanisms are tested and so that external tools that check for resource leaks can be accurate. In release builds, this calls exit(0), and does not return. `pub fn createEnvironFromExisting[](https://ziglang.org/documentation/master/std/#std.process.createEnvironFromExisting)( arena: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), existing: [*:null]const ?[*:0]const u8, options: CreateEnvironOptions[](https://ziglang.org/documentation/master/std/#std.process.CreateEnvironOptions), ) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![:null]?[*:0]u8`
+    
+Creates a null-delimited environment variable block in the format expected by POSIX, from a hash map plus options. `pub fn createEnvironFromMap[](https://ziglang.org/documentation/master/std/#std.process.createEnvironFromMap)( arena: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), map: *const EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap), options: CreateEnvironOptions[](https://ziglang.org/documentation/master/std/#std.process.CreateEnvironOptions), ) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![:null]?[*:0]u8`
+    
+Creates a null-delimited environment variable block in the format expected by POSIX, from a hash map plus options. `pub fn createNullDelimitedEnvMap[](https://ziglang.org/documentation/master/std/#std.process.createNullDelimitedEnvMap)(arena: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), env_map: *const EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap)) Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator).Error[](https://ziglang.org/documentation/master/std/#std.mem.Allocator.Error)![:null]?[*:0]u8`
+`pub fn createWindowsEnvBlock[](https://ziglang.org/documentation/master/std/#std.process.createWindowsEnvBlock)(allocator: mem[](https://ziglang.org/documentation/master/std/#std.mem).Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), env_map: *const EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap)) ![]u16`
+    
+Caller must free result. `pub fn execv[](https://ziglang.org/documentation/master/std/#std.process.execv)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), argv: []const []const u8) ExecvError[](https://ziglang.org/documentation/master/std/#std.process.ExecvError)`
+    
+Replaces the current process image with the executed process. This function must allocate memory to add a null terminating bytes on path and each arg. It must also convert to KEY=VALUE\0 format for environment variables, and include null pointers after the args and after the environment variables. `argv[0]` is the executable path. This function also uses the PATH environment variable to get the full path to the executable. Due to the heap-allocation, it is illegal to call this function in a fork() child. For that use case, use the `std.posix[](https://ziglang.org/documentation/master/std/#std.posix)` functions directly. `pub fn execve[](https://ziglang.org/documentation/master/std/#std.process.execve)( allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), argv: []const []const u8, env_map: ?*const EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap), ) ExecvError[](https://ziglang.org/documentation/master/std/#std.process.ExecvError)`
+    
+Replaces the current process image with the executed process. This function must allocate memory to add a null terminating bytes on path and each arg. It must also convert to KEY=VALUE\0 format for environment variables, and include null pointers after the args and after the environment variables. `argv[0]` is the executable path. This function also uses the PATH environment variable to get the full path to the executable. Due to the heap-allocation, it is illegal to call this function in a fork() child. For that use case, use the `std.posix[](https://ziglang.org/documentation/master/std/#std.posix)` functions directly. `pub fn exit[](https://ziglang.org/documentation/master/std/#std.posix.exit)(status: u8) noreturn`
+    
+Exits all threads of the program with the specified status code. `pub fn fatal[](https://ziglang.org/documentation/master/std/#std.process.fatal)(comptime format: []const u8, format_arguments: anytype) noreturn`
+    
+Logs an error and then terminates the process with exit code 1. `pub fn getBaseAddress[](https://ziglang.org/documentation/master/std/#std.process.getBaseAddress)() usize`
+`pub fn getCwd[](https://ziglang.org/documentation/master/std/#std.process.getCwd)(out_buffer: []u8) ![]u8`
+    
+The result is a slice of `out_buffer`, from index `0`. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn getCwdAlloc[](https://ziglang.org/documentation/master/std/#std.process.getCwdAlloc)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) ![]u8`
+    
+Caller must free the returned memory. On Windows, the result is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the result is an opaque sequence of bytes with no particular encoding. `pub fn getEnvMap[](https://ziglang.org/documentation/master/std/#std.process.getEnvMap)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator)) GetEnvMapError[](https://ziglang.org/documentation/master/std/#std.process.GetEnvMapError)!EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap)`
+    
+Returns a snapshot of the environment variables of the current process. Any modifications to the resulting EnvMap will not be reflected in the environment, and likewise, any future modifications to the environment will not be reflected in the EnvMap. Caller owns resulting `EnvMap[](https://ziglang.org/documentation/master/std/#std.process.EnvMap)` and should call its `deinit` fn when done. `pub fn getEnvVarOwned[](https://ziglang.org/documentation/master/std/#std.process.getEnvVarOwned)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: []const u8) GetEnvVarOwnedError[](https://ziglang.org/documentation/master/std/#std.process.GetEnvVarOwnedError)![]u8`
+    
+Caller must free returned memory. On Windows, if `key` is not valid [WTF-8](https://simonsapin.github.io/wtf-8/), then `error.InvalidWtf8` is returned. On Windows, the value is encoded as [WTF-8](https://simonsapin.github.io/wtf-8/). On other platforms, the value is an opaque sequence of bytes with no particular encoding. `pub fn getUserInfo[](https://ziglang.org/documentation/master/std/#std.process.getUserInfo)(name: []const u8) !UserInfo[](https://ziglang.org/documentation/master/std/#std.process.UserInfo)`
+    
+POSIX function which gets a uid from username. `pub fn getenvW[](https://ziglang.org/documentation/master/std/#std.process.getenvW)(key: [*:0]const u16) ?[:0]const u16`
+    
+Windows-only. Get an environment variable with a null-terminated, WTF-16 encoded name. `pub fn hasEnvVar[](https://ziglang.org/documentation/master/std/#std.process.hasEnvVar)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: []const u8) HasEnvVarError[](https://ziglang.org/documentation/master/std/#std.process.HasEnvVarError)!bool`
+    
+On Windows, if `key` is not valid [WTF-8](https://simonsapin.github.io/wtf-8/), then `error.InvalidWtf8` is returned. `pub fn hasEnvVarConstant[](https://ziglang.org/documentation/master/std/#std.process.hasEnvVarConstant)(comptime key: []const u8) bool`
+    
+On Windows, `key` must be valid WTF-8. `pub fn hasNonEmptyEnvVar[](https://ziglang.org/documentation/master/std/#std.process.hasNonEmptyEnvVar)(allocator: Allocator[](https://ziglang.org/documentation/master/std/#std.mem.Allocator), key: []const u8) HasEnvVarError[](https://ziglang.org/documentation/master/std/#std.process.HasEnvVarError)!bool`
+    
+On Windows, if `key` is not valid [WTF-8](https://simonsapin.github.io/wtf-8/), then `error.InvalidWtf8` is returned. `pub fn hasNonEmptyEnvVarConstant[](https://ziglang.org/documentation/master/std/#std.process.hasNonEmptyEnvVarConstant)(comptime key: []const u8) bool`
+    
+On Windows, `key` must be valid WTF-8. `pub fn parseEnvVarInt[](https://ziglang.org/documentation/master/std/#std.process.parseEnvVarInt)(comptime key: []const u8, comptime I: type, base: u8) ParseEnvVarIntError[](https://ziglang.org/documentation/master/std/#std.process.ParseEnvVarIntError)!I`
+    
+Parses an environment variable as an integer. `pub fn posixGetUserInfo[](https://ziglang.org/documentation/master/std/#std.process.posixGetUserInfo)(name: []const u8) !UserInfo[](https://ziglang.org/documentation/master/std/#std.process.UserInfo)`
+    
+TODO this reads /etc/passwd. But sometimes the user/id mapping is in something else like NIS, AD, etc. See `man nss` or look at an strace for `id myuser`. `pub fn raiseFileDescriptorLimit[](https://ziglang.org/documentation/master/std/#std.process.raiseFileDescriptorLimit)() void`
+    
+Raise the open file descriptor limit. `pub fn totalSystemMemory[](https://ziglang.org/documentation/master/std/#std.process.totalSystemMemory)() TotalSystemMemoryError[](https://ziglang.org/documentation/master/std/#std.process.TotalSystemMemoryError)!u64`
+    
+Returns the total system memory, in bytes as a u64. We return a u64 instead of usize due to PAE on ARM and Linux's /proc/meminfo reporting more memory when using QEMU user mode emulation.
+## Error Sets
+  * [ExecvError](https://ziglang.org/documentation/master/std/#std.process.ExecvError)
+  * [GetCwdAllocError](https://ziglang.org/documentation/master/std/#std.process.GetCwdAllocError)
+  * [GetCwdError](https://ziglang.org/documentation/master/std/#std.posix.GetCwdError)
+  * [GetEnvMapError](https://ziglang.org/documentation/master/std/#std.process.GetEnvMapError)
+  * [GetEnvVarOwnedError](https://ziglang.org/documentation/master/std/#std.process.GetEnvVarOwnedError)
+  * [HasEnvVarError](https://ziglang.org/documentation/master/std/#std.process.HasEnvVarError)
+  * [ParseEnvVarIntError](https://ziglang.org/documentation/master/std/#std.process.ParseEnvVarIntError)
+  * [TotalSystemMemoryError](https://ziglang.org/documentation/master/std/#std.process.TotalSystemMemoryError)
+
+
+## Example Usage
+## Source Code
+# Keyboard Shortcuts 
+
+`?`
+    Show this help dialog 
+
+`Esc`
+    Clear focus; close this dialog 
+
+`s`
+    Focus the search field 
+
+`u`
+    Go to source code 
+
+`↑`
+    Move up in search results 
+
+`↓`
+    Move down in search results 
+
+`⏎`
+    Go to active search result
+# Errors
