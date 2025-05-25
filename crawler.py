@@ -134,5 +134,7 @@ if __name__ == "__main__":
         OUTPUT_PATH.mkdir()
 
     for file_name, crawl_result in tqdm(crawl_results.items()):
-        with open(Path(OUTPUT_PATH, file_name), "w", encoding="utf-8") as f:
+        with open(
+            Path(OUTPUT_PATH, file_name.replace("#", "")), "w", encoding="utf-8"
+        ) as f:
             f.write(crawl_result)
