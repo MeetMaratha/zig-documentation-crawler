@@ -129,7 +129,7 @@ if __name__ == "__main__":
     )
 
     # TODO: Push the resultant crawl_results documents to S3
-    OUTPUT_PATH: Path = Path(".", "Documenations")
+    OUTPUT_PATH: Path = Path(".", "zig-documentations")
     if not OUTPUT_PATH.exists():
         OUTPUT_PATH.mkdir()
 
